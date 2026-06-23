@@ -50,7 +50,7 @@
     .luxury-hero-banner {
       position: relative; width: 100%; height: 35vh; min-height: 250px;
       overflow: hidden; display: flex; justify-content: center; align-items: center;
-      background: var(--bg-card); /* 確保與下方卡片色調一致 */
+      background: var(--bg-card); 
       margin: 0 auto;
     }
     .image-background-layer {
@@ -110,17 +110,15 @@
       .hero-title-section { padding: 32px 20px 32px; }
       
       .luxury-hero-banner { 
-        height: 75vh; /* 大面積佔據螢幕，展現精品圖張力 */
+        height: 75vh; 
         min-height: 450px; 
       }
       .image-background-layer {
-        /* 強制換成手機直式圖，重點置頂 */
         background-image: url('https://i.meee.com.tw/1SXhG7R.png') !important;
         background-position: center top !important; 
         opacity: 1; 
       }
       .overlay-layer {
-        /* 創造絕美的底部淡出漸層，完美融合進 var(--bg-card) */
         background: linear-gradient(to bottom, rgba(19, 30, 38, 0) 40%, rgba(19, 30, 38, 0.7) 75%, #131E26 100%) !important;
       }
     }
@@ -173,17 +171,61 @@
     
     select { appearance: none; background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%238E9BAE%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"); background-repeat: no-repeat; background-position: right 1rem top 50%; background-size: 0.65rem auto; }
 
-    /* 終極除錯：利用 Transform 從物理層面強制縮小 Checkbox，無視 iOS 阻擋 */
-    .checkbox-label { display: flex; align-items: flex-start; font-size: 14px; color: var(--text-main); cursor: pointer; margin-bottom: 16px; line-height: 1.6; letter-spacing: 1px;}
-    .checkbox-label input { 
-      margin-top: 2px; 
-      margin-right: 8px; /* 調整與文字的間距 */
-      accent-color: var(--luxury-gold); 
+    /* ----------------------------------------------------
+       終極除錯：自訂 Checkbox 樣式，完全阻斷 iOS 原生干擾 
+       ---------------------------------------------------- */
+    .checkbox-label { 
+      display: flex; 
+      align-items: center; 
+      font-size: 14px; 
+      color: var(--text-main); 
       cursor: pointer; 
-      transform: scale(0.8); /* 桌機版微縮小 */
-      transform-origin: center;
+      margin-bottom: 16px; 
+      line-height: 1; 
+      letter-spacing: 1px;
     }
+    .checkbox-label input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      background-color: var(--input-bg);
+      margin: 0 10px 0 0;
+      width: 16px; /* 桌機預設大小 */
+      height: 16px;
+      border: 1px solid var(--border-color);
+      display: grid;
+      place-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      flex-shrink: 0; /* 防止被擠壓變形 */
+    }
+    .checkbox-label input[type="checkbox"]::before {
+      content: "";
+      width: 8px; /* 內部金色方塊大小 */
+      height: 8px;
+      transform: scale(0);
+      transition: 0.2s transform ease-in-out;
+      background-color: var(--luxury-gold);
+    }
+    .checkbox-label input[type="checkbox"]:checked {
+      border-color: var(--luxury-gold);
+    }
+    .checkbox-label input[type="checkbox"]:checked::before {
+      transform: scale(1);
+    }
+    
     .highlight-time { color: var(--luxury-gold); font-weight: 600; font-family: 'Montserrat', sans-serif; font-size: 15px;}
+
+    /* 必填確認項目並排樣式 (Inline Group) */
+    .inline-check-group {
+      display: flex;
+      flex-wrap: wrap; /* 空間不夠時允許折行，維持排版整潔 */
+      align-items: center;
+      gap: 16px;
+    }
+    .inline-check-group .checkbox-label {
+      margin-bottom: 0 !important; /* 覆寫底距，確保水平完美對齊 */
+      white-space: nowrap; /* 確保選項文字不會斷行 */
+    }
 
     /* 攜伴區 */
     .companion-box { background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); padding: 32px 24px; margin-bottom: 24px; position: relative; border-radius: 0; transition: 0.3s; }
@@ -292,7 +334,6 @@
       .checkout-wrapper { margin: 48px -24px 0 -24px; padding: 40px 24px; }
       .qr-banner { flex-direction: column; text-align: center; padding: 32px 24px; }
       
-      /* 確保表單欄位 100% 滿版且完美換行，大小一致 */
       .form-row { flex-direction: column; gap: 0; }
       .form-row .form-group { margin-bottom: 32px; width: 100%; min-width: 100%; }
 
@@ -302,11 +343,16 @@
 
       .stats-grid { grid-template-columns: 1fr 1fr; } 
       
-      /* 強制縮小手機版 Checkbox，無視 iOS 阻擋 */
-      .checkbox-label { font-size: 13px; margin-bottom: 20px; }
-      .checkbox-label input { 
-        transform: scale(0.65); /* 終極物理縮小法 */
-        margin-top: 2px;
+      /* 手機版精緻化方塊尺寸 */
+      .checkbox-label { font-size: 13px; margin-bottom: 0; }
+      .checkbox-label input[type="checkbox"] {
+        width: 13px;
+        height: 13px;
+        margin-right: 8px;
+      }
+      .checkbox-label input[type="checkbox"]::before {
+        width: 7px;
+        height: 7px;
       }
       
       .modal-overlay { padding: 0; } 
@@ -384,19 +430,22 @@
             </select>
           </div>
           
-          <div class="form-group" style="background: rgba(0,0,0,0.2); padding: 24px; margin-bottom: 40px; border: 1px solid var(--border-color);">
-            <label style="color: var(--text-main); margin-bottom: 16px; font-weight: 500; font-size: 13px;">必填確認項目</label>
+          <div class="form-group inline-check-group" style="background: rgba(0,0,0,0.2); padding: 24px; margin-bottom: 40px; border: 1px solid var(--border-color);">
+            <div style="color: var(--text-main); font-weight: 500; font-size: 13px; white-space: nowrap;">必填確認項目</div>
+            
             <label class="checkbox-label">
               <input type="checkbox" required>
               <span>入場費(暢飲) NT.<span class="highlight-time">800元</span></span>
             </label>
+            
             <label class="checkbox-label">
               <input type="checkbox" required>
-              <span>我知道遊覽車上車時間為 <span class="highlight-time">11:45</span>。</span>
+              <span>遊覽車上車時間為 <span class="highlight-time">11:45</span>。</span>
             </label>
+            
             <label class="checkbox-label">
               <input type="checkbox" required>
-              <span>我知道回家發車時間為 <span class="highlight-time">21:45</span>。</span>
+              <span>回家發車時間為 <span class="highlight-time">21:45</span>。</span>
             </label>
           </div>
 
@@ -408,18 +457,17 @@
 
           <div class="card-title" style="margin-top: 64px; font-size: 16px;">備註</div>
           
-          <div class="form-row">
-            <div class="form-group">
-              <label>匯款日期</label>
-              <input type="date" id="mainTransferDate">
-            </div>
-            <div class="form-group">
-              <label>帳號後五碼</label>
-              <input type="text" id="mainAccount5" maxlength="5" pattern="\d{5}" title="請輸入5位數字">
-            </div>
+          <div class="form-group">
+            <label>匯款日期</label>
+            <input type="date" id="mainTransferDate">
           </div>
           
-          <div class="form-group" style="margin-top: 0;">
+          <div class="form-group">
+            <label>帳號後五碼</label>
+            <input type="text" id="mainAccount5" maxlength="5" pattern="\d{5}" title="請輸入5位數字">
+          </div>
+          
+          <div class="form-group">
             <label>我聽!你說說看~</label>
             <textarea rows="3" id="mainNotes"></textarea>
           </div>
@@ -488,18 +536,18 @@
           </div>
 
           <div class="card-title" style="margin-top: 56px; font-size: 16px;">備註</div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>匯款日期</label>
-              <input type="date" id="editTransferDate">
-            </div>
-            <div class="form-group">
-              <label>帳號後五碼</label>
-              <input type="text" id="editAccount5" maxlength="5" pattern="\d{5}">
-            </div>
+          
+          <div class="form-group">
+            <label>匯款日期</label>
+            <input type="date" id="editTransferDate">
           </div>
           
-          <div class="form-group" style="margin-top: 0;">
+          <div class="form-group">
+            <label>帳號後五碼</label>
+            <input type="text" id="editAccount5" maxlength="5" pattern="\d{5}">
+          </div>
+          
+          <div class="form-group">
             <label>我聽!你說說看~</label>
             <textarea rows="3" id="editNotes"></textarea>
           </div>
