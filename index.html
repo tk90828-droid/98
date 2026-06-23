@@ -2,8 +2,13 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+  <!-- 強制 LINE 清除快取，避免咬死舊版白畫面 -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  
   <title>巨蟹夏日海灘趴報名表｜淺水灣 VIP EXCLUSIVE</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,16 +31,12 @@
       --luxury-gradient: linear-gradient(135deg, #8AC5CB 0%, #4A8C93 100%);
 
       --rule-bg: rgba(10, 19, 26, 0.98);
-      --rule-card: #131E26;
-      --rule-text: #B0BBC7;
       --rule-gold: #D4AF37;
-      --rule-gold-light: rgba(212, 175, 55, 0.15);
-      --rule-highlight: #8AC5CB;
+      --rule-highlight: #4A8C93;
     }
 
     * { box-sizing: border-box; }
     
-    /* 終極防 LINE 白畫面崩潰：嚴格鎖定寬度為 100%，棄用 100vw */
     html, body { 
       margin: 0; padding: 0; 
       width: 100%; max-width: 100%; 
@@ -44,18 +45,21 @@
       scroll-behavior: smooth;
     }
     
+    /* 雙重宣告背景色：防止 LINE 讀不到 var() 導致全白 */
     body {
       font-family: 'Montserrat', "Noto Sans TC", sans-serif;
+      background-color: #0A131A !important; 
       background-color: var(--bg-body) !important;
+      color: #FFFFFF;
       color: var(--text-main);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* 頂部主視覺 */
     .luxury-hero-banner {
-      position: relative; width: 100%; height: 35vh; min-height: 250px;
+      position: relative; width: 100%; min-height: 250px; height: 35vh;
       overflow: hidden; display: flex; justify-content: center; align-items: center;
+      background: #131E26;
       background: var(--bg-card); 
       margin: 0 auto;
     }
@@ -72,166 +76,140 @@
 
     .hero-title-section {
       text-align: center; padding: 24px 20px 40px; position: relative;
-      background: var(--bg-card); border-bottom: 1px solid var(--border-color); z-index: 10;
+      background: #131E26; background: var(--bg-card); 
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08); z-index: 10;
     }
     .gold-diamond {
       position: absolute; top: -20px; left: 50%; margin-left: -20px;
-      width: 40px; height: 40px; background: var(--bg-body);
-      border: 1px solid var(--luxury-gold); transform: rotate(45deg);
+      width: 40px; height: 40px; background: #0A131A; background: var(--bg-body);
+      border: 1px solid #D4AF37; border: 1px solid var(--luxury-gold); 
+      transform: rotate(45deg);
       display: flex; justify-content: center; align-items: center; z-index: 10;
       box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.1);
     }
     .gold-diamond::after {
-      content: ''; width: 10px; height: 10px; background: var(--luxury-gold);
-      box-shadow: 0 0 12px var(--luxury-gold-glow);
+      content: ''; width: 10px; height: 10px; background: #D4AF37; background: var(--luxury-gold);
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
     }
-    .sub-title { font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 0.5em; font-weight: 500; text-transform: uppercase; margin-bottom: 12px; color: var(--luxury-gold) !important; opacity: 0.9; margin-top: 16px; }
+    .sub-title { font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 0.5em; font-weight: 500; text-transform: uppercase; margin-bottom: 12px; color: #D4AF37 !important; color: var(--luxury-gold) !important; opacity: 0.9; margin-top: 16px; }
     .hero-main-title { font-family: 'Playfair Display', "Noto Serif TC", serif; font-weight: 600; font-size: 32px; letter-spacing: 6px; margin-bottom: 12px; line-height: 1.2; color: #ffffff !important; }
-    .luxury-desc { font-family: 'Montserrat', "Noto Sans TC", sans-serif; font-size: 13px; line-height: 1.6; font-weight: 300; letter-spacing: 3px; color: var(--text-muted) !important; text-transform: uppercase;}
-    .luxury-desc span { color: var(--luxury-gold); margin: 0 8px; font-size: 10px; opacity: 0.7;}
+    .luxury-desc { font-family: 'Montserrat', "Noto Sans TC", sans-serif; font-size: 13px; line-height: 1.6; font-weight: 300; letter-spacing: 3px; color: #8E9BAE !important; color: var(--text-muted) !important; text-transform: uppercase;}
+    .luxury-desc span { color: #D4AF37; color: var(--luxury-gold); margin: 0 8px; font-size: 10px; opacity: 0.7;}
 
     @media (max-width: 768px) {
       .hero-main-title { font-size: 26px; }
       .luxury-desc { font-size: 11px; }
       .hero-title-section { padding: 32px 20px 32px; }
-      
-      .luxury-hero-banner { height: 75vh; min-height: 450px; }
-      .image-background-layer {
-        background-image: url('https://i.meee.com.tw/1SXhG7R.png') !important;
-        background-position: center top !important; opacity: 1; 
-      }
-      .overlay-layer {
-        background: linear-gradient(to bottom, rgba(19, 30, 38, 0) 40%, rgba(19, 30, 38, 0.7) 75%, #131E26 100%) !important;
-      }
+      .luxury-hero-banner { min-height: 400px; height: 60vh; }
+      .image-background-layer { background-image: url('https://i.meee.com.tw/1SXhG7R.png') !important; background-position: center top !important; opacity: 1; }
+      .overlay-layer { background: linear-gradient(to bottom, rgba(19, 30, 38, 0) 40%, rgba(19, 30, 38, 0.7) 75%, #131E26 100%) !important; }
     }
 
-    /* 防 LINE 崩潰：移除 blur 特效，改用高不透明度的實色 */
     .nav-wrapper {
       position: sticky; top: 0; z-index: 90; background: rgba(10, 19, 26, 0.98) !important;
-      border-bottom: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
     .nav-container { max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
     .tabs { display: flex; gap: 32px; overflow-x: auto; scrollbar-width: none; flex: 1; }
     .tabs::-webkit-scrollbar { display: none; }
     .tab-btn {
-      background: transparent; border: none; color: var(--text-muted); font-size: 14px; font-weight: 500; padding: 20px 0;
+      background: transparent; border: none; color: #8E9BAE; color: var(--text-muted); font-size: 14px; font-weight: 500; padding: 20px 0;
       cursor: pointer; position: relative; white-space: nowrap; transition: 0.4s ease; border-radius: 0; letter-spacing: 2px;
     }
     .tab-btn:hover { color: #FFF; }
-    .tab-btn.active { color: var(--luxury-gold); font-weight: 600; }
-    .tab-btn.active::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--luxury-gold); box-shadow: 0 -2px 10px var(--luxury-gold-glow); }
+    .tab-btn.active { color: #D4AF37; color: var(--luxury-gold); font-weight: 600; }
+    .tab-btn.active::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: #D4AF37; background: var(--luxury-gold); box-shadow: 0 -2px 10px rgba(212, 175, 55, 0.4); }
     
     .btn-open-rules {
-      background: transparent; border: 1px solid var(--border-color); color: var(--text-main);
+      background: transparent; border: 1px solid rgba(255, 255, 255, 0.08); border-color: var(--border-color); color: #FFFFFF; color: var(--text-main);
       padding: 8px 20px; border-radius: 0; font-size: 12px; font-weight: 500; cursor: pointer; transition: 0.4s ease; letter-spacing: 2px;
     }
-    .btn-open-rules:hover { background: var(--text-main); color: var(--bg-body); border-color: var(--text-main); }
+    .btn-open-rules:hover { background: #FFFFFF; background: var(--text-main); color: #0A131A; color: var(--bg-body); border-color: #FFFFFF; }
 
     .container { max-width: 760px; margin: 40px auto 80px; padding: 0 20px; }
     
-    /* 防 LINE 崩潰：移除 opacity 動畫，改為直接 block/none 切換 */
     .view-section { display: none; }
     .view-section.active { display: block; }
 
     .main-card {
-      background: var(--bg-card); padding: 56px 48px 0 48px; border-radius: 0;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.4); margin-bottom: 24px; border: 1px solid var(--border-color); overflow: hidden;
+      background: #131E26; background: var(--bg-card); padding: 56px 48px 0 48px; border-radius: 0;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4); margin-bottom: 24px; border: 1px solid rgba(255, 255, 255, 0.08); overflow: hidden;
     }
-    .card-title { font-size: 18px; font-weight: 500; margin: 0 0 40px; color: var(--text-main); border-bottom: 1px solid var(--border-color); padding-bottom: 16px; letter-spacing: 3px; text-transform: uppercase;}
+    .card-title { font-size: 18px; font-weight: 500; margin: 0 0 40px; color: #FFFFFF; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 16px; letter-spacing: 3px; text-transform: uppercase;}
 
     .form-group { margin-bottom: 32px; width: 100%; }
     .form-row { display: flex; gap: 24px; flex-wrap: wrap; width: 100%; }
     .form-row .form-group { flex: 1; min-width: 240px; margin-bottom: 0; }
-    .form-group label { display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; }
+    .form-group label { display: block; font-size: 12px; color: #8E9BAE; color: var(--text-muted); margin-bottom: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; }
     
-    /* ========================================================
-       強制統一 Input 欄位大小 (解決匯款日期寬度不一致與超出邊界)
-       並排除 type="checkbox" 以免影響打勾框
-       ======================================================== */
     .form-group input:not([type="checkbox"]), 
     .form-group select, 
     .form-group textarea {
-      -webkit-appearance: none !important; /* 解除蘋果原生表單挾持 */
-      appearance: none !important;
+      -webkit-appearance: none !important; appearance: none !important;
       width: 100% !important; max-width: 100% !important; min-width: 100% !important;
       display: block !important; box-sizing: border-box !important;
-      padding: 16px 20px; border-radius: 0; border: 1px solid var(--border-color); background: var(--input-bg);
-      color: var(--text-main); font-size: 16px !important; font-family: inherit; transition: all 0.4s ease; outline: none;
-      height: 56px !important; /* 強制所有輸入框同高 */
+      padding: 16px 20px; border-radius: 0; border: 1px solid rgba(255, 255, 255, 0.08); background: #050B10;
+      color: #FFFFFF; font-size: 16px !important; font-family: inherit; transition: all 0.4s ease; outline: none;
+      height: 56px !important; 
     }
     .form-group textarea { height: auto !important; }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--luxury-gold); box-shadow: 0 0 0 1px var(--luxury-gold); background: rgba(212, 175, 55, 0.02); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #D4AF37; box-shadow: 0 0 0 1px #D4AF37; background: rgba(212, 175, 55, 0.02); }
     
     select { background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%238E9BAE%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"); background-repeat: no-repeat; background-position: right 1rem top 50%; background-size: 0.65rem auto; }
 
-    /* 將日曆圖示強制變為白色 */
     input[type="date"]::-webkit-calendar-picker-indicator {
       filter: invert(1) brightness(100);
       cursor: pointer; opacity: 0.8;
     }
 
-    /* ========================================================
-       全新排版：必填確認項目
-       標題一行、三個選項各自獨立一行垂直疊加
-       ======================================================== */
     .vertical-check-group {
       display: flex; flex-direction: column; gap: 16px;
-      background: rgba(0,0,0,0.2); padding: 24px; margin-bottom: 40px; border: 1px solid var(--border-color);
+      background: rgba(0,0,0,0.2); padding: 24px; margin-bottom: 40px; border: 1px solid rgba(255, 255, 255, 0.08);
     }
-    .check-title { color: var(--text-main); font-weight: 500; font-size: 13px; letter-spacing: 2px; margin-bottom: 8px;}
+    .check-title { color: #FFFFFF; font-weight: 500; font-size: 13px; letter-spacing: 2px; margin-bottom: 8px;}
 
-    /* ========================================================
-       自訂精緻 Checkbox：強制鎖定方塊與文字永遠在同一行
-       ======================================================== */
     .checkbox-label { 
-      display: flex !important; 
-      flex-direction: row !important;
-      align-items: center !important; 
-      flex-wrap: nowrap !important; /* 絕對禁止換行 */
-      font-size: 13px; color: var(--text-main); 
+      display: flex !important; flex-direction: row !important; align-items: center !important; 
+      flex-wrap: nowrap !important; font-size: 13px; color: #FFFFFF; 
       cursor: pointer; line-height: 1.4; letter-spacing: 1px; margin-bottom: 0;
     }
     .checkbox-label input[type="checkbox"] {
       appearance: none !important; -webkit-appearance: none !important; background-color: transparent !important;
-      flex: 0 0 14px !important; /* 物理鎖死打勾框大小 */
-      width: 14px !important; height: 14px !important; 
+      flex: 0 0 14px !important; width: 14px !important; height: 14px !important; 
       margin: 0 12px 0 0 !important; padding: 0 !important;
-      border: 1px solid var(--border-color); display: grid; place-content: center; cursor: pointer;
-      transition: all 0.3s ease; outline: none; box-sizing: border-box !important;
+      border: 1px solid rgba(255, 255, 255, 0.08); 
+      display: flex; justify-content: center; align-items: center; /* 取代 place-content 防止 LINE 崩潰 */
+      cursor: pointer; transition: all 0.3s ease; outline: none; box-sizing: border-box !important;
     }
     .checkbox-label input[type="checkbox"]::before {
       content: ""; width: 6px !important; height: 6px !important;
-      transform: scale(0); transition: 0.2s transform ease-in-out; background-color: var(--luxury-gold);
+      transform: scale(0); transition: 0.2s transform ease-in-out; background-color: #D4AF37;
     }
-    .checkbox-label input[type="checkbox"]:checked { border-color: var(--luxury-gold); }
+    .checkbox-label input[type="checkbox"]:checked { border-color: #D4AF37; }
     .checkbox-label input[type="checkbox"]:checked::before { transform: scale(1); }
     
     .checkbox-label span { white-space: nowrap !important; display: inline-block; }
-    .highlight-time { color: var(--luxury-gold); font-weight: 600; font-family: 'Montserrat', sans-serif; font-size: 14px;}
+    .highlight-time { color: #D4AF37; font-weight: 600; font-family: 'Montserrat', sans-serif; font-size: 14px;}
 
-    /* 攜伴區 */
-    .companion-box { background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); padding: 32px 24px; margin-bottom: 24px; position: relative; border-radius: 0; transition: 0.3s; }
+    .companion-box { background: rgba(255,255,255,0.02); border: 1px solid rgba(255, 255, 255, 0.08); padding: 32px 24px; margin-bottom: 24px; position: relative; border-radius: 0; transition: 0.3s; }
     .companion-box:hover { border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.04); }
-    .btn-remove { position: absolute; right: 16px; top: 16px; background: transparent; border: 1px solid var(--border-color); color: var(--text-muted); cursor: pointer; font-size: 11px; padding: 6px 12px; transition: 0.3s; border-radius: 0; letter-spacing: 2px; text-transform: uppercase;}
-    .btn-remove:hover { border-color: var(--danger); color: var(--danger); background: rgba(239, 68, 68, 0.1); }
+    .btn-remove { position: absolute; right: 16px; top: 16px; background: transparent; border: 1px solid rgba(255, 255, 255, 0.08); color: #8E9BAE; cursor: pointer; font-size: 11px; padding: 6px 12px; transition: 0.3s; border-radius: 0; letter-spacing: 2px; text-transform: uppercase;}
+    .btn-remove:hover { border-color: #EF4444; color: #EF4444; background: rgba(239, 68, 68, 0.1); }
     
     .btn-outline { 
-      width: 100%; padding: 18px; background: transparent; border: 1px dashed rgba(212, 175, 55, 0.4); color: var(--luxury-gold); 
+      width: 100%; padding: 18px; background: transparent; border: 1px dashed rgba(212, 175, 55, 0.4); color: #D4AF37; 
       border-radius: 0; cursor: pointer; font-weight: 500; font-size: 13px; transition: all 0.4s ease; letter-spacing: 3px; text-transform: uppercase;
     }
-    .btn-outline:hover { border-color: var(--luxury-gold); background: rgba(212, 175, 55, 0.05); }
+    .btn-outline:hover { border-color: #D4AF37; background: rgba(212, 175, 55, 0.05); }
 
-    /* 結帳區與總額右對齊 */
     .checkout-wrapper {
-      background: rgba(0, 0, 0, 0.3); color: var(--text-main);
-      margin: 56px -48px 0 -48px; padding: 48px; border-top: 1px solid var(--border-color);
+      background: rgba(0, 0, 0, 0.3); color: #FFFFFF;
+      margin: 56px -48px 0 -48px; padding: 48px; border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
-    .total-box { 
-      display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 32px; margin-bottom: 40px; 
-    }
-    .total-detail { font-size: 13px; color: var(--text-muted); line-height: 2; letter-spacing: 1px; }
+    .total-box { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 32px; margin-bottom: 40px; }
+    .total-detail { font-size: 13px; color: #8E9BAE; line-height: 2; letter-spacing: 1px; }
     .total-summary { text-align: right; width: 100%; }
-    .total-price { font-size: 36px; font-family: 'Montserrat', sans-serif; font-weight: 300; color: var(--luxury-gold); letter-spacing: 2px; margin-top: 8px;}
+    .total-price { font-size: 36px; font-family: 'Montserrat', sans-serif; font-weight: 300; color: #D4AF37; letter-spacing: 2px; margin-top: 8px;}
 
     .spinner {
       display: inline-block; width: 16px; height: 16px; margin-right: 12px; vertical-align: middle;
@@ -243,7 +221,7 @@
     .btn-submit {
       position: relative; display: block; width: 100%;
       font-family: 'Montserrat', "Noto Sans TC", sans-serif; text-decoration: none;
-      background: var(--luxury-gradient); color: #0A131A !important; border: none;              
+      background: linear-gradient(135deg, #8AC5CB 0%, #4A8C93 100%); color: #0A131A !important; border: none;              
       padding: 20px 2.5em; font-size: 14px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase;
       transition: all 0.4s ease; border-radius: 0; cursor: pointer; text-align: center; overflow: hidden;
     }
@@ -252,59 +230,77 @@
     .btn-submit:disabled { background: #1F2937; color: #6B7280 !important; cursor: not-allowed; box-shadow: none; }
 
     .qr-banner {
-      display: flex; gap: 32px; align-items: center; background: var(--bg-card); border: 1px solid var(--border-color); padding: 32px; margin-bottom: 24px; border-radius: 0; box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      display: flex; gap: 32px; align-items: center; background: #131E26; border: 1px solid rgba(255, 255, 255, 0.08); padding: 32px; margin-bottom: 24px; border-radius: 0; box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     }
-    .qr-banner img { width: 110px; height: 110px; border: 1px solid var(--border-color); padding: 8px; background: rgba(255,255,255,0.05);}
-    .qr-info .bank { font-size: 12px; color: var(--text-muted); font-weight: 500; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;}
+    .qr-banner img { width: 110px; height: 110px; border: 1px solid rgba(255, 255, 255, 0.08); padding: 8px; background: rgba(255,255,255,0.05);}
+    .qr-info .bank { font-size: 12px; color: #8E9BAE; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;}
     .qr-info .acc { font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 300; color: #FFFFFF !important; letter-spacing: 4px; text-decoration: none;}
 
     .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 40px; }
-    .stat-card { background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); padding: 24px 20px; text-align: center; transition: 0.3s; }
+    .stat-card { background: rgba(0,0,0,0.2); border: 1px solid rgba(255, 255, 255, 0.08); padding: 24px 20px; text-align: center; transition: 0.3s; }
     .stat-card:hover { background: rgba(255,255,255,0.02); }
-    .stat-value { font-size: 28px; font-weight: 300; color: var(--text-main); font-family: 'Montserrat', sans-serif; margin-bottom: 8px; }
-    .stat-label { font-size: 11px; color: var(--text-muted); font-weight: 500; letter-spacing: 2px; text-transform: uppercase;}
+    .stat-value { font-size: 28px; font-weight: 300; color: #FFFFFF; font-family: 'Montserrat', sans-serif; margin-bottom: 8px; }
+    .stat-label { font-size: 11px; color: #8E9BAE; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;}
     
     .filter-group { display: flex; gap: 12px; margin-bottom: 24px; }
-    .btn-filter { background: transparent; border: 1px solid var(--border-color); padding: 10px 20px; cursor: pointer; font-size: 12px; font-weight: 500; color: var(--text-muted); transition: 0.3s; letter-spacing: 2px; text-transform: uppercase; }
-    .btn-filter:hover { border-color: var(--luxury-gold); color: var(--luxury-gold); }
-    .btn-filter.active { background: var(--luxury-gold); color: #000; border-color: var(--luxury-gold); font-weight: 600; }
+    .btn-filter { background: transparent; border: 1px solid rgba(255, 255, 255, 0.08); padding: 10px 20px; cursor: pointer; font-size: 12px; font-weight: 500; color: #8E9BAE; transition: 0.3s; letter-spacing: 2px; text-transform: uppercase; }
+    .btn-filter:hover { border-color: #D4AF37; color: #D4AF37; }
+    .btn-filter.active { background: #D4AF37; color: #000; border-color: #D4AF37; font-weight: 600; }
 
     .admin-table { width: 100%; border-collapse: collapse; font-size: 14px; text-align: left; }
-    .admin-table th { padding: 20px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: var(--text-muted); font-weight: 500; white-space: nowrap; font-size: 12px; letter-spacing: 2px; text-transform: uppercase;}
-    .admin-table td { padding: 20px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-main); }
+    .admin-table th { padding: 20px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #8E9BAE; font-weight: 500; white-space: nowrap; font-size: 12px; letter-spacing: 2px; text-transform: uppercase;}
+    .admin-table td { padding: 20px 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); color: #FFFFFF; }
 
-    /* 防 LINE 崩潰：移除所有 backdrop-filter 模糊效果，改用高不透明度純色 */
     .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.95); display: none; justify-content: center; align-items: center; z-index: 1000; padding: 20px; }
-    .modal-content { background: var(--rule-bg); width: 100%; max-width: 840px; height: 90vh; overflow-y: auto; border-radius: 0; position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.8); border: 1px solid var(--border-color); }
-    .modal-close { position: sticky; top: 16px; left: calc(100% - 56px); margin-bottom: -40px; z-index: 99; background: var(--bg-card); border: 1px solid var(--border-color); width: 40px; height: 40px; border-radius: 0; font-size: 24px; line-height: 1; cursor: pointer; color: var(--text-muted); display: flex; justify-content: center; align-items: center; transition: 0.4s; }
+    .modal-content { background: rgba(10, 19, 26, 0.98); width: 100%; max-width: 840px; height: 90vh; overflow-y: auto; border-radius: 0; position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.8); border: 1px solid rgba(255, 255, 255, 0.08); }
+    .modal-close { position: sticky; top: 16px; left: calc(100% - 56px); margin-bottom: -40px; z-index: 99; background: #131E26; border: 1px solid rgba(255, 255, 255, 0.08); width: 40px; height: 40px; border-radius: 0; font-size: 24px; line-height: 1; cursor: pointer; color: #8E9BAE; display: flex; justify-content: center; align-items: center; transition: 0.4s; }
     .modal-close:hover { color: #FFF; background: rgba(255,255,255,0.1); border-color: #FFF; }
 
-    .rules-wrap { padding: 0 40px 60px; font-family: "Noto Serif TC", "PMingLiU", serif; color: var(--rule-text); line-height: 1.8; }
-    .rules-wrap .freeze-pane { position: sticky; top: 0; z-index: 90; background: rgba(10, 19, 26, 0.98); border-bottom: 1px solid var(--border-color); padding: 24px 20px; text-align: center; margin: 0 -40px 40px; }
-    .rules-wrap .main-title { font-size: 22px; font-weight: 600; letter-spacing: 4px; color: var(--text-main); }
-    .rules-wrap .intro { font-size: 14px; color: var(--text-muted); text-align: center; margin-bottom: 48px; line-height: 2; letter-spacing: 2px; }
+    .rules-wrap { padding: 0 40px 60px; font-family: "Noto Serif TC", "PMingLiU", serif; line-height: 1.8; }
+    .rules-wrap .freeze-pane { position: sticky; top: 0; z-index: 90; background: rgba(10, 19, 26, 0.98); border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding: 24px 20px; text-align: center; margin: 0 -40px 40px; }
     
-    .rules-wrap .rule-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 0; padding: 40px; margin-bottom: 32px; transition: 0.3s; }
-    .rules-wrap .rule-card:hover { border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.03); }
-    .rules-wrap .section-title { font-size: 16px; font-weight: 600; color: var(--rule-gold); margin: 0 0 24px 0; padding-bottom: 16px; border-bottom: 1px solid var(--rule-gold-light); letter-spacing: 3px; text-transform: uppercase; }
-    .rules-wrap .item-title { font-size: 16px; font-weight: 600; color: var(--text-main); margin: 24px 0 12px 0; letter-spacing: 1px; }
-    .rules-wrap .item-title:first-child { margin-top: 0; }
-    .rules-wrap p { margin: 0 0 16px 0; font-size: 14px; color: var(--rule-text); font-family: 'Noto Sans TC', sans-serif; font-weight: 300; }
-    .rules-wrap ul { list-style: none; padding: 0; margin: 0 0 24px 0; }
-    .rules-wrap ul li { position: relative; padding-left: 24px; margin-bottom: 12px; font-size: 14px; color: var(--rule-text); font-family: 'Noto Sans TC', sans-serif; font-weight: 300; }
-    .rules-wrap ul li::before { content: "◆"; position: absolute; left: 0; top: 1px; font-size: 10px; color: var(--luxury-gold); opacity: 0.8; }
-    .rules-wrap .highlight { color: var(--rule-highlight); font-family: 'Montserrat', sans-serif; font-weight: 400; letter-spacing: 1px; }
-    .rules-wrap .price-tag { display: inline-block; background: rgba(138, 197, 203, 0.1); border: 1px solid rgba(138, 197, 203, 0.3); color: var(--rule-highlight); padding: 4px 12px; border-radius: 0; font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 14px; margin: 4px 0; letter-spacing: 1px; }
-    .rules-wrap .danger-text { color: var(--danger); font-weight: 500; }
-    .rules-wrap .price-table { margin-top: 24px; border: 1px solid var(--border-color); border-radius: 0; overflow: hidden; background: rgba(0,0,0,0.2); }
-    .rules-wrap .pt-row { display: flex; justify-content: space-between; padding: 16px 24px; border-bottom: 1px solid var(--border-color); font-family: 'Noto Sans TC', sans-serif; font-size: 14px; font-weight: 300; }
-    .rules-wrap .pt-row:last-child { border-bottom: none; }
-    .rules-wrap .pt-header { background: rgba(255,255,255,0.05); font-weight: 500; color: var(--text-main); letter-spacing: 2px; }
-    .rules-wrap .pt-val { font-family: 'Montserrat', sans-serif; color: var(--rule-highlight); font-weight: 400; letter-spacing: 1px; }
+    /* 彈窗內外層文字設定 */
+    .rules-wrap .main-title { font-size: 22px; font-weight: 600; letter-spacing: 4px; color: #FFFFFF; }
+    .rules-wrap .intro { font-size: 14px; color: #8E9BAE; text-align: center; margin-bottom: 48px; line-height: 2; letter-spacing: 2px; }
+    
+    /* ========================================================
+       本次更新：活動規範方框改為白底黑字
+       ======================================================== */
+    .rules-wrap .rule-card { 
+      background: #FFFFFF !important; /* 強制白底 */
+      border: 1px solid #E2E8F0 !important; /* 邊框改為淺灰色 */
+      border-radius: 0; 
+      padding: 40px; 
+      margin-bottom: 32px; 
+      transition: 0.3s; 
+    }
+    .rules-wrap .rule-card:hover { border-color: #CBD5E1 !important; box-shadow: 0 10px 30px rgba(255,255,255,0.05); }
+    
+    /* 卡片內文字強制為黑/深灰色 */
+    .rules-wrap .rule-card p { margin: 0 0 16px 0; font-size: 14px; color: #333333 !important; font-family: 'Noto Sans TC', sans-serif; font-weight: 400; }
+    .rules-wrap .rule-card ul { list-style: none; padding: 0; margin: 0 0 24px 0; }
+    .rules-wrap .rule-card ul li { position: relative; padding-left: 24px; margin-bottom: 12px; font-size: 14px; color: #333333 !important; font-family: 'Noto Sans TC', sans-serif; font-weight: 400; }
+    .rules-wrap .rule-card ul li::before { content: "◆"; position: absolute; left: 0; top: 1px; font-size: 10px; color: #D4AF37 !important; opacity: 1; }
+    
+    /* 標題類文字強制為全黑 */
+    .rules-wrap .rule-card .item-title { font-size: 16px; font-weight: 700 !important; color: #000000 !important; margin: 24px 0 12px 0; letter-spacing: 1px; }
+    .rules-wrap .rule-card .item-title:first-child { margin-top: 0; }
+    
+    /* 主段落標題維持金色點綴，底線配合白底改為淺金 */
+    .rules-wrap .rule-card .section-title { font-size: 16px; font-weight: 700; color: #D4AF37 !important; margin: 0 0 24px 0; padding-bottom: 16px; border-bottom: 1px solid rgba(212, 175, 55, 0.3) !important; letter-spacing: 3px; text-transform: uppercase; }
+    
+    /* 高亮與標籤文字 */
+    .rules-wrap .rule-card .highlight { color: #4A8C93 !important; font-family: 'Montserrat', sans-serif; font-weight: 600 !important; letter-spacing: 1px; }
+    .rules-wrap .rule-card .price-tag { display: inline-block; background: rgba(74, 140, 147, 0.1) !important; border: 1px solid rgba(74, 140, 147, 0.3) !important; color: #4A8C93 !important; padding: 4px 12px; font-family: 'Montserrat', sans-serif; font-weight: 600 !important; font-size: 14px; margin: 4px 0; letter-spacing: 1px; }
+    .rules-wrap .rule-card .danger-text { color: #EF4444 !important; font-weight: 600 !important; }
+    
+    /* 表格配合白底調整 */
+    .rules-wrap .rule-card .price-table { margin-top: 24px; border: 1px solid #E2E8F0 !important; border-radius: 0; overflow: hidden; background: #FFFFFF !important; }
+    .rules-wrap .rule-card .pt-row { display: flex; justify-content: space-between; padding: 16px 24px; border-bottom: 1px solid #E2E8F0 !important; font-family: 'Noto Sans TC', sans-serif; font-size: 14px; font-weight: 400; color: #333333 !important; }
+    .rules-wrap .rule-card .pt-row:last-child { border-bottom: none !important; }
+    .rules-wrap .rule-card .pt-header { background: #F8FAFC !important; font-weight: 600 !important; color: #000000 !important; letter-spacing: 2px; }
+    .rules-wrap .rule-card .pt-val { font-family: 'Montserrat', sans-serif; color: #4A8C93 !important; font-weight: 600 !important; letter-spacing: 1px; }
 
-    /* =========================================
-       手機版終極優化 (Mobile Optimization) 
-       ========================================= */
     @media(max-width: 600px) {
       .nav-container { flex-direction: column; gap: 16px; padding: 16px 20px; }
       .tabs { gap: 20px; }
@@ -314,7 +310,6 @@
       .checkout-wrapper { margin: 48px -24px 0 -24px; padding: 40px 24px; }
       .qr-banner { flex-direction: column; text-align: center; padding: 32px 24px; }
       
-      /* 終極修復：強制手機版排版改為 block，徹底消滅超出邊界問題 */
       .form-row { display: block !important; width: 100% !important; }
       .form-row .form-group { display: block !important; width: 100% !important; margin-bottom: 32px; }
 
@@ -361,7 +356,6 @@
   <div class="container">
     
     <div id="tab-create" class="view-section active">
-      
       <div class="qr-banner">
         <img src="https://via.placeholder.com/150/050B10/FFFFFF?text=QR+Code" alt="QR Code">
         <div class="qr-info">
@@ -373,12 +367,10 @@
       <div class="main-card">
         <div class="card-title">報名資料填寫</div>
         <form id="createForm" onsubmit="submitForm(event, 'main')">
-          
           <div class="form-group">
             <label>聯絡電話(必填)</label>
             <input type="tel" id="mainPhone" required>
           </div>
-          
           <div class="form-row">
             <div class="form-group">
               <label>Name</label>
@@ -389,7 +381,6 @@
               <input type="text" id="mainIg" required>
             </div>
           </div>
-
           <div class="form-group">
             <label>交通接駁需求</label>
             <select id="mainShuttle" onchange="calcTotal()">
@@ -397,34 +388,27 @@
               <option value="400">需要遊覽車接駁 ($400)</option>
             </select>
           </div>
-          
           <div class="vertical-check-group">
             <div class="check-title">必填確認項目</div>
-            
             <label class="checkbox-label">
               <input type="checkbox" required>
               <span>入場費 NT.<span class="highlight-time">800元</span></span>
             </label>
-            
             <label class="checkbox-label">
               <input type="checkbox" required>
               <span>遊覽車上車 <span class="highlight-time">13:15</span></span>
             </label>
-            
             <label class="checkbox-label">
               <input type="checkbox" required>
               <span>回家發車 <span class="highlight-time">21:45</span></span>
             </label>
           </div>
-
           <div class="form-group">
             <label>攜伴朋友</label>
             <div id="main-companions-container"></div>
             <button type="button" class="btn-outline" onclick="addCompanion('main')">＋ 增加攜伴人數</button>
           </div>
-
           <div class="card-title" style="margin-top: 64px; font-size: 16px;">備註</div>
-          
           <div class="form-row">
             <div class="form-group">
               <label>匯款日期</label>
@@ -435,23 +419,20 @@
               <input type="text" id="mainAccount5" maxlength="5" pattern="\d{5}" title="請輸入5位數字">
             </div>
           </div>
-          
           <div class="form-group">
             <label>我聽!你說說看~</label>
             <textarea rows="3" id="mainNotes"></textarea>
           </div>
-
           <div class="checkout-wrapper">
             <div class="total-box">
               <div class="total-detail" id="mainCalcDetail">入場費: $800<br>接駁費: $0</div>
               <div class="total-summary">
-                <div style="font-size:11px; color:var(--text-muted); font-weight:500; letter-spacing:2px; text-transform:uppercase;">總結帳金額</div>
+                <div style="font-size:11px; color:#8E9BAE; font-weight:500; letter-spacing:2px; text-transform:uppercase;">總結帳金額</div>
                 <div class="total-price" id="mainTotalPrice">NT$ 800</div>
               </div>
             </div>
             <button type="submit" class="btn-submit">送出報名</button>
           </div>
-
         </form>
       </div>
     </div>
@@ -465,20 +446,17 @@
             <input type="tel" id="searchPhone">
           </div>
           <div class="form-group" style="flex: 1;">
-            <button type="button" class="btn-submit" style="margin-top:0; padding:16px; background:var(--text-main); color:var(--bg-body)!important;" onclick="fetchDataForEdit(event)">查詢資料</button>
+            <button type="button" class="btn-submit" style="margin-top:0; padding:16px; background:#FFFFFF; color:#0A131A!important;" onclick="fetchDataForEdit(event)">查詢資料</button>
           </div>
         </div>
       </div>
-      
-      <div id="editFormArea" class="main-card" style="display:none; padding-bottom: 0; border: 1px solid var(--luxury-gold);">
-        <p style="color:var(--luxury-gold); font-weight:500; margin-top:0; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; font-size:13px; letter-spacing:1px;">已載入您的資料，請直接修改下方欄位後重新送出覆蓋。</p>
-        
+      <div id="editFormArea" class="main-card" style="display:none; padding-bottom: 0; border: 1px solid #D4AF37;">
+        <p style="color:#D4AF37; font-weight:500; margin-top:0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 20px; font-size:13px; letter-spacing:1px;">已載入您的資料，請直接修改下方欄位後重新送出覆蓋。</p>
         <form id="editForm" onsubmit="submitForm(event, 'edit')" style="margin-top: 32px;">
           <div class="form-group">
             <label>聯絡電話 (查詢憑證，不可修改)</label>
             <input type="tel" id="editPhone" readonly style="background: rgba(255,255,255,0.05); color: #6B7280; border-color: transparent;">
           </div>
-          
           <div class="form-row">
             <div class="form-group">
               <label>Name</label>
@@ -489,7 +467,6 @@
               <input type="text" id="editIg" required>
             </div>
           </div>
-
           <div class="form-group">
             <label>交通接駁需求</label>
             <select id="editShuttle" onchange="calcTotal('edit')">
@@ -497,7 +474,6 @@
               <option value="400">需要遊覽車接駁 ($400)</option>
             </select>
           </div>
-
           <div class="vertical-check-group">
             <div class="check-title">必填確認項目</div>
             <label class="checkbox-label">
@@ -513,15 +489,12 @@
               <span>回家發車 <span class="highlight-time">21:45</span></span>
             </label>
           </div>
-
           <div class="form-group">
             <label>攜伴朋友</label>
             <div id="edit-companions-container"></div>
             <button type="button" class="btn-outline" onclick="addCompanion('edit')">＋ 增加攜伴人數</button>
           </div>
-
           <div class="card-title" style="margin-top: 56px; font-size: 16px;">備註</div>
-          
           <div class="form-row">
             <div class="form-group">
               <label>匯款日期</label>
@@ -532,17 +505,15 @@
               <input type="text" id="editAccount5" maxlength="5">
             </div>
           </div>
-          
           <div class="form-group">
             <label>我聽!你說說看~</label>
             <textarea rows="3" id="editNotes"></textarea>
           </div>
-
           <div class="checkout-wrapper">
             <div class="total-box">
               <div class="total-detail" id="editCalcDetail">入場費: $800<br>接駁費: $0</div>
               <div class="total-summary">
-                <div style="font-size:11px; color:var(--text-muted); font-weight:500; letter-spacing:2px; text-transform:uppercase;">總結帳金額</div>
+                <div style="font-size:11px; color:#8E9BAE; font-weight:500; letter-spacing:2px; text-transform:uppercase;">總結帳金額</div>
                 <div class="total-price" id="editTotalPrice">NT$ 800</div>
               </div>
             </div>
@@ -554,17 +525,15 @@
 
     <div id="tab-admin" class="view-section">
       <div class="main-card" id="adminLoginArea" style="text-align:center; padding: 80px 40px; padding-bottom: 80px;">
-        <h2 style="margin-top:0; font-family:'Playfair Display', serif; font-weight:400; letter-spacing:4px; font-size: 24px; color: var(--luxury-gold);">ADMIN ACCESS</h2>
-        <p style="color:var(--text-muted); margin-bottom:40px; font-size:12px; letter-spacing:2px; text-transform: uppercase;">請輸入主辦單位專屬密碼</p>
-        <input type="password" id="adminPwd" class="form-group" style="width:100%; max-width:320px; padding:18px; border:1px solid var(--border-color); text-align:center; display:block; margin:0 auto 32px; border-radius:0; letter-spacing: 4px;">
+        <h2 style="margin-top:0; font-family:'Playfair Display', serif; font-weight:400; letter-spacing:4px; font-size: 24px; color: #D4AF37;">ADMIN ACCESS</h2>
+        <p style="color:#8E9BAE; margin-bottom:40px; font-size:12px; letter-spacing:2px; text-transform: uppercase;">請輸入主辦單位專屬密碼</p>
+        <input type="password" id="adminPwd" class="form-group" style="width:100%; max-width:320px; padding:18px; border:1px solid rgba(255, 255, 255, 0.08); text-align:center; display:block; margin:0 auto 32px; border-radius:0; letter-spacing: 4px;">
         <div style="max-width: 320px; margin: 0 auto;">
           <button type="button" class="btn-submit" style="margin-top:0;" onclick="loadAdminDashboard(event)">登入查看</button>
         </div>
       </div>
-      
       <div class="main-card" id="adminTableArea" style="display:none; overflow-x: auto; padding: 48px 48px 64px 48px;">
         <div class="card-title">主辦單位儀表板</div>
-        
         <div class="stats-grid">
           <div class="stat-card">
             <div class="stat-value" id="stat-total-groups">0</div>
@@ -579,11 +548,10 @@
             <div class="stat-label">未繳費組數</div>
           </div>
           <div class="stat-card" style="background: rgba(212, 175, 55, 0.05); border-color: rgba(212, 175, 55, 0.3);">
-            <div class="stat-value" id="stat-revenue" style="color: var(--luxury-gold);">$0</div>
-            <div class="stat-label" style="color: var(--text-main);">總預期金額</div>
+            <div class="stat-value" id="stat-revenue" style="color: #D4AF37;">$0</div>
+            <div class="stat-label" style="color: #FFFFFF;">總預期金額</div>
           </div>
         </div>
-
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
           <div class="filter-group">
             <button class="btn-filter active" onclick="filterAdminTable('all', this)">全部名單</button>
@@ -591,7 +559,6 @@
             <button class="btn-filter" onclick="filterAdminTable('paid', this)">已繳款清單</button>
           </div>
         </div>
-
         <table class="admin-table">
           <thead>
             <tr>
@@ -602,8 +569,7 @@
               <th>狀態</th>
             </tr>
           </thead>
-          <tbody id="adminTbody">
-            </tbody>
+          <tbody id="adminTbody"></tbody>
         </table>
       </div>
     </div>
@@ -613,12 +579,10 @@
   <div class="modal-overlay" id="rulesModal">
     <div class="modal-content">
       <button class="modal-close" onclick="toggleModal(false)">&times;</button>
-      
       <div class="rules-wrap">
         <div class="freeze-pane">
           <div class="main-title">包場活動須知暨場地使用規範</div>
         </div>
-
         <div class="intro">
           歡迎參加本次包場活動。<br>為維護活動品質、場地安全及所有參與者權益，<br>入場即視為已閱讀並同意遵守以下規範。
         </div>
@@ -656,14 +620,14 @@
           <p>如實際損失超過保證金金額，承租人仍應補足差額。</p>
         </div>
 
-        <div class="rule-card" style="box-shadow: 0 0 30px rgba(212, 175, 55, 0.05); border: 1px solid rgba(212, 175, 55, 0.2);">
+        <div class="rule-card" style="box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);">
           <div class="section-title">三、匯款資訊</div>
           <ul>
             <li>銀行名稱：連線商業銀行（824）</li>
             <li>總行代碼：6880</li>
-            <li>匯款帳號：<span class="highlight" style="font-size: 18px; color: var(--luxury-gold);">111009917651</span></li>
+            <li>匯款帳號：<span class="highlight" style="font-size: 18px;">111009917651</span></li>
           </ul>
-          <p style="color: var(--rule-gold); font-weight: 500; margin-top: 24px;">請於匯款完成後提供帳號後五碼或匯款證明，以利核對款項。</p>
+          <p style="color: #D4AF37 !important; font-weight: 700; margin-top: 24px;">請於匯款完成後提供帳號後五碼或匯款證明，以利核對款項。</p>
         </div>
 
         <div class="rule-card">
@@ -689,7 +653,7 @@
             <ul style="margin: 0;"><li>店內裝潢</li><li>浴池設備</li><li>廁所設備</li><li>監視器設備</li></ul>
           </div>
           <ul><li>其他場地設施</li></ul>
-          <p style="color: var(--rule-gold); font-weight: 500; margin-top: 24px;">承租人應協助管理同行賓客，並對同行賓客造成之損害負連帶責任。</p>
+          <p style="color: #D4AF37 !important; font-weight: 700; margin-top: 24px;">承租人應協助管理同行賓客，並對同行賓客造成之損害負連帶責任。</p>
         </div>
 
         <div class="rule-card">
@@ -699,7 +663,7 @@
           <p><span class="price-tag">NT$2,000／人</span><br>如欲使用浴池 VIP 區，請至吧台購買 VIP 入場手環。</p>
           <div class="item-title">入場規定</div>
           <p>未配戴 VIP 手環者不得進入浴池區域。<br>經現場查驗發現未配戴手環進入者：<br>需補繳入場費 <span class="price-tag">NT$2,000／人</span></p>
-          <div class="item-title" style="color: var(--rule-gold);">巨蟹座壽星好友優惠</div>
+          <div class="item-title" style="color: #D4AF37 !important;">巨蟹座壽星好友優惠</div>
           <p>巨蟹座壽星本人可持身分證件至吧台免費兌換 VIP 手環乙支。</p>
         </div>
 
@@ -729,286 +693,305 @@
   </div>
 
   <script>
-    const GAS_URL = "https://script.google.com/macros/s/AKfycbwVL5tggzYX-BoHT88uRUKEo4OFdFuuQ1y5E3ILOtIY4NYXYUk_kRHoj4A3YZX2jm-W/exec";
-    
-    let adminGlobalData = []; 
+    try {
+      const GAS_URL = "https://script.google.com/macros/s/AKfycbwVL5tggzYX-BoHT88uRUKEo4OFdFuuQ1y5E3ILOtIY4NYXYUk_kRHoj4A3YZX2jm-W/exec";
+      let adminGlobalData = []; 
 
-    function switchTab(event, tabId) {
-      document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
-      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-      document.getElementById('tab-' + tabId).classList.add('active');
-      if(event) event.currentTarget.classList.add('active');
-      window.scrollTo({ top: document.querySelector('.hero-title-section').offsetTop, behavior: 'smooth' });
-    }
-
-    function toggleModal(show) {
-      document.getElementById('rulesModal').style.display = show ? 'flex' : 'none';
-      document.body.style.overflow = show ? 'hidden' : ''; 
-    }
-
-    let compCounters = { main: 0, edit: 0 };
-    
-    function addCompanion(type) {
-      compCounters[type]++;
-      const container = document.getElementById(`${type}-companions-container`);
-      const div = document.createElement('div');
-      div.className = 'companion-box';
-      div.id = `comp-${type}-${compCounters[type]}`;
-      div.innerHTML = `
-        <button type="button" class="btn-remove" onclick="removeComp('${type}', ${compCounters[type]})">✕ 移除</button>
-        <div class="form-group" style="margin-bottom:24px;">
-          <label>朋友姓名</label>
-          <input type="text" class="c-name" required>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>交通接駁</label>
-            <select class="c-shuttle" onchange="calcTotal('${type}')">
-              <option value="0">自行前往</option>
-              <option value="400">需要遊覽車接駁 ($400)</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>費用支付</label>
-            <select class="c-pay" onchange="calcTotal('${type}')">
-              <option value="merged">合併結帳 (算在總金額)</option>
-              <option value="split">各自繳費 (朋友自行匯款)</option>
-            </select>
-          </div>
-        </div>
-      `;
-      container.appendChild(div);
-      calcTotal(type);
-    }
-
-    function removeComp(type, id) {
-      const el = document.getElementById(`comp-${type}-${id}`);
-      if(el) { el.remove(); calcTotal(type); }
-    }
-
-    function calcTotal(type = 'main') {
-      const BASE_FEE = 800;
-      let total = BASE_FEE;
-      let mShuttle = parseInt(document.getElementById(`${type}Shuttle`).value) || 0;
-      
-      let detailHtml = `入場費: $${BASE_FEE}<br>接駁費: $${mShuttle}<br>`;
-      total += mShuttle;
-
-      document.getElementById(`${type}-companions-container`).querySelectorAll('.companion-box').forEach((box, index) => {
-        let cShuttle = parseInt(box.querySelector('.c-shuttle').value) || 0;
-        let cPay = box.querySelector('.c-pay').value;
-        let cCost = BASE_FEE + cShuttle;
-        
-        if (cPay === 'merged') {
-          total += cCost;
-          detailHtml += `朋友 ${index+1} (合併): $${cCost}<br>`;
-        } else {
-          detailHtml += `朋友 ${index+1} (自付): $${cCost} <span style="color:#F87171; font-size:11px; letter-spacing:1px;">(不計入總額)</span><br>`;
-        }
-      });
-
-      document.getElementById(`${type}CalcDetail`).innerHTML = detailHtml;
-      document.getElementById(`${type}TotalPrice`).innerText = `NT$ ${total}`;
-      return total;
-    }
-
-    function submitForm(e, type) {
-      e.preventDefault();
-      const btn = e.target.querySelector('button[type="submit"]');
-      const originalText = btn.innerText;
-      
-      btn.innerHTML = '<span class="spinner"></span> 處理中...';
-      btn.disabled = true;
-
-      const companions = [];
-      document.getElementById(`${type}-companions-container`).querySelectorAll('.companion-box').forEach(box => {
-        companions.push({
-          name: box.querySelector('.c-name').value,
-          shuttle: box.querySelector('.c-shuttle').value,
-          pay: box.querySelector('.c-pay').value
-        });
-      });
-
-      const payload = {
-        action: 'submit',
-        phone: "'" + document.getElementById(`${type}Phone`).value,
-        name: document.getElementById(`${type}Name`).value,
-        ig: document.getElementById(`${type}Ig`).value,
-        shuttle: document.getElementById(`${type}Shuttle`).value,
-        companions: companions,
-        transferDate: document.getElementById(`${type}TransferDate`).value,
-        account5: document.getElementById(`${type}Account5`).value,
-        notes: document.getElementById(`${type}Notes`).value,
-        total: calcTotal(type)
-      };
-
-      fetch(GAS_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(payload)
-      })
-      .then(res => res.json())
-      .then(data => {
-        if(data.status === 'success') {
-          alert('✅ 報名資料已成功處理！\n\n(您的資料已安全寫入資料庫，請記得完成匯款作業)');
-          if(type === 'main') {
-            e.target.reset(); 
-            document.getElementById('main-companions-container').innerHTML = ''; 
-            calcTotal('main'); 
-          } else {
-            document.getElementById('editFormArea').style.display = 'none';
-          }
-        } else {
-          alert('❌ 發生錯誤：' + data.message);
-        }
-      })
-      .catch(err => { alert('連線失敗，請檢查網路狀態。'); })
-      .finally(() => {
-        btn.innerHTML = originalText;
-        btn.disabled = false;
-      });
-    }
-
-    function fetchDataForEdit(e) {
-      const phone = document.getElementById('searchPhone').value;
-      if(!phone) return alert('請先輸入查詢電話');
-      
-      const btn = e.target;
-      const originalText = btn.innerText;
-      btn.innerHTML = '<span class="spinner"></span> 查詢中...';
-      btn.disabled = true;
-
-      fetch(GAS_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify({ action: 'search', phone: phone })
-      })
-      .then(res => res.json())
-      .then(res => {
-        if(res.status === 'success') {
-          document.getElementById('editPhone').value = res.data.phone;
-          document.getElementById('editName').value = res.data.name;
-          document.getElementById('editIg').value = res.data.ig;
-          document.getElementById('editShuttle').value = res.data.shuttle === '需要接駁' ? '400' : '0';
-          
-          let tDate = res.data.transferDate;
-          if (tDate && tDate.length > 10 && tDate.includes('GMT')) {
-            let d = new Date(tDate);
-            tDate = `${d.getFullYear()}-${(d.getMonth()+1).toString().padStart(2,'0')}-${d.getDate().toString().padStart(2,'0')}`;
-          }
-          document.getElementById('editTransferDate').value = tDate || '';
-          document.getElementById('editAccount5').value = res.data.account5 || '';
-          document.getElementById('editNotes').value = res.data.notes || '';
-
-          document.getElementById('edit-companions-container').innerHTML = '';
-          compCounters['edit'] = 0;
-          if(res.data.compDetails && res.data.compDetails !== "無攜伴") {
-            let lines = res.data.compDetails.split('\n');
-            lines.forEach(line => {
-              let match = line.match(/朋友\d+:\s+(.*?)\s+\((.*?),\s+(.*?)\)/);
-              if(match) {
-                addCompanion('edit');
-                let lastBox = document.getElementById(`comp-edit-${compCounters['edit']}`);
-                lastBox.querySelector('.c-name').value = match[1];
-                lastBox.querySelector('.c-shuttle').value = match[2] === '接駁' ? '400' : '0';
-                lastBox.querySelector('.c-pay').value = match[3] === '合併結帳' ? 'merged' : 'split';
-              }
-            });
-          }
-          calcTotal('edit');
-          document.getElementById('editFormArea').style.display = 'block';
-        } else {
-          alert('⚠️ ' + res.message);
-          document.getElementById('editFormArea').style.display = 'none';
-        }
-      })
-      .catch(err => { alert('連線失敗，請檢查網路狀態。'); })
-      .finally(() => {
-        btn.innerHTML = originalText;
-        btn.disabled = false;
-      });
-    }
-
-    function loadAdminDashboard(e) {
-      const pwd = document.getElementById('adminPwd').value;
-      if(pwd !== '0706') return alert('密碼錯誤，請重新輸入！');
-
-      const btn = e.target;
-      const originalText = btn.innerText;
-      btn.innerHTML = '<span class="spinner"></span> 載入中...';
-      btn.disabled = true;
-
-      fetch(GAS_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify({ action: 'admin' })
-      })
-      .then(res => res.json())
-      .then(res => {
-        if(res.status === 'success') {
-          adminGlobalData = res.data; 
-          document.getElementById('adminLoginArea').style.display = 'none';
-          document.getElementById('adminTableArea').style.display = 'block';
-          
-          calculateAdminStats();
-          renderAdminTable('all'); 
-        } else {
-          alert('發生錯誤：' + res.message);
-        }
-      })
-      .catch(err => { alert('連線失敗，請檢查網路狀態。'); })
-      .finally(() => {
-        btn.innerHTML = originalText;
-        btn.disabled = false;
-      });
-    }
-
-    function calculateAdminStats() {
-      let totalGroups = adminGlobalData.length;
-      let paidGroups = adminGlobalData.filter(r => r.payStatus === '已付款').length;
-      let unpaidGroups = totalGroups - paidGroups;
-      let expectedRevenue = adminGlobalData.reduce((sum, r) => sum + (parseInt(r.total) || 0), 0);
-
-      document.getElementById('stat-total-groups').innerText = totalGroups;
-      document.getElementById('stat-paid-groups').innerText = paidGroups;
-      document.getElementById('stat-unpaid-groups').innerText = unpaidGroups;
-      document.getElementById('stat-revenue').innerText = '$' + expectedRevenue.toLocaleString();
-    }
-
-    function filterAdminTable(filterType, btnElement) {
-      document.querySelectorAll('.btn-filter').forEach(el => el.classList.remove('active'));
-      btnElement.classList.add('active');
-      renderAdminTable(filterType);
-    }
-
-    function renderAdminTable(filterType) {
-      const tbody = document.getElementById('adminTbody');
-      tbody.innerHTML = ''; 
-      
-      let filteredData = adminGlobalData;
-      if (filterType === 'paid') filteredData = adminGlobalData.filter(r => r.payStatus === '已付款');
-      if (filterType === 'unpaid') filteredData = adminGlobalData.filter(r => r.payStatus !== '已付款');
-
-      if (filteredData.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding: 32px; color: var(--text-muted);">無符合條件的名單</td></tr>`;
-        return;
+      function switchTab(event, tabId) {
+        document.querySelectorAll('.view-section').forEach(function(el) { el.classList.remove('active'); });
+        document.querySelectorAll('.tab-btn').forEach(function(el) { el.classList.remove('active'); });
+        document.getElementById('tab-' + tabId).classList.add('active');
+        if(event) event.currentTarget.classList.add('active');
+        window.scrollTo({ top: document.querySelector('.hero-title-section').offsetTop, behavior: 'smooth' });
       }
 
-      filteredData.forEach(row => {
-        let statusBadge = row.payStatus === '已付款' 
-          ? `<span style="background:rgba(52, 211, 153, 0.15); color:#34D399; border:1px solid rgba(52, 211, 153, 0.3); padding:6px 12px; font-size:11px; font-weight:600; border-radius:12px; letter-spacing:1px;">已付款</span>`
-          : `<span style="background:rgba(248, 113, 113, 0.15); color:#F87171; border:1px solid rgba(248, 113, 113, 0.3); padding:6px 12px; font-size:11px; font-weight:600; border-radius:12px; letter-spacing:1px;">未付款</span>`;
-          
-        tbody.innerHTML += `
-          <tr>
-            <td style="font-weight:500; font-size:15px;">${row.name}</td>
-            <td style="font-family:'Montserrat', sans-serif; font-size:13px; color:var(--text-muted);">${row.phone}</td>
-            <td style="font-family:'Montserrat', sans-serif; font-weight:500; color:var(--luxury-gold); font-size:15px;">$${row.total}</td>
-            <td style="font-size:13px; color:var(--text-muted); font-family:'Montserrat', sans-serif;">${row.transferInfo}</td>
-            <td>${statusBadge}</td>
-          </tr>
+      window.switchTab = switchTab;
+
+      function toggleModal(show) {
+        document.getElementById('rulesModal').style.display = show ? 'flex' : 'none';
+        document.body.style.overflow = show ? 'hidden' : ''; 
+      }
+      
+      window.toggleModal = toggleModal;
+
+      let compCounters = { main: 0, edit: 0 };
+      
+      function addCompanion(type) {
+        compCounters[type]++;
+        const container = document.getElementById(type + '-companions-container');
+        const div = document.createElement('div');
+        div.className = 'companion-box';
+        div.id = 'comp-' + type + '-' + compCounters[type];
+        div.innerHTML = `
+          <button type="button" class="btn-remove" onclick="removeComp('` + type + `', ` + compCounters[type] + `)">✕ 移除</button>
+          <div class="form-group" style="margin-bottom:24px;">
+            <label>朋友姓名</label>
+            <input type="text" class="c-name" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>交通接駁</label>
+              <select class="c-shuttle" onchange="calcTotal('` + type + `')">
+                <option value="0">自行前往</option>
+                <option value="400">需要遊覽車接駁 ($400)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>費用支付</label>
+              <select class="c-pay" onchange="calcTotal('` + type + `')">
+                <option value="merged">合併結帳 (算在總金額)</option>
+                <option value="split">各自繳費 (朋友自行匯款)</option>
+              </select>
+            </div>
+          </div>
         `;
-      });
+        container.appendChild(div);
+        calcTotal(type);
+      }
+      window.addCompanion = addCompanion;
+
+      function removeComp(type, id) {
+        const el = document.getElementById('comp-' + type + '-' + id);
+        if(el) { el.remove(); calcTotal(type); }
+      }
+      window.removeComp = removeComp;
+
+      function calcTotal(type) {
+        type = type || 'main';
+        const BASE_FEE = 800;
+        let total = BASE_FEE;
+        let mShuttle = parseInt(document.getElementById(type + 'Shuttle').value) || 0;
+        
+        let detailHtml = '入場費: $' + BASE_FEE + '<br>接駁費: $' + mShuttle + '<br>';
+        total += mShuttle;
+
+        let companionBoxes = document.getElementById(type + '-companions-container').querySelectorAll('.companion-box');
+        for (let i = 0; i < companionBoxes.length; i++) {
+          let box = companionBoxes[i];
+          let cShuttle = parseInt(box.querySelector('.c-shuttle').value) || 0;
+          let cPay = box.querySelector('.c-pay').value;
+          let cCost = BASE_FEE + cShuttle;
+          
+          if (cPay === 'merged') {
+            total += cCost;
+            detailHtml += '朋友 ' + (i+1) + ' (合併): $' + cCost + '<br>';
+          } else {
+            detailHtml += '朋友 ' + (i+1) + ' (自付): $' + cCost + ' <span style="color:#EF4444; font-size:11px; letter-spacing:1px;">(不計入總額)</span><br>';
+          }
+        }
+
+        document.getElementById(type + 'CalcDetail').innerHTML = detailHtml;
+        document.getElementById(type + 'TotalPrice').innerText = 'NT$ ' + total;
+        return total;
+      }
+      window.calcTotal = calcTotal;
+
+      function submitForm(e, type) {
+        e.preventDefault();
+        const btn = e.target.querySelector('button[type="submit"]');
+        const originalText = btn.innerText;
+        
+        btn.innerHTML = '<span class="spinner"></span> 處理中...';
+        btn.disabled = true;
+
+        const companions = [];
+        let companionBoxes = document.getElementById(type + '-companions-container').querySelectorAll('.companion-box');
+        for (let i = 0; i < companionBoxes.length; i++) {
+          let box = companionBoxes[i];
+          companions.push({
+            name: box.querySelector('.c-name').value,
+            shuttle: box.querySelector('.c-shuttle').value,
+            pay: box.querySelector('.c-pay').value
+          });
+        }
+
+        const payload = {
+          action: 'submit',
+          phone: "'" + document.getElementById(type + 'Phone').value,
+          name: document.getElementById(type + 'Name').value,
+          ig: document.getElementById(type + 'Ig').value,
+          shuttle: document.getElementById(type + 'Shuttle').value,
+          companions: companions,
+          transferDate: document.getElementById(type + 'TransferDate').value,
+          account5: document.getElementById(type + 'Account5').value,
+          notes: document.getElementById(type + 'Notes').value,
+          total: calcTotal(type)
+        };
+
+        fetch(GAS_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(payload)
+        })
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+          if(data.status === 'success') {
+            alert('✅ 報名資料已成功處理！\n\n(您的資料已安全寫入資料庫，請記得完成匯款作業)');
+            if(type === 'main') {
+              e.target.reset(); 
+              document.getElementById('main-companions-container').innerHTML = ''; 
+              calcTotal('main'); 
+            } else {
+              document.getElementById('editFormArea').style.display = 'none';
+            }
+          } else {
+            alert('❌ 發生錯誤：' + data.message);
+          }
+        })
+        .catch(function(err) { alert('連線失敗，請檢查網路狀態。'); })
+        .finally(function() {
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+        });
+      }
+      window.submitForm = submitForm;
+
+      function fetchDataForEdit(e) {
+        const phone = document.getElementById('searchPhone').value;
+        if(!phone) return alert('請先輸入查詢電話');
+        
+        const btn = e.target;
+        const originalText = btn.innerText;
+        btn.innerHTML = '<span class="spinner"></span> 查詢中...';
+        btn.disabled = true;
+
+        fetch(GAS_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({ action: 'search', phone: phone })
+        })
+        .then(function(res) { return res.json(); })
+        .then(function(res) {
+          if(res.status === 'success') {
+            document.getElementById('editPhone').value = res.data.phone;
+            document.getElementById('editName').value = res.data.name;
+            document.getElementById('editIg').value = res.data.ig;
+            document.getElementById('editShuttle').value = res.data.shuttle === '需要接駁' ? '400' : '0';
+            
+            let tDate = res.data.transferDate;
+            if (tDate && tDate.length > 10 && tDate.indexOf('GMT') !== -1) {
+              let d = new Date(tDate);
+              tDate = d.getFullYear() + '-' + ('0' + (d.getMonth()+1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+            }
+            document.getElementById('editTransferDate').value = tDate || '';
+            document.getElementById('editAccount5').value = res.data.account5 || '';
+            document.getElementById('editNotes').value = res.data.notes || '';
+
+            document.getElementById('edit-companions-container').innerHTML = '';
+            compCounters['edit'] = 0;
+            if(res.data.compDetails && res.data.compDetails !== "無攜伴") {
+              let lines = res.data.compDetails.split('\n');
+              for(let i = 0; i < lines.length; i++) {
+                let match = lines[i].match(/朋友\d+:\s+(.*?)\s+\((.*?),\s+(.*?)\)/);
+                if(match) {
+                  addCompanion('edit');
+                  let lastBox = document.getElementById('comp-edit-' + compCounters['edit']);
+                  lastBox.querySelector('.c-name').value = match[1];
+                  lastBox.querySelector('.c-shuttle').value = match[2] === '接駁' ? '400' : '0';
+                  lastBox.querySelector('.c-pay').value = match[3] === '合併結帳' ? 'merged' : 'split';
+                }
+              }
+            }
+            calcTotal('edit');
+            document.getElementById('editFormArea').style.display = 'block';
+          } else {
+            alert('⚠️ ' + res.message);
+            document.getElementById('editFormArea').style.display = 'none';
+          }
+        })
+        .catch(function(err) { alert('連線失敗，請檢查網路狀態。'); })
+        .finally(function() {
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+        });
+      }
+      window.fetchDataForEdit = fetchDataForEdit;
+
+      function loadAdminDashboard(e) {
+        const pwd = document.getElementById('adminPwd').value;
+        if(pwd !== '0706') return alert('密碼錯誤，請重新輸入！');
+
+        const btn = e.target;
+        const originalText = btn.innerText;
+        btn.innerHTML = '<span class="spinner"></span> 載入中...';
+        btn.disabled = true;
+
+        fetch(GAS_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({ action: 'admin' })
+        })
+        .then(function(res) { return res.json(); })
+        .then(function(res) {
+          if(res.status === 'success') {
+            adminGlobalData = res.data; 
+            document.getElementById('adminLoginArea').style.display = 'none';
+            document.getElementById('adminTableArea').style.display = 'block';
+            
+            calculateAdminStats();
+            renderAdminTable('all'); 
+          } else {
+            alert('發生錯誤：' + res.message);
+          }
+        })
+        .catch(function(err) { alert('連線失敗，請檢查網路狀態。'); })
+        .finally(function() {
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+        });
+      }
+      window.loadAdminDashboard = loadAdminDashboard;
+
+      function calculateAdminStats() {
+        let totalGroups = adminGlobalData.length;
+        let paidGroups = adminGlobalData.filter(function(r) { return r.payStatus === '已付款'; }).length;
+        let unpaidGroups = totalGroups - paidGroups;
+        let expectedRevenue = adminGlobalData.reduce(function(sum, r) { return sum + (parseInt(r.total) || 0); }, 0);
+
+        document.getElementById('stat-total-groups').innerText = totalGroups;
+        document.getElementById('stat-paid-groups').innerText = paidGroups;
+        document.getElementById('stat-unpaid-groups').innerText = unpaidGroups;
+        document.getElementById('stat-revenue').innerText = '$' + expectedRevenue.toLocaleString();
+      }
+
+      function filterAdminTable(filterType, btnElement) {
+        document.querySelectorAll('.btn-filter').forEach(function(el) { el.classList.remove('active'); });
+        btnElement.classList.add('active');
+        renderAdminTable(filterType);
+      }
+      window.filterAdminTable = filterAdminTable;
+
+      function renderAdminTable(filterType) {
+        const tbody = document.getElementById('adminTbody');
+        tbody.innerHTML = ''; 
+        
+        let filteredData = adminGlobalData;
+        if (filterType === 'paid') filteredData = adminGlobalData.filter(function(r) { return r.payStatus === '已付款'; });
+        if (filterType === 'unpaid') filteredData = adminGlobalData.filter(function(r) { return r.payStatus !== '已付款'; });
+
+        if (filteredData.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 32px; color: #8E9BAE;">無符合條件的名單</td></tr>';
+          return;
+        }
+
+        filteredData.forEach(function(row) {
+          let statusBadge = row.payStatus === '已付款' 
+            ? '<span style="background:rgba(52, 211, 153, 0.15); color:#34D399; border:1px solid rgba(52, 211, 153, 0.3); padding:6px 12px; font-size:11px; font-weight:600; border-radius:12px; letter-spacing:1px;">已付款</span>'
+            : '<span style="background:rgba(248, 113, 113, 0.15); color:#F87171; border:1px solid rgba(248, 113, 113, 0.3); padding:6px 12px; font-size:11px; font-weight:600; border-radius:12px; letter-spacing:1px;">未付款</span>';
+            
+          tbody.innerHTML += `
+            <tr>
+              <td style="font-weight:500; font-size:15px;">${row.name}</td>
+              <td style="font-family:'Montserrat', sans-serif; font-size:13px; color:#8E9BAE;">${row.phone}</td>
+              <td style="font-family:'Montserrat', sans-serif; font-weight:500; color:#D4AF37; font-size:15px;">$${row.total}</td>
+              <td style="font-size:13px; color:#8E9BAE; font-family:'Montserrat', sans-serif;">${row.transferInfo}</td>
+              <td>${statusBadge}</td>
+            </tr>
+          `;
+        });
+      }
+    } catch (error) {
+      console.error("Script execution error:", error);
     }
   </script>
 </body>
