@@ -12,7 +12,6 @@
   
   <style>
     :root {
-      /* 頂級午夜俱樂部色調 */
       --bg-body: #0A131A;    
       --bg-card: #131E26;    
       --text-main: #FFFFFF;  
@@ -26,7 +25,6 @@
       --danger: #EF4444;
       --luxury-gradient: linear-gradient(135deg, #8AC5CB 0%, #4A8C93 100%);
 
-      /* 規範公告專屬色調 */
       --rule-bg: rgba(10, 19, 26, 0.98);
       --rule-card: #131E26;
       --rule-text: #B0BBC7;
@@ -36,17 +34,17 @@
     }
 
     * { box-sizing: border-box; }
-    html, body { height: 100%; margin: 0; padding: 0; scroll-behavior: smooth; }
+    html, body { height: 100%; margin: 0; padding: 0; }
     
     body {
       font-family: 'Montserrat', "Noto Sans TC", sans-serif;
-      background-color: var(--bg-body);
+      background-color: var(--bg-body) !important;
       color: var(--text-main);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* 頂部主視覺：電腦版 */
+    /* 頂部主視覺 */
     .luxury-hero-banner {
       position: relative; width: 100%; height: 35vh; min-height: 250px;
       overflow: hidden; display: flex; justify-content: center; align-items: center;
@@ -56,46 +54,26 @@
     .image-background-layer {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%;
       background: url('https://i.meee.com.tw/q76hNuV.png') center/cover no-repeat;
-      z-index: 0;
-      opacity: 0.85; 
-      transition: opacity 0.5s ease;
+      z-index: 0; opacity: 0.85; 
     }
     .overlay-layer {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
       background: linear-gradient(to bottom, rgba(19,30,38,0) 0%, rgba(19,30,38,1) 100%);
     }
 
-    /* 圖片下方的標題文字區塊 (無縫融合設計) */
     .hero-title-section {
-      text-align: center;
-      padding: 24px 20px 40px;
-      position: relative;
-      background: var(--bg-card);
-      border-bottom: 1px solid var(--border-color);
-      z-index: 10;
+      text-align: center; padding: 24px 20px 40px; position: relative;
+      background: var(--bg-card); border-bottom: 1px solid var(--border-color); z-index: 10;
     }
-    
     .gold-diamond {
-      position: absolute;
-      top: -20px;
-      left: 50%;
-      margin-left: -20px;
-      width: 40px;
-      height: 40px;
-      background: var(--bg-body);
-      border: 1px solid var(--luxury-gold);
-      transform: rotate(45deg);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 10;
+      position: absolute; top: -20px; left: 50%; margin-left: -20px;
+      width: 40px; height: 40px; background: var(--bg-body);
+      border: 1px solid var(--luxury-gold); transform: rotate(45deg);
+      display: flex; justify-content: center; align-items: center; z-index: 10;
       box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.1);
     }
     .gold-diamond::after {
-      content: '';
-      width: 10px;
-      height: 10px;
-      background: var(--luxury-gold);
+      content: ''; width: 10px; height: 10px; background: var(--luxury-gold);
       box-shadow: 0 0 12px var(--luxury-gold-glow);
     }
     .sub-title { font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 0.5em; font-weight: 500; text-transform: uppercase; margin-bottom: 12px; color: var(--luxury-gold) !important; opacity: 0.9; margin-top: 16px; }
@@ -103,30 +81,24 @@
     .luxury-desc { font-family: 'Montserrat', "Noto Sans TC", sans-serif; font-size: 13px; line-height: 1.6; font-weight: 300; letter-spacing: 3px; color: var(--text-muted) !important; text-transform: uppercase;}
     .luxury-desc span { color: var(--luxury-gold); margin: 0 8px; font-size: 10px; opacity: 0.7;}
 
-    /* RWD 手機版：精品海報無縫淡出設計 */
     @media (max-width: 768px) {
       .hero-main-title { font-size: 26px; }
       .luxury-desc { font-size: 11px; }
       .hero-title-section { padding: 32px 20px 32px; }
       
-      .luxury-hero-banner { 
-        height: 75vh; 
-        min-height: 450px; 
-      }
+      .luxury-hero-banner { height: 75vh; min-height: 450px; }
       .image-background-layer {
         background-image: url('https://i.meee.com.tw/1SXhG7R.png') !important;
-        background-position: center top !important; 
-        opacity: 1; 
+        background-position: center top !important; opacity: 1; 
       }
       .overlay-layer {
         background: linear-gradient(to bottom, rgba(19, 30, 38, 0) 40%, rgba(19, 30, 38, 0.7) 75%, #131E26 100%) !important;
       }
     }
 
-    /* 導覽列與頁籤 */
     .nav-wrapper {
-      position: sticky; top: 0; z-index: 90; background: rgba(10, 19, 26, 0.85);
-      backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      position: sticky; top: 0; z-index: 90; background: rgba(10, 19, 26, 0.95);
+      border-bottom: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
     .nav-container { max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
     .tabs { display: flex; gap: 32px; overflow-x: auto; scrollbar-width: none; flex: 1; }
@@ -145,11 +117,11 @@
     }
     .btn-open-rules:hover { background: var(--text-main); color: var(--bg-body); border-color: var(--text-main); }
 
-    /* 核心內容區與表單 */
     .container { max-width: 760px; margin: 40px auto 80px; padding: 0 20px; }
-    .view-section { display: none; animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; transform: translateY(20px); }
+    
+    /* 移除動畫防 LINE 白畫面崩潰，改為直接 block/none 切換 */
+    .view-section { display: none; }
     .view-section.active { display: block; }
-    @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
 
     .main-card {
       background: var(--bg-card); padding: 56px 48px 0 48px; border-radius: 0;
@@ -162,112 +134,63 @@
     .form-row .form-group { flex: 1; min-width: 240px; margin-bottom: 0; }
     .form-group label { display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; }
     
-    /* ----------------------------------------------------
-       強制統一 Input 欄位大小 (解決匯款日期寬度不一致) 
-       ---------------------------------------------------- */
-    .form-group input, .form-group select, .form-group textarea {
-      width: 100% !important; 
-      max-width: 100% !important; 
-      display: block !important;
-      padding: 16px 20px; 
-      border-radius: 0; 
-      border: 1px solid var(--border-color); 
-      background: var(--input-bg);
-      color: var(--text-main); 
-      font-size: 16px !important; /* 防 iOS 自動放大 */
-      font-family: inherit; 
-      transition: all 0.4s ease; 
-      outline: none; 
-      box-sizing: border-box !important;
-      height: 56px !important; /* 強制所有輸入框同高 */
+    /* ========================================================
+       終極修復：排除 Checkbox！強制統一所有一般輸入框的寬高與格式
+       ======================================================== */
+    .form-group input:not([type="checkbox"]), 
+    .form-group select, 
+    .form-group textarea {
+      width: 100% !important; max-width: 100% !important; min-width: 100% !important;
+      display: block !important; box-sizing: border-box !important;
+      padding: 16px 20px; border-radius: 0; border: 1px solid var(--border-color); background: var(--input-bg);
+      color: var(--text-main); font-size: 16px !important; font-family: inherit; transition: all 0.4s ease; outline: none;
+      height: 56px !important;
     }
     .form-group textarea { height: auto !important; }
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--luxury-gold); box-shadow: 0 0 0 1px var(--luxury-gold); background: rgba(212, 175, 55, 0.02); }
     
-    select { appearance: none; background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%238E9BAE%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"); background-repeat: no-repeat; background-position: right 1rem top 50%; background-size: 0.65rem auto; }
+    select { appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%238E9BAE%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"); background-repeat: no-repeat; background-position: right 1rem top 50%; background-size: 0.65rem auto; }
 
-    /* 將日曆圖示強制變為白色 */
+    /* 將日曆圖示強制變為純白色 */
     input[type="date"]::-webkit-calendar-picker-indicator {
-      filter: invert(1);
-      cursor: pointer;
-      opacity: 0.8;
+      filter: invert(1) brightness(100);
+      cursor: pointer; opacity: 0.8;
     }
 
-    /* ----------------------------------------------------
-       自訂精緻小 Checkbox (阻斷原生干擾) 
-       ---------------------------------------------------- */
+    /* ========================================================
+       自訂精品 Checkbox：絕對鎖死文字與勾框同行、垂直排版
+       ======================================================== */
     .checkbox-label { 
-      display: flex; 
-      align-items: center; 
-      font-size: 14px; 
-      color: var(--text-main); 
-      cursor: pointer; 
-      line-height: 1; 
-      letter-spacing: 1px;
+      display: flex !important; 
+      flex-direction: row !important;
+      align-items: center !important; 
+      justify-content: flex-start !important;
+      flex-wrap: nowrap !important; /* 絕對禁止換行 */
+      font-size: 13px; color: var(--text-main); 
+      cursor: pointer; line-height: 1; letter-spacing: 1px; margin-bottom: 20px;
     }
+    .checkbox-label:last-child { margin-bottom: 0; }
+    
     .checkbox-label input[type="checkbox"] {
-      appearance: none;
-      -webkit-appearance: none;
-      background-color: var(--input-bg);
-      margin: 0 8px 0 0 !important;
-      padding: 0 !important;
-      width: 12px !important; /* 強制縮小尺寸 */
-      height: 12px !important;
-      min-width: 12px !important;
-      border: 1px solid var(--border-color);
-      display: grid;
-      place-content: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      flex-shrink: 0;
+      appearance: none; -webkit-appearance: none; background-color: transparent;
+      margin: 0 10px 0 0 !important; padding: 0 !important;
+      width: 14px !important; height: 14px !important; min-width: 14px !important; max-width: 14px !important;
+      border: 1px solid var(--border-color); 
+      display: flex !important; align-items: center; justify-content: center; 
+      cursor: pointer; transition: all 0.3s ease; 
+      flex: 0 0 auto !important; /* 不放大、不縮小，絕對鎖死比例 */
+      outline: none;
     }
     .checkbox-label input[type="checkbox"]::before {
-      content: "";
-      width: 6px !important; /* 內部金色方塊 */
-      height: 6px !important;
-      transform: scale(0);
-      transition: 0.2s transform ease-in-out;
-      background-color: var(--luxury-gold);
+      content: ""; width: 8px !important; height: 8px !important;
+      transform: scale(0); transition: 0.2s transform ease-in-out; background-color: var(--luxury-gold);
     }
-    .checkbox-label input[type="checkbox"]:checked {
-      border-color: var(--luxury-gold);
-    }
-    .checkbox-label input[type="checkbox"]:checked::before {
-      transform: scale(1);
-    }
+    .checkbox-label input[type="checkbox"]:checked { border-color: var(--luxury-gold); }
+    .checkbox-label input[type="checkbox"]:checked::before { transform: scale(1); }
     
-    .highlight-time { color: var(--luxury-gold); font-weight: 600; font-family: 'Montserrat', sans-serif; font-size: 15px;}
-
-    /* ----------------------------------------------------
-       必填確認項目：強迫排在同一排不換行 (Inline Group) 
-       ---------------------------------------------------- */
-    .inline-check-group {
-      display: flex !important;
-      flex-direction: row !important;
-      flex-wrap: nowrap !important; /* 強制不換行 */
-      align-items: center;
-      gap: 16px;
-      padding: 16px 20px !important;
-      overflow-x: auto; /* 允許橫向滑動 */
-      -webkit-overflow-scrolling: touch;
-      white-space: nowrap; /* 確保文字不折行 */
-      background: rgba(0,0,0,0.2); 
-      margin-bottom: 40px; 
-      border: 1px solid var(--border-color);
-    }
-    .inline-check-group::-webkit-scrollbar { display: none; } /* 隱藏滑動軸維持美觀 */
-    .inline-check-group .checkbox-label {
-      white-space: nowrap !important;
-      margin-bottom: 0 !important;
-    }
-    .inline-check-title {
-      flex-shrink: 0;
-      color: var(--text-main);
-      font-weight: 500;
-      font-size: 13px;
-      white-space: nowrap;
-      margin-right: 8px;
-    }
+    /* 文字確保不換行 */
+    .checkbox-label span { white-space: nowrap !important; display: inline-block; }
+    .highlight-time { color: var(--luxury-gold); font-weight: 600; font-family: 'Montserrat', sans-serif; font-size: 14px;}
 
     /* 攜伴區 */
     .companion-box { background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); padding: 32px 24px; margin-bottom: 24px; position: relative; border-radius: 0; transition: 0.3s; }
@@ -290,10 +213,9 @@
       display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 32px; margin-bottom: 40px; 
     }
     .total-detail { font-size: 13px; color: var(--text-muted); line-height: 2; letter-spacing: 1px; }
-    .total-summary { text-align: right; }
+    .total-summary { text-align: right; width: 100%; }
     .total-price { font-size: 36px; font-family: 'Montserrat', sans-serif; font-weight: 300; color: var(--luxury-gold); letter-spacing: 2px; margin-top: 8px;}
 
-    /* 載入動畫 (Spinner) */
     .spinner {
       display: inline-block; width: 16px; height: 16px; margin-right: 12px; vertical-align: middle;
       border: 2px solid rgba(255,255,255,0.2); border-radius: 50%; border-top-color: #fff;
@@ -312,7 +234,6 @@
     .btn-submit:active:not(:disabled) { transform: translateY(0); }
     .btn-submit:disabled { background: #1F2937; color: #6B7280 !important; cursor: not-allowed; box-shadow: none; }
 
-    /* QR Code 區塊 */
     .qr-banner {
       display: flex; gap: 32px; align-items: center; background: var(--bg-card); border: 1px solid var(--border-color); padding: 32px; margin-bottom: 24px; border-radius: 0; box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     }
@@ -320,7 +241,6 @@
     .qr-info .bank { font-size: 12px; color: var(--text-muted); font-weight: 500; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;}
     .qr-info .acc { font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 300; color: #FFFFFF !important; letter-spacing: 4px; text-decoration: none;}
 
-    /* 後台數據面板 */
     .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 40px; }
     .stat-card { background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); padding: 24px 20px; text-align: center; transition: 0.3s; }
     .stat-card:hover { background: rgba(255,255,255,0.02); }
@@ -336,13 +256,13 @@
     .admin-table th { padding: 20px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: var(--text-muted); font-weight: 500; white-space: nowrap; font-size: 12px; letter-spacing: 2px; text-transform: uppercase;}
     .admin-table td { padding: 20px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-main); }
 
-    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); display: none; justify-content: center; align-items: center; z-index: 1000; padding: 20px; }
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.9); display: none; justify-content: center; align-items: center; z-index: 1000; padding: 20px; }
     .modal-content { background: var(--rule-bg); width: 100%; max-width: 840px; height: 90vh; overflow-y: auto; border-radius: 0; position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.8); border: 1px solid var(--border-color); }
     .modal-close { position: sticky; top: 16px; left: calc(100% - 56px); margin-bottom: -40px; z-index: 99; background: var(--bg-card); border: 1px solid var(--border-color); width: 40px; height: 40px; border-radius: 0; font-size: 24px; line-height: 1; cursor: pointer; color: var(--text-muted); display: flex; justify-content: center; align-items: center; transition: 0.4s; }
     .modal-close:hover { color: #FFF; background: rgba(255,255,255,0.1); border-color: #FFF; }
 
     .rules-wrap { padding: 0 40px 60px; font-family: "Noto Serif TC", "PMingLiU", serif; color: var(--rule-text); line-height: 1.8; }
-    .rules-wrap .freeze-pane { position: sticky; top: 0; z-index: 90; background: rgba(10, 19, 26, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); padding: 24px 20px; text-align: center; margin: 0 -40px 40px; }
+    .rules-wrap .freeze-pane { position: sticky; top: 0; z-index: 90; background: rgba(10, 19, 26, 0.98); border-bottom: 1px solid var(--border-color); padding: 24px 20px; text-align: center; margin: 0 -40px 40px; }
     .rules-wrap .main-title { font-size: 22px; font-weight: 600; letter-spacing: 4px; color: var(--text-main); }
     .rules-wrap .intro { font-size: 14px; color: var(--text-muted); text-align: center; margin-bottom: 48px; line-height: 2; letter-spacing: 2px; }
     
@@ -364,9 +284,6 @@
     .rules-wrap .pt-header { background: rgba(255,255,255,0.05); font-weight: 500; color: var(--text-main); letter-spacing: 2px; }
     .rules-wrap .pt-val { font-family: 'Montserrat', sans-serif; color: var(--rule-highlight); font-weight: 400; letter-spacing: 1px; }
 
-    /* =========================================
-       手機版終極優化 (Mobile Optimization) 
-       ========================================= */
     @media(max-width: 600px) {
       .nav-container { flex-direction: column; gap: 16px; padding: 16px 20px; }
       .tabs { gap: 20px; }
@@ -379,14 +296,13 @@
       .form-row { flex-direction: column; gap: 0; }
       .form-row .form-group { margin-bottom: 32px; width: 100%; min-width: 100%; }
 
-      /* 結帳總金額強制靠右 */
       .total-box { flex-direction: column; align-items: stretch; gap: 24px;}
       .total-summary { align-self: flex-end; text-align: right; width: 100%; }
 
       .stats-grid { grid-template-columns: 1fr 1fr; } 
       
       .modal-overlay { padding: 0; } 
-      .modal-content { height: 100vh; border: none; }
+      .modal-content { height: 100%; border: none; }
       .modal-close { top: 12px; left: calc(100% - 52px); }
       .rules-wrap { padding: 0 20px 40px; }
       .rules-wrap .freeze-pane { padding: 20px; margin: 0 -20px 32px; }
@@ -460,8 +376,8 @@
             </select>
           </div>
           
-          <div class="form-group inline-check-group">
-            <div class="inline-check-title">必填確認項目</div>
+          <div class="form-group" style="background: rgba(0,0,0,0.2); padding: 24px; margin-bottom: 40px; border: 1px solid var(--border-color);">
+            <div style="color: var(--text-main); font-weight: 500; font-size: 13px; letter-spacing: 2px; margin-bottom: 24px;">必填確認項目</div>
             
             <label class="checkbox-label">
               <input type="checkbox" required>
@@ -470,12 +386,12 @@
             
             <label class="checkbox-label">
               <input type="checkbox" required>
-              <span>遊覽車上車時間為 <span class="highlight-time">11:45</span>。</span>
+              <span>遊覽車上車 <span class="highlight-time">13:15</span></span>
             </label>
             
             <label class="checkbox-label">
               <input type="checkbox" required>
-              <span>回家發車時間為 <span class="highlight-time">21:45</span>。</span>
+              <span>回家發車 <span class="highlight-time">21:45</span></span>
             </label>
           </div>
 
@@ -787,7 +703,7 @@
 
     function toggleModal(show) {
       document.getElementById('rulesModal').style.display = show ? 'flex' : 'none';
-      document.body.style.overflow = show ? 'hidden' : 'auto'; 
+      document.body.style.overflow = show ? 'hidden' : ''; 
     }
 
     let compCounters = { main: 0, edit: 0 };
