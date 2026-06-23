@@ -3,31 +3,34 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
-  <title>巨蟹夏日海灘趴報名表｜淺水灣</title>
+  <title>巨蟹夏日海灘趴報名表｜淺水灣 VIP EXCLUSIVE</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;700&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@400;600;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@400;600;900&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      --bg-body: #EBE7E0;    
-      --bg-card: #FFFFFF;    
-      --text-main: #1C1917;  
-      --text-muted: #78716C; 
-      --border-color: #D6D3D1; 
-      --input-bg: #FFFFFF;   
+      /* 頂級午夜俱樂部色調 (Midnight VIP Lounge) */
+      --bg-body: #0A131A;    
+      --bg-card: #131E26;    
+      --text-main: #FFFFFF;  
+      --text-muted: #8E9BAE; 
+      --border-color: rgba(255, 255, 255, 0.08); 
+      --input-bg: #050B10;   
       
-      --luxury-teal: #33CCCC; 
+      --luxury-teal: #8AC5CB; 
+      --luxury-gold: #D4AF37;
       --danger: #EF4444;
-      --rainbow-gradient: linear-gradient(90deg, #ff5f6d, #ffc371, #9be15d, #00e3ae, #45aaf2, #9b59b6);
+      --luxury-gradient: linear-gradient(135deg, #8AC5CB 0%, #4A8C93 100%);
 
-      --rule-bg: #FAFAFA;
-      --rule-card: #FFFFFF;
-      --rule-text: #1F2937;
-      --rule-gold: #8B6914;
-      --rule-gold-light: rgba(139, 105, 20, 0.1);
-      --rule-highlight: #059669;
+      /* 規範公告專屬色調 */
+      --rule-bg: rgba(10, 19, 26, 0.98);
+      --rule-card: #131E26;
+      --rule-text: #B0BBC7;
+      --rule-gold: #D4AF37;
+      --rule-gold-light: rgba(212, 175, 55, 0.15);
+      --rule-highlight: #8AC5CB;
     }
 
     * { box-sizing: border-box; }
@@ -49,217 +52,195 @@
     }
     .image-background-layer {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      background: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      background: url('https://i.meee.com.tw/q76hNuV.png') center/cover no-repeat;
       z-index: 0;
+      opacity: 0.6; /* 壓暗背景以凸顯高級感 */
     }
     .overlay-layer {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%);
+      background: linear-gradient(to bottom, rgba(10,19,26,0.2) 0%, rgba(10,19,26,1) 100%);
     }
-    .content-layer {
-      position: relative; z-index: 10; text-align: center; padding: 0 5%; width: 100%;
-    }
-    .sub-title {
-      font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 0.4em;
-      font-weight: 500; text-transform: uppercase; margin-bottom: 8px; color: #ffffff !important; opacity: 0.9;
-    }
-    .hero-main-title {
-      font-family: 'Playfair Display', "Noto Serif TC", serif; font-weight: 400; 
-      font-size: 32px; letter-spacing: 4px; margin-bottom: 4px; line-height: 1.1; color: #ffffff !important; 
-    }
-    .luxury-desc {
-      font-family: 'Montserrat', "Noto Sans TC", sans-serif; font-size: 13px; line-height: 1.6;
-      font-weight: 300; letter-spacing: 2px; color: #ffffff !important; opacity: 0.9;   
-    }
+    .content-layer { position: relative; z-index: 10; text-align: center; padding: 0 5%; width: 100%; }
+    .sub-title { font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 0.5em; font-weight: 500; text-transform: uppercase; margin-bottom: 12px; color: var(--luxury-teal) !important; opacity: 0.9; }
+    .hero-main-title { font-family: 'Playfair Display', "Noto Serif TC", serif; font-weight: 600; font-size: 36px; letter-spacing: 6px; margin-bottom: 8px; line-height: 1.2; color: #ffffff !important; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+    .luxury-desc { font-family: 'Montserrat', "Noto Sans TC", sans-serif; font-size: 13px; line-height: 1.6; font-weight: 300; letter-spacing: 3px; color: var(--text-muted) !important; }
 
     @media (max-width: 768px) {
       .luxury-hero-banner { height: 22vh; min-height: 180px; }
-      .hero-main-title { font-size: 24px; }
+      .hero-main-title { font-size: 26px; }
       .luxury-desc { font-size: 12px; }
     }
 
     /* 導覽列與頁籤 */
     .nav-wrapper {
-      position: sticky; top: 0; z-index: 90; background: rgba(235, 231, 224, 0.95);
-      backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+      position: sticky; top: 0; z-index: 90; background: rgba(10, 19, 26, 0.85);
+      backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
-    .nav-container {
-      max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px;
-    }
-    .tabs { display: flex; gap: 24px; overflow-x: auto; scrollbar-width: none; flex: 1; }
+    .nav-container { max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+    .tabs { display: flex; gap: 32px; overflow-x: auto; scrollbar-width: none; flex: 1; }
     .tabs::-webkit-scrollbar { display: none; }
     .tab-btn {
-      background: transparent; border: none; color: var(--text-muted);
-      font-size: 14px; font-weight: 600; padding: 18px 0;
-      cursor: pointer; position: relative; white-space: nowrap; transition: 0.3s;
-      border-radius: 0; font-family: 'Montserrat', "Noto Sans TC", sans-serif; letter-spacing: 1px;
+      background: transparent; border: none; color: var(--text-muted); font-size: 14px; font-weight: 500; padding: 20px 0;
+      cursor: pointer; position: relative; white-space: nowrap; transition: 0.4s ease; border-radius: 0; letter-spacing: 2px;
     }
-    .tab-btn:hover, .tab-btn.active { color: var(--text-main); }
-    .tab-btn.active::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
-      height: 2px; background: var(--text-main);
-    }
+    .tab-btn:hover { color: #FFF; }
+    .tab-btn.active { color: var(--luxury-teal); font-weight: 600; }
+    .tab-btn.active::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--luxury-teal); box-shadow: 0 -2px 10px rgba(138, 197, 203, 0.5); }
     .btn-open-rules {
-      background: transparent; border: 1px solid var(--text-main); color: var(--text-main);
-      padding: 6px 16px; border-radius: 0; font-size: 13px; font-weight: 500; cursor: pointer; transition: 0.3s;
-      letter-spacing: 1px; font-family: inherit;
+      background: transparent; border: 1px solid var(--border-color); color: var(--text-main);
+      padding: 8px 20px; border-radius: 0; font-size: 12px; font-weight: 500; cursor: pointer; transition: 0.4s ease; letter-spacing: 2px;
     }
-    .btn-open-rules:hover { background: var(--text-main); color: #FFF; }
+    .btn-open-rules:hover { background: var(--text-main); color: var(--bg-body); border-color: var(--text-main); }
 
     /* 核心內容區與表單 */
     .container { max-width: 760px; margin: 40px auto 80px; padding: 0 20px; }
-    .view-section { display: none; animation: fadeIn 0.4s ease forwards; opacity: 0; transform: translateY(10px); }
+    .view-section { display: none; animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; transform: translateY(20px); }
     .view-section.active { display: block; }
     @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
 
     .main-card {
-      background: var(--bg-card); padding: 48px 40px 0 40px; border-radius: 0;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.02); margin-bottom: 24px; border: 1px solid rgba(255,255,255,0.5);
-      overflow: hidden;
+      background: var(--bg-card); padding: 56px 48px 0 48px; border-radius: 0;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4); margin-bottom: 24px; border: 1px solid var(--border-color); overflow: hidden;
     }
-    .card-title { font-size: 20px; font-weight: 600; margin: 0 0 32px; color: var(--text-main); border-bottom: 1px solid var(--border-color); padding-bottom: 16px; letter-spacing: 1px;}
+    .card-title { font-size: 18px; font-weight: 500; margin: 0 0 40px; color: var(--text-main); border-bottom: 1px solid var(--border-color); padding-bottom: 16px; letter-spacing: 3px; text-transform: uppercase;}
 
-    .form-group { margin-bottom: 24px; }
+    .form-group { margin-bottom: 32px; }
     .form-row { display: flex; gap: 24px; flex-wrap: wrap; }
     .form-row .form-group { flex: 1; min-width: 240px; margin-bottom: 0; }
-    .form-group label { display: block; font-size: 13px; color: var(--text-muted); margin-bottom: 8px; font-weight: 500; letter-spacing: 1px; }
+    .form-group label { display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; }
     
     .form-group input, .form-group select, .form-group textarea {
-      width: 100%; padding: 14px 16px; border-radius: 0; border: 1px solid var(--border-color); background: var(--input-bg);
-      color: var(--text-main); font-size: 15px; font-family: inherit; transition: all 0.3s ease; outline: none; box-sizing: border-box;
+      width: 100%; padding: 16px 20px; border-radius: 0; border: 1px solid var(--border-color); background: var(--input-bg);
+      color: var(--text-main); font-size: 15px; font-family: inherit; transition: all 0.4s ease; outline: none; box-sizing: border-box;
     }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-      border-color: var(--text-main); box-shadow: none;
-    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--luxury-teal); box-shadow: 0 0 0 1px var(--luxury-teal); background: rgba(138, 197, 203, 0.02); }
     
-    .checkbox-label { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; color: var(--text-main); cursor: pointer; margin-bottom: 12px; line-height: 1.6;}
-    .checkbox-label input { margin-top: 3px; width: 16px; height: 16px; accent-color: var(--text-main); cursor: pointer;}
-    .highlight-time { color: #E76F51; font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 15px;}
+    /* 修改 select 下拉選單的箭頭與背景 */
+    select { appearance: none; background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%238E9BAE%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"); background-repeat: no-repeat; background-position: right 1rem top 50%; background-size: 0.65rem auto; }
+
+    .checkbox-label { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; color: var(--text-main); cursor: pointer; margin-bottom: 16px; line-height: 1.6; letter-spacing: 1px;}
+    .checkbox-label input { margin-top: 4px; width: 16px; height: 16px; accent-color: var(--luxury-teal); cursor: pointer; background: var(--input-bg); border: 1px solid var(--border-color);}
+    .highlight-time { color: var(--luxury-gold); font-weight: 600; font-family: 'Montserrat', sans-serif; font-size: 15px;}
 
     /* 攜伴區 */
-    .companion-box { background: var(--bg-body); border: 1px solid var(--border-color); padding: 24px; margin-bottom: 16px; position: relative; border-radius: 0; }
-    .btn-remove { position: absolute; right: 16px; top: 16px; background: transparent; border: 1px solid var(--border-color); color: var(--text-muted); cursor: pointer; font-size: 12px; padding: 4px 10px; transition: 0.2s; border-radius: 0; letter-spacing: 1px;}
-    .btn-remove:hover { border-color: var(--danger); color: var(--danger); }
+    .companion-box { background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); padding: 32px 24px; margin-bottom: 24px; position: relative; border-radius: 0; transition: 0.3s; }
+    .companion-box:hover { border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.04); }
+    .btn-remove { position: absolute; right: 16px; top: 16px; background: transparent; border: 1px solid var(--border-color); color: var(--text-muted); cursor: pointer; font-size: 11px; padding: 6px 12px; transition: 0.3s; border-radius: 0; letter-spacing: 2px; text-transform: uppercase;}
+    .btn-remove:hover { border-color: var(--danger); color: var(--danger); background: rgba(239, 68, 68, 0.1); }
     
     .btn-outline { 
-      width: 100%; padding: 16px; background: transparent; border: 1px solid var(--luxury-teal); color: var(--luxury-teal); 
-      border-radius: 0; cursor: pointer; font-weight: 500; font-size: 14px; transition: all 0.4s ease; 
-      letter-spacing: 2px; text-transform: uppercase;
+      width: 100%; padding: 18px; background: transparent; border: 1px dashed var(--border-color); color: var(--luxury-teal); 
+      border-radius: 0; cursor: pointer; font-weight: 500; font-size: 13px; transition: all 0.4s ease; letter-spacing: 3px; text-transform: uppercase;
     }
-    .btn-outline:hover { background: var(--luxury-teal); color: #FFF; }
+    .btn-outline:hover { border-color: var(--luxury-teal); background: rgba(138, 197, 203, 0.05); color: var(--luxury-teal); }
 
-    /* 結帳區與彩虹框按鈕 */
+    /* 結帳區與高級按鈕 */
     .checkout-wrapper {
-      background: linear-gradient(135deg, #FAFAFA 0%, #E8EAEF 50%, #D2D6DC 100%);
-      color: var(--text-main); margin: 48px -40px 0 -40px; padding: 40px;
-      box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.9); border-top: 1px solid var(--border-color);
+      background: rgba(0, 0, 0, 0.3); color: var(--text-main);
+      margin: 56px -48px 0 -48px; padding: 48px; border-top: 1px solid var(--border-color);
     }
     .total-box { 
-      display: flex; justify-content: space-between; align-items: flex-end; 
-      border-bottom: 1px solid rgba(0,0,0,0.08); padding-bottom: 24px; margin-bottom: 32px; 
+      display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 32px; margin-bottom: 40px; 
     }
-    .total-detail { font-size: 13px; color: var(--text-muted); line-height: 1.8; letter-spacing: 1px; }
-    .total-price { font-size: 32px; font-family: 'Montserrat', sans-serif; font-weight: 500; color: var(--text-main); letter-spacing: 1px; }
+    .total-detail { font-size: 13px; color: var(--text-muted); line-height: 2; letter-spacing: 1px; }
+    .total-price { font-size: 36px; font-family: 'Montserrat', sans-serif; font-weight: 300; color: var(--luxury-gold); letter-spacing: 2px; margin-top: 8px;}
+
+    /* 載入動畫 (Spinner) */
+    .spinner {
+      display: inline-block; width: 16px; height: 16px; margin-right: 12px; vertical-align: middle;
+      border: 2px solid rgba(255,255,255,0.2); border-radius: 50%; border-top-color: #fff;
+      animation: spin 0.8s ease-in-out infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
 
     .btn-submit {
       position: relative; display: block; width: 100%;
       font-family: 'Montserrat', "Noto Sans TC", sans-serif; text-decoration: none;
-      background-color: rgba(0, 0, 0, 0.75); color: #FFFFFF !important; border: 1px solid #FFFFFF;             
-      padding: 18px 2.5em; font-size: 15px; font-weight: 500; letter-spacing: 0.2em;
-      text-transform: uppercase; transition: color 0.4s ease, border-color 0.4s ease, background-color 0.4s ease;
-      border-radius: 0; cursor: pointer; text-align: center; z-index: 1;
+      background: var(--luxury-gradient); color: #0A131A !important; border: none;              
+      padding: 20px 2.5em; font-size: 14px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase;
+      transition: all 0.4s ease; border-radius: 0; cursor: pointer; text-align: center; overflow: hidden;
     }
-    .btn-submit::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-      background-color: #FFFFFF; z-index: -1; opacity: 0; transition: opacity 0.4s ease;
-    }
-    .btn-submit::after {
-      content: ''; position: absolute; top: -1px; left: -1px; right: -1px; bottom: -1px;
-      background: var(--rainbow-gradient); z-index: -2; opacity: 0; transition: opacity 0.4s ease;
-    }
-    .btn-submit:hover {
-      background-color: transparent; color: var(--text-main) !important; border-color: transparent;             
-    }
-    .btn-submit:hover::before, .btn-submit:hover::after { opacity: 1; }
-    .btn-submit:disabled { background-color: #A8A29E; cursor: not-allowed; border-color: #A8A29E; }
-    .btn-submit:disabled::before, .btn-submit:disabled::after { display: none; }
+    .btn-submit:hover:not(:disabled) { box-shadow: 0 0 20px rgba(138, 197, 203, 0.4); transform: translateY(-2px); }
+    .btn-submit:active:not(:disabled) { transform: translateY(0); }
+    .btn-submit:disabled { background: #1F2937; color: #6B7280 !important; cursor: not-allowed; box-shadow: none; }
 
     /* QR Code 區塊 */
     .qr-banner {
-      display: flex; gap: 24px; align-items: center; background: #FFF;
-      border: 1px solid var(--border-color); padding: 24px; margin-bottom: 24px;
-      border-radius: 0; box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+      display: flex; gap: 32px; align-items: center; background: var(--bg-card); border: 1px solid var(--border-color); padding: 32px; margin-bottom: 24px; border-radius: 0; box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     }
-    .qr-banner img { width: 100px; height: 100px; border: 1px solid var(--border-color); padding: 4px;}
-    .qr-info .bank { font-size: 13px; color: var(--text-muted); font-weight: 500; letter-spacing: 1px;}
-    .qr-info .acc { font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 500; color: var(--text-main); margin-top: 4px; letter-spacing: 3px;}
+    .qr-banner img { width: 110px; height: 110px; border: 1px solid var(--border-color); padding: 8px; background: rgba(255,255,255,0.05);}
+    .qr-info .bank { font-size: 12px; color: var(--text-muted); font-weight: 500; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;}
+    .qr-info .acc { font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 300; color: var(--text-main); letter-spacing: 4px;}
+
+    /* 後台數據面板 (Stats Grid) */
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 40px; }
+    .stat-card { background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); padding: 24px 20px; text-align: center; transition: 0.3s; }
+    .stat-card:hover { background: rgba(255,255,255,0.02); }
+    .stat-value { font-size: 28px; font-weight: 300; color: var(--text-main); font-family: 'Montserrat', sans-serif; margin-bottom: 8px; }
+    .stat-label { font-size: 11px; color: var(--text-muted); font-weight: 500; letter-spacing: 2px; text-transform: uppercase;}
+    
+    /* 後台篩選按鈕 */
+    .filter-group { display: flex; gap: 12px; margin-bottom: 24px; }
+    .btn-filter { background: transparent; border: 1px solid var(--border-color); padding: 10px 20px; cursor: pointer; font-size: 12px; font-weight: 500; color: var(--text-muted); transition: 0.3s; letter-spacing: 2px; text-transform: uppercase; }
+    .btn-filter:hover { border-color: var(--text-main); color: var(--text-main); }
+    .btn-filter.active { background: var(--text-main); color: var(--bg-body); border-color: var(--text-main); }
 
     /* 後台表格 */
     .admin-table { width: 100%; border-collapse: collapse; font-size: 14px; text-align: left; }
-    .admin-table th { padding: 16px; border-bottom: 2px solid var(--border-color); color: var(--text-muted); font-weight: 500; white-space: nowrap;}
-    .admin-table td { padding: 16px; border-bottom: 1px solid var(--border-color); }
+    .admin-table th { padding: 20px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: var(--text-muted); font-weight: 500; white-space: nowrap; font-size: 12px; letter-spacing: 2px; text-transform: uppercase;}
+    .admin-table td { padding: 20px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-main); }
 
     /* 規範公告彈窗 */
-    .modal-overlay {
-      position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(5px);
-      display: none; justify-content: center; align-items: center; z-index: 1000; padding: 20px;
-    }
-    .modal-content {
-      background: var(--rule-bg); width: 100%; max-width: 840px; height: 90vh; overflow-y: auto; border-radius: 0; position: relative;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-    }
-    .modal-close {
-      position: sticky; top: 16px; left: calc(100% - 56px); margin-bottom: -40px; z-index: 99;
-      background: #FFF; border: 1px solid #E5E7EB; width: 40px; height: 40px; border-radius: 0; 
-      font-size: 24px; line-height: 1; cursor: pointer; color: #6B7280; 
-      display: flex; justify-content: center; align-items: center; transition: 0.3s;
-    }
-    .modal-close:hover { color: #111; background: #F3F4F6; }
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); display: none; justify-content: center; align-items: center; z-index: 1000; padding: 20px; }
+    .modal-content { background: var(--rule-bg); width: 100%; max-width: 840px; height: 90vh; overflow-y: auto; border-radius: 0; position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.8); border: 1px solid var(--border-color); }
+    .modal-close { position: sticky; top: 16px; left: calc(100% - 56px); margin-bottom: -40px; z-index: 99; background: var(--bg-card); border: 1px solid var(--border-color); width: 40px; height: 40px; border-radius: 0; font-size: 24px; line-height: 1; cursor: pointer; color: var(--text-muted); display: flex; justify-content: center; align-items: center; transition: 0.4s; }
+    .modal-close:hover { color: #FFF; background: rgba(255,255,255,0.1); border-color: #FFF; }
 
-    .rules-wrap { padding: 0 20px 40px; font-family: "Noto Serif TC", "PMingLiU", serif; color: var(--rule-text); line-height: 1.7; }
-    .rules-wrap .freeze-pane {
-      position: sticky; top: 0; z-index: 90; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border-color); padding: 20px; text-align: center; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); margin: 0 -20px 32px;
-    }
-    .rules-wrap .main-title { font-size: 22px; font-weight: 900; letter-spacing: 2px; color: #111827; margin-bottom: 4px; }
-    .rules-wrap .sub-title { font-size: 14px; color: var(--text-muted); letter-spacing: 1px; }
-    .rules-wrap .intro { font-size: 15px; color: var(--text-muted); text-align: center; margin-bottom: 40px; line-height: 1.8; }
+    .rules-wrap { padding: 0 40px 60px; font-family: "Noto Serif TC", "PMingLiU", serif; color: var(--rule-text); line-height: 1.8; }
+    .rules-wrap .freeze-pane { position: sticky; top: 0; z-index: 90; background: rgba(10, 19, 26, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); padding: 24px 20px; text-align: center; margin: 0 -40px 40px; }
+    .rules-wrap .main-title { font-size: 22px; font-weight: 600; letter-spacing: 4px; color: var(--text-main); }
+    .rules-wrap .intro { font-size: 14px; color: var(--text-muted); text-align: center; margin-bottom: 48px; line-height: 2; letter-spacing: 2px; }
     
-    .rules-wrap .rule-card { background: var(--rule-card); border: 1px solid var(--border-color); border-radius: 0; padding: 28px 32px; margin-bottom: 24px; }
-    .rules-wrap .section-title { font-size: 18px; font-weight: 900; color: var(--rule-gold); margin: 0 0 20px 0; padding-bottom: 12px; border-bottom: 1px solid var(--rule-gold-light); letter-spacing: 1px; }
-    .rules-wrap .item-title { font-size: 16px; font-weight: 900; color: #111827; margin: 20px 0 8px 0; }
+    .rules-wrap .rule-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 0; padding: 40px; margin-bottom: 32px; transition: 0.3s; }
+    .rules-wrap .rule-card:hover { border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.03); }
+    .rules-wrap .section-title { font-size: 16px; font-weight: 600; color: var(--rule-gold); margin: 0 0 24px 0; padding-bottom: 16px; border-bottom: 1px solid var(--rule-gold-light); letter-spacing: 3px; text-transform: uppercase; }
+    .rules-wrap .item-title { font-size: 16px; font-weight: 600; color: var(--text-main); margin: 24px 0 12px 0; letter-spacing: 1px; }
     .rules-wrap .item-title:first-child { margin-top: 0; }
-    .rules-wrap p { margin: 0 0 12px 0; font-size: 15px; color: var(--rule-text); }
-    .rules-wrap ul { list-style: none; padding: 0; margin: 0 0 16px 0; }
-    .rules-wrap ul li { position: relative; padding-left: 20px; margin-bottom: 8px; font-size: 15px; color: var(--rule-text); }
-    .rules-wrap ul li::before { content: "◆"; position: absolute; left: 0; top: 1px; font-size: 12px; color: var(--rule-gold); opacity: 0.8; }
-    
-    .rules-wrap .highlight { color: var(--rule-highlight); font-family: sans-serif; font-weight: bold; letter-spacing: 0.5px; }
-    .rules-wrap .price-tag { display: inline-block; background: rgba(5, 150, 105, 0.08); border: 1px solid rgba(5, 150, 105, 0.2); color: var(--rule-highlight); padding: 2px 8px; border-radius: 0; font-family: sans-serif; font-weight: bold; font-size: 14px; margin: 2px 0; }
-    .rules-wrap .danger-text { color: var(--danger); font-weight: 600; }
-    .rules-wrap .price-table { margin-top: 16px; border: 1px solid var(--border-color); border-radius: 0; overflow: hidden; }
-    .rules-wrap .pt-row { display: flex; justify-content: space-between; padding: 12px 20px; border-bottom: 1px solid var(--border-color); }
+    .rules-wrap p { margin: 0 0 16px 0; font-size: 14px; color: var(--rule-text); font-family: 'Noto Sans TC', sans-serif; font-weight: 300; }
+    .rules-wrap ul { list-style: none; padding: 0; margin: 0 0 24px 0; }
+    .rules-wrap ul li { position: relative; padding-left: 24px; margin-bottom: 12px; font-size: 14px; color: var(--rule-text); font-family: 'Noto Sans TC', sans-serif; font-weight: 300; }
+    .rules-wrap ul li::before { content: "◆"; position: absolute; left: 0; top: 1px; font-size: 10px; color: var(--luxury-teal); opacity: 0.8; }
+    .rules-wrap .highlight { color: var(--rule-highlight); font-family: 'Montserrat', sans-serif; font-weight: 400; letter-spacing: 1px; }
+    .rules-wrap .price-tag { display: inline-block; background: rgba(138, 197, 203, 0.1); border: 1px solid rgba(138, 197, 203, 0.3); color: var(--rule-highlight); padding: 4px 12px; border-radius: 0; font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 14px; margin: 4px 0; letter-spacing: 1px; }
+    .rules-wrap .danger-text { color: var(--danger); font-weight: 500; }
+    .rules-wrap .price-table { margin-top: 24px; border: 1px solid var(--border-color); border-radius: 0; overflow: hidden; background: rgba(0,0,0,0.2); }
+    .rules-wrap .pt-row { display: flex; justify-content: space-between; padding: 16px 24px; border-bottom: 1px solid var(--border-color); font-family: 'Noto Sans TC', sans-serif; font-size: 14px; font-weight: 300; }
     .rules-wrap .pt-row:last-child { border-bottom: none; }
-    .rules-wrap .pt-header { background: #F9FAFB; font-weight: 900; color: #111827; }
-    .rules-wrap .pt-val { font-family: sans-serif; color: var(--rule-highlight); font-weight: bold; }
+    .rules-wrap .pt-header { background: rgba(255,255,255,0.05); font-weight: 500; color: var(--text-main); letter-spacing: 2px; }
+    .rules-wrap .pt-val { font-family: 'Montserrat', sans-serif; color: var(--rule-highlight); font-weight: 400; letter-spacing: 1px; }
 
     @media(max-width: 600px) {
-      .nav-container { flex-direction: column; gap: 12px; padding: 12px 20px; }
-      .btn-open-rules { align-self: stretch; text-align: center; padding: 10px; }
-      .main-card { padding: 32px 20px 0 20px; }
-      .checkout-wrapper { margin: 40px -20px 0 -20px; padding: 32px 20px; }
-      .qr-banner { flex-direction: column; text-align: center; padding: 24px; }
+      .nav-container { flex-direction: column; gap: 16px; padding: 16px 20px; }
+      .tabs { gap: 20px; }
+      .tab-btn { padding: 12px 0; }
+      .btn-open-rules { align-self: stretch; text-align: center; padding: 12px; }
+      .main-card { padding: 40px 24px 0 24px; }
+      .checkout-wrapper { margin: 48px -24px 0 -24px; padding: 40px 24px; }
+      .qr-banner { flex-direction: column; text-align: center; padding: 32px 24px; }
       .form-row { flex-direction: column; gap: 0; }
-      .form-row .form-group { margin-bottom: 24px; width: 100%; }
-      .total-box { flex-direction: column; align-items: flex-start; gap: 16px;}
+      .form-row .form-group { margin-bottom: 32px; width: 100%; }
+      .total-box { flex-direction: column; align-items: flex-start; gap: 24px;}
+      .stats-grid { grid-template-columns: 1fr 1fr; } 
+      
+      .checkbox-label input { width: 15px; height: 15px; margin-top: 5px; }
+      
       .modal-overlay { padding: 0; } 
-      .modal-content { height: 100vh; }
+      .modal-content { height: 100vh; border: none; }
       .modal-close { top: 12px; left: calc(100% - 52px); }
-      .rules-wrap { padding: 0 14px 40px; }
-      .rules-wrap .freeze-pane { padding: 16px; margin: 0 -14px 24px; }
+      .rules-wrap { padding: 0 20px 40px; }
+      .rules-wrap .freeze-pane { padding: 20px; margin: 0 -20px 32px; }
       .rules-wrap .main-title { font-size: 18px; }
-      .rules-wrap .rule-card { padding: 24px 20px; }
+      .rules-wrap .rule-card { padding: 28px 20px; }
     }
   </style>
 </head>
@@ -291,16 +272,16 @@
     <div id="tab-create" class="view-section active">
       
       <div class="qr-banner">
-        <img src="https://via.placeholder.com/150?text=QR+Code" alt="QR Code">
+        <img src="https://via.placeholder.com/150/050B10/FFFFFF?text=QR+Code" alt="QR Code">
         <div class="qr-info">
-          <div class="bank">國泰世華銀行 (013) 西門分行｜吉拾行樂有限公司</div>
-          <div class="acc">056035007402</div>
+          <div class="bank">連線商業銀行 (824) 總行 6880</div>
+          <div class="acc">111009917651</div>
         </div>
       </div>
 
       <div class="main-card">
         <div class="card-title">報名資料填寫</div>
-        <form id="createForm" onsubmit="submitForm(event)">
+        <form id="createForm" onsubmit="submitForm(event, 'main')">
           
           <div class="form-group">
             <label>聯絡電話(必填)</label>
@@ -326,15 +307,15 @@
             </select>
           </div>
           
-          <div class="form-group" style="background: var(--bg-body); padding: 20px; margin-bottom: 32px; border: 1px solid var(--border-color);">
-            <label style="color: var(--text-main); margin-bottom: 12px; font-weight: 600;">必填確認項目</label>
+          <div class="form-group" style="background: rgba(0,0,0,0.2); padding: 24px; margin-bottom: 40px; border: 1px solid var(--border-color);">
+            <label style="color: var(--text-main); margin-bottom: 16px; font-weight: 500; font-size: 13px;">必填確認項目</label>
             <label class="checkbox-label">
               <input type="checkbox" required>
               <span>入場費(暢飲) NT.<span class="highlight-time">800元</span></span>
             </label>
             <label class="checkbox-label">
               <input type="checkbox" required>
-              <span>我知道遊覽車上車時間為 <span class="highlight-time">11:45</span>，逾時不候。</span>
+              <span>我知道遊覽車上車時間為 <span class="highlight-time">11:45</span>。</span>
             </label>
             <label class="checkbox-label">
               <input type="checkbox" required>
@@ -344,11 +325,11 @@
 
           <div class="form-group">
             <label>攜伴朋友</label>
-            <div id="companions-container"></div>
-            <button type="button" class="btn-outline" onclick="addCompanion()">＋ 增加攜伴人數</button>
+            <div id="main-companions-container"></div>
+            <button type="button" class="btn-outline" onclick="addCompanion('main')">＋ 增加攜伴人數</button>
           </div>
 
-          <div class="card-title" style="margin-top: 56px; font-size: 18px;">備註</div>
+          <div class="card-title" style="margin-top: 64px; font-size: 16px;">備註</div>
           
           <div class="form-row">
             <div class="form-group">
@@ -360,17 +341,17 @@
               <input type="text" id="mainAccount5" maxlength="5" pattern="\d{5}" title="請輸入5位數字">
             </div>
           </div>
-          <div class="form-group" style="margin-top: 24px;">
+          <div class="form-group" style="margin-top: 32px;">
             <label>我聽!你說說看~</label>
             <textarea rows="3" id="mainNotes"></textarea>
           </div>
 
           <div class="checkout-wrapper">
             <div class="total-box">
-              <div class="total-detail" id="calcDetail">入場費: $800<br>接駁費: $0</div>
+              <div class="total-detail" id="mainCalcDetail">入場費: $800<br>接駁費: $0</div>
               <div style="text-align: right;">
-                <div style="font-size:12px; color:var(--text-muted); font-weight:500; letter-spacing:1px;">總結帳金額</div>
-                <div class="total-price" id="totalPrice">NT$ 800</div>
+                <div style="font-size:11px; color:var(--text-muted); font-weight:500; letter-spacing:2px; text-transform:uppercase;">總結帳金額</div>
+                <div class="total-price" id="mainTotalPrice">NT$ 800</div>
               </div>
             </div>
             <button type="submit" class="btn-submit">送出報名</button>
@@ -389,28 +370,116 @@
             <input type="tel" id="searchPhone">
           </div>
           <div class="form-group" style="flex: 1;">
-            <button type="button" class="btn-submit" style="margin-top:0; padding:13px;" onclick="mockSearch()">查詢資料</button>
+            <button type="button" class="btn-submit" style="margin-top:0; padding:16px; background:var(--text-main); color:var(--bg-body)!important;" onclick="fetchDataForEdit(event)">查詢資料</button>
           </div>
         </div>
       </div>
       
-      <div id="editFormArea" class="main-card" style="display:none; padding-bottom: 0; border: 1px solid var(--text-main);">
-        <p style="color:var(--text-main); font-weight:600; margin-top:0;">已載入您的資料，請切換至「填寫報名」重新填寫送出即可覆蓋舊紀錄。</p>
+      <div id="editFormArea" class="main-card" style="display:none; padding-bottom: 0; border: 1px solid var(--luxury-teal);">
+        <p style="color:var(--luxury-teal); font-weight:500; margin-top:0; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; font-size:13px; letter-spacing:1px;">已載入您的資料，請直接修改下方欄位後重新送出覆蓋。</p>
+        
+        <form id="editForm" onsubmit="submitForm(event, 'edit')" style="margin-top: 32px;">
+          <div class="form-group">
+            <label>聯絡電話 (查詢憑證，不可修改)</label>
+            <!-- 配合 Dark Mode 修改背景色與文字色 -->
+            <input type="tel" id="editPhone" readonly style="background: rgba(255,255,255,0.05); color: #6B7280; border-color: transparent;">
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label>真實姓名</label>
+              <input type="text" id="editName" required>
+            </div>
+            <div class="form-group">
+              <label>IG 帳號</label>
+              <input type="text" id="editIg" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>交通接駁需求</label>
+            <select id="editShuttle" onchange="calcTotal('edit')">
+              <option value="0">自行前往</option>
+              <option value="400">需要遊覽車接駁 ($400)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>攜伴朋友</label>
+            <div id="edit-companions-container"></div>
+            <button type="button" class="btn-outline" onclick="addCompanion('edit')">＋ 增加攜伴人數</button>
+          </div>
+
+          <div class="card-title" style="margin-top: 56px; font-size: 16px;">備註</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>匯款日期</label>
+              <input type="date" id="editTransferDate">
+            </div>
+            <div class="form-group">
+              <label>帳號後五碼</label>
+              <input type="text" id="editAccount5" maxlength="5" pattern="\d{5}">
+            </div>
+          </div>
+          <div class="form-group" style="margin-top: 32px;">
+            <label>我聽!你說說看~</label>
+            <textarea rows="3" id="editNotes"></textarea>
+          </div>
+
+          <div class="checkout-wrapper">
+            <div class="total-box">
+              <div class="total-detail" id="editCalcDetail">入場費: $800<br>接駁費: $0</div>
+              <div style="text-align: right;">
+                <div style="font-size:11px; color:var(--text-muted); font-weight:500; letter-spacing:2px; text-transform:uppercase;">總結帳金額</div>
+                <div class="total-price" id="editTotalPrice">NT$ 800</div>
+              </div>
+            </div>
+            <button type="submit" class="btn-submit">儲存修改並送出</button>
+          </div>
+        </form>
       </div>
     </div>
 
     <div id="tab-admin" class="view-section">
-      <div class="main-card" id="adminLoginArea" style="text-align:center; padding: 60px 20px; padding-bottom: 60px;">
-        <h2 style="margin-top:0; font-family:'Playfair Display', serif; font-weight:400; letter-spacing:2px;">ADMIN ACCESS</h2>
-        <p style="color:var(--text-muted); margin-bottom:32px; font-size:14px; letter-spacing:1px;">請輸入主辦單位專屬密碼</p>
-        <input type="password" id="adminPwd" class="form-group" style="width:100%; max-width:280px; padding:16px; border:1px solid var(--border-color); text-align:center; display:block; margin:0 auto 24px; border-radius:0;">
-        <div style="max-width: 280px; margin: 0 auto;">
-          <button type="button" class="btn-submit" style="margin-top:0;" onclick="checkAdminPwd()">登入查看</button>
+      <div class="main-card" id="adminLoginArea" style="text-align:center; padding: 80px 40px; padding-bottom: 80px;">
+        <h2 style="margin-top:0; font-family:'Playfair Display', serif; font-weight:400; letter-spacing:4px; font-size: 24px; color: var(--luxury-gold);">ADMIN ACCESS</h2>
+        <p style="color:var(--text-muted); margin-bottom:40px; font-size:12px; letter-spacing:2px; text-transform: uppercase;">請輸入主辦單位專屬密碼</p>
+        <input type="password" id="adminPwd" class="form-group" style="width:100%; max-width:320px; padding:18px; border:1px solid var(--border-color); text-align:center; display:block; margin:0 auto 32px; border-radius:0; letter-spacing: 4px;">
+        <div style="max-width: 320px; margin: 0 auto;">
+          <button type="button" class="btn-submit" style="margin-top:0;" onclick="loadAdminDashboard(event)">登入查看</button>
         </div>
       </div>
       
-      <div class="main-card" id="adminTableArea" style="display:none; overflow-x: auto; padding-bottom: 48px;">
-        <div class="card-title">報名清單總覽</div>
+      <div class="main-card" id="adminTableArea" style="display:none; overflow-x: auto; padding: 48px 48px 64px 48px;">
+        <div class="card-title">主辦單位儀表板</div>
+        
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="stat-total-groups">0</div>
+            <div class="stat-label">總報名組數</div>
+          </div>
+          <div class="stat-card" style="border-bottom: 2px solid #34D399;">
+            <div class="stat-value" id="stat-paid-groups" style="color: #34D399;">0</div>
+            <div class="stat-label">已繳費組數</div>
+          </div>
+          <div class="stat-card" style="border-bottom: 2px solid #F87171;">
+            <div class="stat-value" id="stat-unpaid-groups" style="color: #F87171;">0</div>
+            <div class="stat-label">未繳費組數</div>
+          </div>
+          <div class="stat-card" style="background: rgba(138, 197, 203, 0.1); border-color: rgba(138, 197, 203, 0.3);">
+            <div class="stat-value" id="stat-revenue" style="color: var(--luxury-teal);">$0</div>
+            <div class="stat-label" style="color: var(--text-main);">總預期金額</div>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+          <div class="filter-group">
+            <button class="btn-filter active" onclick="filterAdminTable('all', this)">全部名單</button>
+            <button class="btn-filter" onclick="filterAdminTable('unpaid', this)">未繳款清單</button>
+            <button class="btn-filter" onclick="filterAdminTable('paid', this)">已繳款清單</button>
+          </div>
+        </div>
+
         <table class="admin-table">
           <thead>
             <tr>
@@ -421,7 +490,7 @@
               <th>狀態</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="adminTbody">
             </tbody>
         </table>
       </div>
@@ -435,8 +504,7 @@
       
       <div class="rules-wrap">
         <div class="freeze-pane">
-          <div class="main-title">無心戒酒互助會</div>
-          <div class="sub-title">包場活動須知暨場地使用規範</div>
+          <div class="main-title">包場活動須知暨場地使用規範</div>
         </div>
 
         <div class="intro">
@@ -452,7 +520,7 @@
           <div class="item-title">最低消費人數</div>
           <p>本次包場活動最低消費以 <span class="highlight">60人</span> 計算。</p>
           <ul>
-            <li>未滿60人，仍以60人計費。</li>
+            <li>未滿60人，仍以60人計費.</li>
             <li>超過60人則依實際入場人數計算。</li>
             <li>本活動不設入場人數上限，但仍須遵守場地安全規範及現場工作人員管理。</li>
           </ul>
@@ -472,37 +540,24 @@
           </ul>
           <div class="item-title">保證金扣抵項目</div>
           <p>活動結束後，如有以下情形，場地方得自保證金中扣除相關費用：</p>
-          <ul>
-            <li>設備損壞或遺失</li>
-            <li>場地設施毀損</li>
-            <li>額外清潔費</li>
-            <li>垃圾清運費</li>
-            <li>浴池區設備損害</li>
-            <li>其他因活動產生之損失或費用</li>
-          </ul>
+          <ul><li>設備損壞或遺失</li><li>場地設施毀損</li><li>額外清潔費</li><li>垃圾清運費</li><li>浴池區設備損害</li><li>其他因活動產生之損失或費用</li></ul>
           <p>如實際損失超過保證金金額，承租人仍應補足差額。</p>
         </div>
 
-        <div class="rule-card" style="box-shadow: 0 0 20px rgba(139, 105, 20, 0.06); border: 1px solid rgba(139, 105, 20, 0.2);">
+        <div class="rule-card" style="box-shadow: 0 0 30px rgba(212, 175, 55, 0.05); border: 1px solid rgba(212, 175, 55, 0.2);">
           <div class="section-title">三、匯款資訊</div>
           <ul>
-            <li>銀行名稱：國泰世華銀行</li>
-            <li>分行名稱：西門分行</li>
-            <li>帳戶名稱：吉拾行樂有限公司</li>
-            <li>匯款帳號：<span class="highlight" style="font-size: 16px;">056035007402</span></li>
+            <li>銀行名稱：連線商業銀行（824）</li>
+            <li>總行代碼：6880</li>
+            <li>匯款帳號：<span class="highlight" style="font-size: 18px; color: var(--luxury-gold);">111009917651</span></li>
           </ul>
-          <p style="color: var(--rule-gold); font-weight: 600; margin-top: 16px;">請於匯款完成後提供帳號後五碼或匯款證明，以利核對款項。</p>
+          <p style="color: var(--rule-gold); font-weight: 500; margin-top: 24px;">請於匯款完成後提供帳號後五碼或匯款證明，以利核對款項。</p>
         </div>
 
         <div class="rule-card">
           <div class="section-title">四、違禁品管理</div>
           <p>本場地<span class="danger-text">全面禁止</span>攜帶、持有、使用、販售或散布：</p>
-          <ul>
-            <li>違禁藥品</li>
-            <li>管制物品</li>
-            <li>危險物品</li>
-            <li>其他違法物品</li>
-          </ul>
+          <ul><li>違禁藥品</li><li>管制物品</li><li>危險物品</li><li>其他違法物品</li></ul>
           <p>如發現違法情事，現場有權立即請相關人員離場，並視情況通報警方處理。<br>因個人違法行為所衍生之一切法律責任，均由當事人自行負責。</p>
         </div>
 
@@ -518,23 +573,11 @@
           <p>活動期間請愛惜場地設備及設施。</p>
           <p>如因個人或同行賓客行為造成任何設備、設施、裝潢或空間損壞，應負修復責任或照價賠償。<br>包含但不限於：</p>
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; margin-bottom: 16px;">
-            <ul style="margin: 0;">
-              <li>DJ設備</li>
-              <li>音響設備</li>
-              <li>電腦及軟硬體設備</li>
-              <li>桌椅家具</li>
-            </ul>
-            <ul style="margin: 0;">
-              <li>店內裝潢</li>
-              <li>浴池設備</li>
-              <li>廁所設備</li>
-              <li>監視器設備</li>
-            </ul>
+            <ul style="margin: 0;"><li>DJ設備</li><li>音響設備</li><li>電腦及軟硬體設備</li><li>桌椅家具</li></ul>
+            <ul style="margin: 0;"><li>店內裝潢</li><li>浴池設備</li><li>廁所設備</li><li>監視器設備</li></ul>
           </div>
-          <ul>
-            <li>其他場地設施</li>
-          </ul>
-          <p style="color: var(--rule-gold); font-weight: 600; margin-top: 16px;">承租人應協助管理同行賓客，並對同行賓客造成之損害負連帶責任。</p>
+          <ul><li>其他場地設施</li></ul>
+          <p style="color: var(--rule-gold); font-weight: 500; margin-top: 24px;">承租人應協助管理同行賓客，並對同行賓客造成之損害負連帶責任。</p>
         </div>
 
         <div class="rule-card">
@@ -552,45 +595,21 @@
           <div class="section-title">八、浴池區設備賠償標準</div>
           <p>使用期間請愛惜設備。<br>如因人為因素造成設備或設施損壞，應負修復責任或照價賠償。<br>主要設備價值如下：</p>
           <div class="price-table">
-            <div class="pt-row pt-header">
-              <div>設備名稱</div>
-              <div>設備價值</div>
-            </div>
-            <div class="pt-row">
-              <div>淋浴設備</div>
-              <div class="pt-val">NT$98,000</div>
-            </div>
-            <div class="pt-row">
-              <div>浴池設備</div>
-              <div class="pt-val">NT$800,000</div>
-            </div>
-            <div class="pt-row">
-              <div>烤箱設備</div>
-              <div class="pt-val">NT$280,000</div>
-            </div>
+            <div class="pt-row pt-header"><div>設備名稱</div><div>設備價值</div></div>
+            <div class="pt-row"><div>淋浴設備</div><div class="pt-val">NT$98,000</div></div>
+            <div class="pt-row"><div>浴池設備</div><div class="pt-val">NT$800,000</div></div>
+            <div class="pt-row"><div>烤箱設備</div><div class="pt-val">NT$280,000</div></div>
           </div>
         </div>
 
         <div class="rule-card">
           <div class="section-title">九、場地方終止權</div>
           <p>如有下列情形之一，場地方有權立即終止活動並要求相關人員離場：</p>
-          <ul>
-            <li>持有或使用違禁品</li>
-            <li>打架鬥毆</li>
-            <li>危害公共安全</li>
-            <li>蓄意破壞設備</li>
-            <li>嚴重影響其他客人或鄰近環境</li>
-            <li>拒絕配合工作人員管理</li>
-          </ul>
+          <ul><li>持有或使用違禁品</li><li>打架鬥毆</li><li>危害公共安全</li><li>蓄意破壞設備</li><li>嚴重影響其他客人或鄰近環境</li><li>拒絕配合工作人員管理</li></ul>
           <p>相關費用恕不退還。</p>
-          <div class="item-title" style="margin-top: 32px;">監視錄影公告</div>
+          <div class="item-title" style="margin-top: 40px;">監視錄影公告</div>
           <p>為維護場地安全、設備管理、活動秩序及保障參與者權益，本場地設有監視錄影設備。<br>本場地公共區域及浴池 VIP 區均有錄影監控系統運作中。<br>錄影資料僅供下列用途使用：</p>
-          <ul>
-            <li>場地安全管理</li>
-            <li>設備損害認定</li>
-            <li>糾紛處理</li>
-            <li>配合警方或主管機關依法調查</li>
-          </ul>
+          <ul><li>場地安全管理</li><li>設備損害認定</li><li>糾紛處理</li><li>配合警方或主管機關依法調查</li></ul>
           <p>不另作其他用途。<br>進入本場地即視為知悉並同意於公共空間範圍內接受錄影紀錄。</p>
         </div>
       </div>
@@ -598,20 +617,15 @@
   </div>
 
   <script>
-    // ==========================================
-    // Fetch API URL 
-    // ==========================================
     const GAS_URL = "https://script.google.com/macros/s/AKfycbwVL5tggzYX-BoHT88uRUKEo4OFdFuuQ1y5E3ILOtIY4NYXYUk_kRHoj4A3YZX2jm-W/exec";
+    
+    let adminGlobalData = []; 
 
-    // ----------------------------------------------------------------
-    // 1. 介面互動與頁籤邏輯
-    // ----------------------------------------------------------------
     function switchTab(tabId) {
       document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
       document.getElementById('tab-' + tabId).classList.add('active');
       event.currentTarget.classList.add('active');
-      
       window.scrollTo({ top: document.querySelector('.luxury-hero-banner').offsetHeight, behavior: 'smooth' });
     }
 
@@ -620,34 +634,31 @@
       document.body.style.overflow = show ? 'hidden' : 'auto'; 
     }
 
-    // ----------------------------------------------------------------
-    // 2. 攜伴系統與動態金額計算
-    // ----------------------------------------------------------------
-    let compCount = 0;
+    let compCounters = { main: 0, edit: 0 };
     
-    function addCompanion() {
-      compCount++;
-      const container = document.getElementById('companions-container');
+    function addCompanion(type) {
+      compCounters[type]++;
+      const container = document.getElementById(`${type}-companions-container`);
       const div = document.createElement('div');
       div.className = 'companion-box';
-      div.id = `comp-${compCount}`;
+      div.id = `comp-${type}-${compCounters[type]}`;
       div.innerHTML = `
-        <button type="button" class="btn-remove" onclick="removeComp(${compCount})">✕ 移除</button>
-        <div class="form-group" style="margin-bottom:16px;">
+        <button type="button" class="btn-remove" onclick="removeComp('${type}', ${compCounters[type]})">✕ 移除</button>
+        <div class="form-group" style="margin-bottom:24px;">
           <label>朋友姓名</label>
           <input type="text" class="c-name" required>
         </div>
         <div class="form-row">
           <div class="form-group">
             <label>交通接駁</label>
-            <select class="c-shuttle" onchange="calcTotal()">
+            <select class="c-shuttle" onchange="calcTotal('${type}')">
               <option value="0">自行前往</option>
               <option value="400">需要遊覽車接駁 ($400)</option>
             </select>
           </div>
           <div class="form-group">
             <label>費用支付</label>
-            <select class="c-pay" onchange="calcTotal()">
+            <select class="c-pay" onchange="calcTotal('${type}')">
               <option value="merged">合併結帳 (算在總金額)</option>
               <option value="split">各自繳費 (朋友自行匯款)</option>
             </select>
@@ -655,23 +666,23 @@
         </div>
       `;
       container.appendChild(div);
-      calcTotal();
+      calcTotal(type);
     }
 
-    function removeComp(id) {
-      const el = document.getElementById(`comp-${id}`);
-      if(el) { el.remove(); calcTotal(); }
+    function removeComp(type, id) {
+      const el = document.getElementById(`comp-${type}-${id}`);
+      if(el) { el.remove(); calcTotal(type); }
     }
 
-    function calcTotal() {
+    function calcTotal(type = 'main') {
       const BASE_FEE = 800;
       let total = BASE_FEE;
-      let mShuttle = parseInt(document.getElementById('mainShuttle').value) || 0;
+      let mShuttle = parseInt(document.getElementById(`${type}Shuttle`).value) || 0;
       
       let detailHtml = `入場費: $${BASE_FEE}<br>接駁費: $${mShuttle}<br>`;
       total += mShuttle;
 
-      document.querySelectorAll('.companion-box').forEach((box, index) => {
+      document.getElementById(`${type}-companions-container`).querySelectorAll('.companion-box').forEach((box, index) => {
         let cShuttle = parseInt(box.querySelector('.c-shuttle').value) || 0;
         let cPay = box.querySelector('.c-pay').value;
         let cCost = BASE_FEE + cShuttle;
@@ -680,27 +691,25 @@
           total += cCost;
           detailHtml += `朋友 ${index+1} (合併): $${cCost}<br>`;
         } else {
-          detailHtml += `朋友 ${index+1} (自付): $${cCost} <span style="color:#EF4444; font-size:12px; letter-spacing:1px;">(不計入總額)</span><br>`;
+          detailHtml += `朋友 ${index+1} (自付): $${cCost} <span style="color:#F87171; font-size:11px; letter-spacing:1px;">(不計入總額)</span><br>`;
         }
       });
 
-      document.getElementById('calcDetail').innerHTML = detailHtml;
-      document.getElementById('totalPrice').innerText = `NT$ ${total}`;
+      document.getElementById(`${type}CalcDetail`).innerHTML = detailHtml;
+      document.getElementById(`${type}TotalPrice`).innerText = `NT$ ${total}`;
       return total;
     }
 
-    // ----------------------------------------------------------------
-    // 3. 後端 Fetch API 串接邏輯
-    // ----------------------------------------------------------------
-    function submitForm(e) {
+    function submitForm(e, type) {
       e.preventDefault();
       const btn = e.target.querySelector('button[type="submit"]');
       const originalText = btn.innerText;
-      btn.innerText = '處理中，請稍候...';
+      
+      btn.innerHTML = '<span class="spinner"></span> 處理中...';
       btn.disabled = true;
 
       const companions = [];
-      document.querySelectorAll('.companion-box').forEach(box => {
+      document.getElementById(`${type}-companions-container`).querySelectorAll('.companion-box').forEach(box => {
         companions.push({
           name: box.querySelector('.c-name').value,
           shuttle: box.querySelector('.c-shuttle').value,
@@ -710,15 +719,15 @@
 
       const payload = {
         action: 'submit',
-        phone: document.getElementById('mainPhone').value,
-        name: document.getElementById('mainName').value,
-        ig: document.getElementById('mainIg').value,
-        shuttle: document.getElementById('mainShuttle').value,
+        phone: "'" + document.getElementById(`${type}Phone`).value,
+        name: document.getElementById(`${type}Name`).value,
+        ig: document.getElementById(`${type}Ig`).value,
+        shuttle: document.getElementById(`${type}Shuttle`).value,
         companions: companions,
-        transferDate: document.getElementById('mainTransferDate').value,
-        account5: document.getElementById('mainAccount5').value,
-        notes: document.getElementById('mainNotes').value,
-        total: calcTotal()
+        transferDate: document.getElementById(`${type}TransferDate`).value,
+        account5: document.getElementById(`${type}Account5`).value,
+        notes: document.getElementById(`${type}Notes`).value,
+        total: calcTotal(type)
       };
 
       fetch(GAS_URL, {
@@ -729,30 +738,33 @@
       .then(res => res.json())
       .then(data => {
         if(data.status === 'success') {
-          alert('✅ 報名資料已成功送出！\n\n(您的資料已安全寫入資料庫，請記得完成匯款作業)');
-          e.target.reset(); 
-          document.getElementById('companions-container').innerHTML = ''; 
-          calcTotal(); 
+          alert('✅ 報名資料已成功處理！\n\n(您的資料已安全寫入資料庫，請記得完成匯款作業)');
+          if(type === 'main') {
+            e.target.reset(); 
+            document.getElementById('main-companions-container').innerHTML = ''; 
+            calcTotal('main'); 
+          } else {
+            document.getElementById('editFormArea').style.display = 'none';
+          }
         } else {
           alert('❌ 發生錯誤：' + data.message);
         }
       })
-      .catch(err => {
-        alert('連線失敗，請檢查網路狀態。');
-      })
+      .catch(err => { alert('連線失敗，請檢查網路狀態。'); })
       .finally(() => {
-        btn.innerText = originalText;
+        btn.innerHTML = originalText;
         btn.disabled = false;
       });
     }
 
-    function mockSearch() {
+    function fetchDataForEdit(e) {
       const phone = document.getElementById('searchPhone').value;
-      if(!phone) return alert('請先輸入電話');
+      if(!phone) return alert('請先輸入查詢電話');
       
-      const btn = event.target;
-      const originText = btn.innerText;
-      btn.innerText = '搜尋中...';
+      const btn = e.target;
+      const originalText = btn.innerText;
+      btn.innerHTML = '<span class="spinner"></span> 查詢中...';
+      btn.disabled = true;
 
       fetch(GAS_URL, {
         method: 'POST',
@@ -762,28 +774,57 @@
       .then(res => res.json())
       .then(res => {
         if(res.status === 'success') {
+          document.getElementById('editPhone').value = res.data.phone;
+          document.getElementById('editName').value = res.data.name;
+          document.getElementById('editIg').value = res.data.ig;
+          document.getElementById('editShuttle').value = res.data.shuttle === '需要接駁' ? '400' : '0';
+          
+          let tDate = res.data.transferDate;
+          if (tDate && tDate.length > 10 && tDate.includes('GMT')) {
+            let d = new Date(tDate);
+            tDate = `${d.getFullYear()}-${(d.getMonth()+1).toString().padStart(2,'0')}-${d.getDate().toString().padStart(2,'0')}`;
+          }
+          document.getElementById('editTransferDate').value = tDate || '';
+          document.getElementById('editAccount5').value = res.data.account5 || '';
+          document.getElementById('editNotes').value = res.data.notes || '';
+
+          document.getElementById('edit-companions-container').innerHTML = '';
+          compCounters['edit'] = 0;
+          if(res.data.compDetails && res.data.compDetails !== "無攜伴") {
+            let lines = res.data.compDetails.split('\n');
+            lines.forEach(line => {
+              let match = line.match(/朋友\d+:\s+(.*?)\s+\((.*?),\s+(.*?)\)/);
+              if(match) {
+                addCompanion('edit');
+                let lastBox = document.getElementById(`comp-edit-${compCounters['edit']}`);
+                lastBox.querySelector('.c-name').value = match[1];
+                lastBox.querySelector('.c-shuttle').value = match[2] === '接駁' ? '400' : '0';
+                lastBox.querySelector('.c-pay').value = match[3] === '合併結帳' ? 'merged' : 'split';
+              }
+            });
+          }
+          calcTotal('edit');
           document.getElementById('editFormArea').style.display = 'block';
-          alert(`已找到 ${res.data.name} 的資料！\n目前總金額：$${res.data.total}\n付款狀態：${res.data.payStatus}\n\n如需修改，請直接於「填寫報名」分頁重新送出即可覆蓋舊資料。`);
         } else {
           alert('⚠️ ' + res.message);
           document.getElementById('editFormArea').style.display = 'none';
         }
       })
-      .catch(err => {
-        alert('連線失敗，請檢查網路狀態。');
-      })
-      .finally(() => btn.innerText = originText);
+      .catch(err => { alert('連線失敗，請檢查網路狀態。'); })
+      .finally(() => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+      });
     }
 
-    function checkAdminPwd() {
+    function loadAdminDashboard(e) {
       const pwd = document.getElementById('adminPwd').value;
-      if(pwd !== '0706') {
-        return alert('密碼錯誤，請重新輸入！');
-      }
+      if(pwd !== '0706') return alert('密碼錯誤，請重新輸入！');
 
-      const btn = event.target;
-      const originText = btn.innerText;
-      btn.innerText = '載入名單中...';
+      const btn = e.target;
+      const originalText = btn.innerText;
+      btn.innerHTML = '<span class="spinner"></span> 載入中...';
+      btn.disabled = true;
 
       fetch(GAS_URL, {
         method: 'POST',
@@ -793,35 +834,70 @@
       .then(res => res.json())
       .then(res => {
         if(res.status === 'success') {
+          adminGlobalData = res.data; 
           document.getElementById('adminLoginArea').style.display = 'none';
           document.getElementById('adminTableArea').style.display = 'block';
           
-          const tbody = document.querySelector('.admin-table tbody');
-          tbody.innerHTML = ''; 
-          
-          res.data.forEach(row => {
-            let statusBadge = row.payStatus === '已付款' 
-              ? `<span style="border: 1px solid #166534; color:#166534; padding:4px 10px; font-size:12px; font-weight:500;">已付款</span>`
-              : `<span style="border: 1px solid #991B1B; color:#991B1B; padding:4px 10px; font-size:12px; font-weight:500;">未付款</span>`;
-              
-            tbody.innerHTML += `
-              <tr>
-                <td>${row.name}</td>
-                <td>${row.phone}</td>
-                <td style="font-family:'Montserrat', sans-serif;">$${row.total}</td>
-                <td>${row.transferInfo}</td>
-                <td>${statusBadge}</td>
-              </tr>
-            `;
-          });
+          calculateAdminStats();
+          renderAdminTable('all'); 
         } else {
           alert('發生錯誤：' + res.message);
         }
       })
-      .catch(err => {
-        alert('連線失敗，請檢查網路狀態。');
-      })
-      .finally(() => btn.innerText = originText);
+      .catch(err => { alert('連線失敗，請檢查網路狀態。'); })
+      .finally(() => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+      });
+    }
+
+    function calculateAdminStats() {
+      let totalGroups = adminGlobalData.length;
+      let paidGroups = adminGlobalData.filter(r => r.payStatus === '已付款').length;
+      let unpaidGroups = totalGroups - paidGroups;
+      let expectedRevenue = adminGlobalData.reduce((sum, r) => sum + (parseInt(r.total) || 0), 0);
+
+      document.getElementById('stat-total-groups').innerText = totalGroups;
+      document.getElementById('stat-paid-groups').innerText = paidGroups;
+      document.getElementById('stat-unpaid-groups').innerText = unpaidGroups;
+      document.getElementById('stat-revenue').innerText = '$' + expectedRevenue.toLocaleString();
+    }
+
+    function filterAdminTable(filterType, btnElement) {
+      document.querySelectorAll('.btn-filter').forEach(el => el.classList.remove('active'));
+      btnElement.classList.add('active');
+      renderAdminTable(filterType);
+    }
+
+    function renderAdminTable(filterType) {
+      const tbody = document.getElementById('adminTbody');
+      tbody.innerHTML = ''; 
+      
+      let filteredData = adminGlobalData;
+      if (filterType === 'paid') filteredData = adminGlobalData.filter(r => r.payStatus === '已付款');
+      if (filterType === 'unpaid') filteredData = adminGlobalData.filter(r => r.payStatus !== '已付款');
+
+      if (filteredData.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding: 32px; color: var(--text-muted);">無符合條件的名單</td></tr>`;
+        return;
+      }
+
+      filteredData.forEach(row => {
+        /* JS 內的狀態 Badge 也依照高級感深色模式調整配色 */
+        let statusBadge = row.payStatus === '已付款' 
+          ? `<span style="background:rgba(52, 211, 153, 0.15); color:#34D399; border:1px solid rgba(52, 211, 153, 0.3); padding:6px 12px; font-size:11px; font-weight:600; border-radius:12px; letter-spacing:1px;">已付款</span>`
+          : `<span style="background:rgba(248, 113, 113, 0.15); color:#F87171; border:1px solid rgba(248, 113, 113, 0.3); padding:6px 12px; font-size:11px; font-weight:600; border-radius:12px; letter-spacing:1px;">未付款</span>`;
+          
+        tbody.innerHTML += `
+          <tr>
+            <td style="font-weight:500; font-size:15px;">${row.name}</td>
+            <td style="font-family:'Montserrat', sans-serif; font-size:13px; color:var(--text-muted);">${row.phone}</td>
+            <td style="font-family:'Montserrat', sans-serif; font-weight:500; color:var(--luxury-gold); font-size:15px;">$${row.total}</td>
+            <td style="font-size:13px; color:var(--text-muted); font-family:'Montserrat', sans-serif;">${row.transferInfo}</td>
+            <td>${statusBadge}</td>
+          </tr>
+        `;
+      });
     }
   </script>
 </body>
