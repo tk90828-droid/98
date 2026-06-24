@@ -12,6 +12,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="https://i.meee.com.tw/q76hNuV.png">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@400;600;900&display=swap" rel="stylesheet">
   
   <style>
@@ -25,13 +26,9 @@
       
       --luxury-teal: #8AC5CB; 
       --luxury-gold: #D4AF37; 
-      --luxury-gold-glow: rgba(212, 175, 55, 0.4);
       --danger: #EF4444;
-      --luxury-gradient: linear-gradient(135deg, #8AC5CB 0%, #4A8C93 100%);
-
-      --rule-bg: rgba(10, 19, 26, 0.98);
-      --rule-gold: #D4AF37;
-      --rule-highlight: #4A8C93;
+      --success: #10B981;
+      --warning: #F59E0B;
     }
 
     * { box-sizing: border-box; }
@@ -53,14 +50,14 @@
     }
 
     .luxury-hero-banner {
-      position: relative; width: 100%; min-height: 400px; height: 50vh;
+      position: relative; width: 100%; min-height: 480px; height: 55vh;
       overflow: hidden; display: flex; justify-content: center; align-items: center;
       background: #131E26;
       margin: 0 auto;
     }
     .image-background-layer {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      background: url('https://i.meee.com.tw/q76hNuV.png') center/cover no-repeat;
+      background: url('https://i.meee.com.tw/q76hNuV.png') center 25%/cover no-repeat;
       z-index: 0; opacity: 0.85; 
       transition: opacity 0.5s ease;
     }
@@ -71,34 +68,24 @@
 
     .hero-title-section {
       text-align: center; padding: 24px 20px 40px; position: relative;
-      background: #131E26; 
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08); z-index: 10;
+      background: #131E26; border-bottom: 1px solid rgba(255, 255, 255, 0.08); z-index: 10;
     }
     .gold-diamond {
       position: absolute; top: -20px; left: 50%; margin-left: -20px;
       width: 40px; height: 40px; background: #0A131A; 
-      border: 1px solid #D4AF37; 
+      border: 1px solid var(--luxury-gold); 
       transform: rotate(45deg);
       display: flex; justify-content: center; align-items: center; z-index: 10;
       box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.1);
     }
     .gold-diamond::after {
-      content: ''; width: 10px; height: 10px; background: #D4AF37; 
+      content: ''; width: 10px; height: 10px; background: var(--luxury-gold); 
       box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
     }
-    .sub-title { font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 0.5em; font-weight: 500; text-transform: uppercase; margin-bottom: 12px; color: #D4AF37 !important; opacity: 0.9; margin-top: 16px; }
+    .sub-title { font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 0.5em; font-weight: 500; text-transform: uppercase; margin-bottom: 12px; color: var(--luxury-gold) !important; opacity: 0.9; margin-top: 16px; }
     .hero-main-title { font-family: 'Playfair Display', "Noto Serif TC", serif; font-weight: 600; font-size: 32px; letter-spacing: 6px; margin-bottom: 12px; line-height: 1.2; color: #ffffff !important; }
-    .luxury-desc { font-family: 'Montserrat', "Noto Sans TC", sans-serif; font-size: 13px; line-height: 1.6; font-weight: 300; letter-spacing: 3px; color: #8E9BAE !important; text-transform: uppercase;}
-    .luxury-desc span { color: #D4AF37; margin: 0 8px; font-size: 10px; opacity: 0.7;}
-
-    @media (max-width: 768px) {
-      .hero-main-title { font-size: 26px; }
-      .luxury-desc { font-size: 11px; }
-      .hero-title-section { padding: 32px 20px 32px; }
-      .luxury-hero-banner { min-height: 500px; height: 75vh; }
-      .image-background-layer { background-image: url('https://i.meee.com.tw/1SXhG7R.png') !important; background-position: center top !important; opacity: 1; }
-      .overlay-layer { background: linear-gradient(to bottom, rgba(19, 30, 38, 0) 40%, rgba(19, 30, 38, 0.7) 75%, #131E26 100%) !important; }
-    }
+    .luxury-desc { font-family: 'Montserrat', "Noto Sans TC", sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 3px; color: var(--text-muted) !important; text-transform: uppercase;}
+    .luxury-desc span { color: var(--luxury-gold); margin: 0 8px; font-size: 10px; opacity: 0.7;}
 
     .nav-wrapper {
       position: sticky; top: 0; z-index: 90; background: rgba(10, 19, 26, 0.98) !important;
@@ -108,23 +95,25 @@
     .tabs { display: flex; overflow-x: auto; flex: 1; }
     .tabs::-webkit-scrollbar { display: none; }
     .tab-btn {
-      background: transparent; border: none; color: #8E9BAE; font-size: 14px; font-weight: 500; padding: 20px 0; margin-right: 32px;
-      cursor: pointer; position: relative; white-space: nowrap; transition: 0.4s ease; border-radius: 0; letter-spacing: 2px;
+      background: transparent; border: none; color: var(--text-muted); font-size: 14px; font-weight: 500; padding: 20px 0; margin-right: 32px;
+      cursor: pointer; position: relative; white-space: nowrap; transition: 0.4s ease; letter-spacing: 2px;
     }
     .tab-btn:hover { color: #FFF; }
-    .tab-btn.active { color: #D4AF37; font-weight: 600; }
-    .tab-btn.active::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: #D4AF37; box-shadow: 0 -2px 10px rgba(212, 175, 55, 0.4); }
+    .tab-btn.active { color: var(--luxury-gold); font-weight: 600; }
+    .tab-btn.active::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--luxury-gold); box-shadow: 0 -2px 10px rgba(212, 175, 55, 0.4); }
     
     .btn-open-rules {
       background: transparent; border: 1px solid rgba(255, 255, 255, 0.08); color: #FFFFFF;
-      padding: 8px 20px; border-radius: 0; font-size: 12px; font-weight: 500; cursor: pointer; transition: 0.4s ease; letter-spacing: 2px;
+      padding: 8px 20px; font-size: 12px; font-weight: 500; cursor: pointer; transition: 0.4s ease; letter-spacing: 2px;
     }
-    .btn-open-rules:hover { background: #FFFFFF; color: #0A131A; border-color: #FFFFFF; }
+    .btn-open-rules:hover { background: #FFFFFF; color: #0A131A; }
 
-    .container { max-width: 760px; margin: 40px auto 80px; padding: 0 20px; }
+    .container { max-width: 760px; margin: 40px auto 80px; padding: 0 20px; transition: max-width 0.4s ease; }
+    .container.admin-mode { max-width: 1200px; }
     
     .view-section { display: none; }
-    .view-section.active { display: block; }
+    .view-section.active { display: block; animation: fadeIn 0.4s ease forwards; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
     .main-card {
       background: #131E26; padding: 56px 48px 0 48px; border-radius: 0;
@@ -136,202 +125,180 @@
     .form-row { display: flex; flex-wrap: wrap; width: 100%; }
     .form-row .form-group { flex: 1; min-width: 240px; margin-bottom: 0; margin-right: 24px; }
     .form-row .form-group:last-child { margin-right: 0; }
-    .form-group label { display: block; font-size: 12px; color: #8E9BAE; margin-bottom: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; }
+    .form-group label { display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; }
     
-    .form-group input:not([type="checkbox"]), 
-    .form-group select, 
-    .form-group textarea {
+    .form-group input:not([type="checkbox"]), .form-group select, .form-group textarea {
       -webkit-appearance: none !important; appearance: none !important;
-      width: 100% !important; max-width: 100% !important; min-width: 100% !important;
-      display: block !important; box-sizing: border-box !important;
-      padding: 16px 20px; border-radius: 0; border: 1px solid rgba(255, 255, 255, 0.08); background: #050B10;
-      color: #FFFFFF; font-size: 16px !important; font-family: inherit; transition: all 0.4s ease; outline: none;
-      height: 56px !important; 
+      width: 100%; box-sizing: border-box; padding: 16px 20px; border-radius: 0; border: 1px solid rgba(255, 255, 255, 0.08); background: #050B10;
+      color: #FFFFFF; font-size: 16px !important; font-family: inherit; transition: all 0.4s ease; outline: none; height: 56px; 
     }
     .form-group textarea { height: auto !important; }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #D4AF37; box-shadow: 0 0 0 1px #D4AF37; background: rgba(212, 175, 55, 0.02); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--luxury-gold); box-shadow: 0 0 0 1px var(--luxury-gold); background: rgba(212, 175, 55, 0.02); }
     
     select { background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%238E9BAE%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"); background-repeat: no-repeat; background-position: right 1rem top 50%; background-size: 0.65rem auto; }
+    input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1) brightness(100); cursor: pointer; opacity: 0.8; }
 
-    input[type="date"]::-webkit-calendar-picker-indicator {
-      filter: invert(1) brightness(100);
-      cursor: pointer; opacity: 0.8;
-    }
-
-    .vertical-check-group {
-      display: flex; flex-direction: column; background: rgba(0,0,0,0.2); padding: 24px; margin-bottom: 40px; border: 1px solid rgba(255, 255, 255, 0.08);
-    }
+    .vertical-check-group { display: flex; flex-direction: column; background: rgba(0,0,0,0.2); padding: 24px; margin-bottom: 40px; border: 1px solid rgba(255, 255, 255, 0.08); }
     .check-title { color: #FFFFFF; font-weight: 500; font-size: 13px; letter-spacing: 2px; margin-bottom: 16px;}
-
-    .checkbox-label { 
-      display: flex !important; flex-direction: row !important; align-items: center !important; 
-      flex-wrap: nowrap !important; font-size: 13px; color: #FFFFFF; 
-      cursor: pointer; line-height: 1.4; letter-spacing: 1px; margin-bottom: 16px;
-    }
+    .checkbox-label { display: flex; align-items: center; font-size: 13px; color: #FFFFFF; cursor: pointer; line-height: 1.4; letter-spacing: 1px; margin-bottom: 16px; }
     .checkbox-label:last-child { margin-bottom: 0; }
-    
-    .checkbox-label input[type="checkbox"] {
-      appearance: none !important; -webkit-appearance: none !important; background-color: transparent !important;
-      flex: 0 0 14px !important; width: 14px !important; height: 14px !important; 
-      margin: 0 12px 0 0 !important; padding: 0 !important;
-      border: 1px solid rgba(255, 255, 255, 0.08); 
-      display: flex; justify-content: center; align-items: center; 
-      cursor: pointer; transition: all 0.3s ease; outline: none; box-sizing: border-box !important;
-    }
-    .checkbox-label input[type="checkbox"]::before {
-      content: ""; width: 6px !important; height: 6px !important;
-      transform: scale(0); transition: 0.2s transform ease-in-out; background-color: #D4AF37;
-    }
-    .checkbox-label input[type="checkbox"]:checked { border-color: #D4AF37; }
+    .checkbox-label input[type="checkbox"] { appearance: none; -webkit-appearance: none; flex: 0 0 14px; width: 14px; height: 14px; margin: 0 12px 0 0; border: 1px solid rgba(255, 255, 255, 0.08); display: flex; justify-content: center; align-items: center; cursor: pointer; transition: 0.3s; }
+    .checkbox-label input[type="checkbox"]::before { content: ""; width: 6px; height: 6px; transform: scale(0); transition: 0.2s; background-color: var(--luxury-gold); }
+    .checkbox-label input[type="checkbox"]:checked { border-color: var(--luxury-gold); }
     .checkbox-label input[type="checkbox"]:checked::before { transform: scale(1); }
-    
-    .checkbox-label span { white-space: nowrap !important; display: inline-block; }
-    .highlight-time { color: #D4AF37; font-weight: 600; font-family: 'Montserrat', sans-serif; font-size: 14px;}
+    .highlight-time { color: var(--luxury-gold); font-weight: 600; font-family: 'Montserrat', sans-serif; font-size: 14px;}
 
-    .companion-box { background: rgba(255,255,255,0.02); border: 1px solid rgba(255, 255, 255, 0.08); padding: 32px 24px; margin-bottom: 24px; position: relative; border-radius: 0; transition: 0.3s; }
+    .companion-box { background: rgba(255,255,255,0.02); border: 1px solid rgba(255, 255, 255, 0.08); padding: 32px 24px; margin-bottom: 24px; position: relative; transition: 0.3s; }
     .companion-box:hover { border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.04); }
-    .btn-remove { position: absolute; right: 16px; top: 16px; background: transparent; border: 1px solid rgba(255, 255, 255, 0.08); color: #8E9BAE; cursor: pointer; font-size: 11px; padding: 6px 12px; transition: 0.3s; border-radius: 0; letter-spacing: 2px; text-transform: uppercase;}
-    .btn-remove:hover { border-color: #EF4444; color: #EF4444; background: rgba(239, 68, 68, 0.1); }
+    .btn-remove { position: absolute; right: 16px; top: 16px; background: transparent; border: 1px solid rgba(255, 255, 255, 0.08); color: var(--text-muted); cursor: pointer; font-size: 11px; padding: 6px 12px; transition: 0.3s; letter-spacing: 2px; text-transform: uppercase;}
+    .btn-remove:hover { border-color: var(--danger); color: var(--danger); background: rgba(239, 68, 68, 0.1); }
     
-    .btn-outline { 
-      width: 100%; padding: 18px; background: transparent; border: 1px dashed rgba(212, 175, 55, 0.4); color: #D4AF37; 
-      border-radius: 0; cursor: pointer; font-weight: 500; font-size: 13px; transition: all 0.4s ease; letter-spacing: 3px; text-transform: uppercase;
-    }
-    .btn-outline:hover { border-color: #D4AF37; background: rgba(212, 175, 55, 0.05); }
+    .btn-outline { width: 100%; padding: 18px; background: transparent; border: 1px dashed rgba(212, 175, 55, 0.4); color: var(--luxury-gold); cursor: pointer; font-weight: 500; font-size: 13px; transition: 0.4s; letter-spacing: 3px; text-transform: uppercase; }
+    .btn-outline:hover { border-color: var(--luxury-gold); background: rgba(212, 175, 55, 0.05); }
 
-    .checkout-wrapper {
-      background: rgba(0, 0, 0, 0.3); color: #FFFFFF;
-      margin: 56px -48px 0 -48px; padding: 48px; border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
+    .checkout-wrapper { background: rgba(0, 0, 0, 0.3); margin: 56px -48px 0 -48px; padding: 48px; border-top: 1px solid rgba(255, 255, 255, 0.08); }
     .total-box { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 32px; margin-bottom: 40px; }
-    .total-detail { font-size: 13px; color: #8E9BAE; line-height: 2; letter-spacing: 1px; }
+    .total-detail { font-size: 13px; color: var(--text-muted); line-height: 2; letter-spacing: 1px; }
     .total-summary { text-align: right; width: 100%; }
-    .total-price { font-size: 36px; font-family: 'Montserrat', sans-serif; font-weight: 300; color: #D4AF37; letter-spacing: 2px; margin-top: 8px;}
+    .total-price { font-size: 36px; font-family: 'Montserrat', sans-serif; font-weight: 300; color: var(--luxury-gold); letter-spacing: 2px; margin-top: 8px;}
 
-    .spinner {
-      display: inline-block; width: 16px; height: 16px; margin-right: 12px; vertical-align: middle;
-      border: 2px solid rgba(255,255,255,0.2); border-radius: 50%; border-top-color: #fff;
-      animation: spin 0.8s ease-in-out infinite;
-    }
+    .spinner { display: inline-block; width: 16px; height: 16px; margin-right: 12px; vertical-align: middle; border: 2px solid rgba(255,255,255,0.2); border-radius: 50%; border-top-color: #fff; animation: spin 0.8s ease-in-out infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    .btn-submit {
-      position: relative; display: block; width: 100%;
-      font-family: 'Montserrat', "Noto Sans TC", sans-serif; text-decoration: none;
-      background: linear-gradient(135deg, #8AC5CB 0%, #4A8C93 100%); color: #0A131A !important; border: none;              
-      padding: 20px 2.5em; font-size: 14px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase;
-      transition: all 0.4s ease; border-radius: 0; cursor: pointer; text-align: center; overflow: hidden;
-    }
+    .btn-submit { position: relative; display: block; width: 100%; font-family: 'Montserrat', "Noto Sans TC", sans-serif; background: linear-gradient(135deg, #8AC5CB 0%, #4A8C93 100%); color: #0A131A !important; border: none; padding: 20px 2.5em; font-size: 14px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; transition: 0.4s; cursor: pointer; text-align: center; overflow: hidden; }
     .btn-submit:hover:not(:disabled) { box-shadow: 0 0 20px rgba(138, 197, 203, 0.4); transform: translateY(-2px); }
     .btn-submit:active:not(:disabled) { transform: translateY(0); }
     .btn-submit:disabled { background: #1F2937; color: #6B7280 !important; cursor: not-allowed; box-shadow: none; }
 
-    /* 全新匯款帳號版塊設計 */
-    .bank-banner {
-      display: flex; flex-direction: column; align-items: center; justify-content: center; 
-      background: #131E26; border: 1px solid rgba(212, 175, 55, 0.2); 
-      padding: 48px 24px; margin-bottom: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); 
-      text-align: center; position: relative; border-radius: 0;
-    }
-    .bank-banner::before { 
-      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; 
-      background: linear-gradient(90deg, transparent, #D4AF37, transparent); 
-    }
-    .bank-info .bank-title { font-size: 12px; color: #D4AF37; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 16px; }
-    .bank-info .bank-name { font-size: 13px; color: #8E9BAE; font-weight: 500; letter-spacing: 2px; margin-bottom: 8px; }
+    .bank-banner { display: flex; flex-direction: column; align-items: center; justify-content: center; background: #131E26; border: 1px solid rgba(212, 175, 55, 0.2); padding: 48px 24px; margin-top: 40px; margin-bottom: 0; box-shadow: 0 20px 40px rgba(0,0,0,0.3); text-align: center; position: relative; }
+    .bank-banner::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--luxury-gold), transparent); }
+    .bank-info .bank-title { font-size: 12px; color: var(--luxury-gold); font-weight: 600; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 16px; }
+    .bank-info .bank-name { font-size: 13px; color: var(--text-muted); font-weight: 500; letter-spacing: 2px; margin-bottom: 8px; }
     .bank-info .bank-acc { font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 300; color: #FFFFFF; letter-spacing: 4px; margin-bottom: 32px; }
-    
-    .btn-copy { 
-      background: rgba(212, 175, 55, 0.05); border: 1px solid #D4AF37; color: #D4AF37; 
-      padding: 14px 40px; font-size: 13px; font-weight: 500; cursor: pointer; 
-      transition: all 0.4s ease; letter-spacing: 4px; text-transform: uppercase;
+    .btn-copy { background: rgba(212, 175, 55, 0.05); border: 1px solid var(--luxury-gold); color: var(--luxury-gold); padding: 14px 40px; font-size: 13px; font-weight: 500; cursor: pointer; transition: 0.4s; letter-spacing: 4px; text-transform: uppercase; }
+    .btn-copy:hover { background: var(--luxury-gold); color: #0A131A; box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); transform: translateY(-2px); }
+
+    .edit-status-card { display: flex; justify-content: space-between; align-items: center; background: rgba(212, 175, 55, 0.05); border: 1px solid rgba(212, 175, 55, 0.3); padding: 24px 32px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+    .status-item { text-align: left; border-right: 1px solid rgba(255,255,255,0.08); padding-right: 24px; flex: 1; }
+    .status-item:last-child { border-right: none; padding-right: 0; text-align: right; }
+    .status-item .label { font-size: 11px; color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; font-weight: 500; }
+    .status-item .value { font-size: 15px; color: #FFF; font-weight: 600; letter-spacing: 1px; }
+    .status-item .value.highlight { color: var(--luxury-gold); font-family: 'Montserrat', sans-serif; }
+
+    /* =========================================
+       優化 2: 後台白底黑字、高密度設計
+       ========================================= */
+    .admin-white-card {
+      background: #FFFFFF !important;
+      padding: 32px 32px 48px 32px !important; /* 讓整體緊湊點 */
+      border-radius: 8px;
     }
-    .btn-copy:hover { background: #D4AF37; color: #0A131A; box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); transform: translateY(-2px); }
-    .btn-copy:active { transform: translateY(0); }
+    .admin-white-card .card-title {
+      color: #111827 !important;
+      border-bottom: 2px solid #F1F5F9 !important;
+      margin-bottom: 24px !important;
+    }
 
-    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 40px; }
-    .stat-card { background: rgba(0,0,0,0.2); border: 1px solid rgba(255, 255, 255, 0.08); padding: 24px 20px; text-align: center; transition: 0.3s; }
-    .stat-card:hover { background: rgba(255,255,255,0.02); }
-    .stat-value { font-size: 28px; font-weight: 300; color: #FFFFFF; font-family: 'Montserrat', sans-serif; margin-bottom: 8px; }
-    .stat-label { font-size: 11px; color: #8E9BAE; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;}
+    /* 頂部四格狀態數據 */
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
+    .stat-card { background: #F8FAFC; border: 1px solid #E2E8F0; padding: 16px; text-align: center; border-radius: 4px; }
+    .stat-value { font-size: 24px; font-weight: 600; color: #111827; font-family: 'Montserrat', sans-serif; margin-bottom: 4px; }
+    .stat-label { font-size: 11px; color: #64748B; font-weight: 500; letter-spacing: 1px; text-transform: uppercase;}
     
-    .filter-group { display: flex; margin-bottom: 24px; }
-    .btn-filter { background: transparent; border: 1px solid rgba(255, 255, 255, 0.08); padding: 10px 20px; cursor: pointer; font-size: 12px; font-weight: 500; color: #8E9BAE; transition: 0.3s; letter-spacing: 2px; text-transform: uppercase; margin-right: 12px; }
-    .btn-filter:hover { border-color: #D4AF37; color: #D4AF37; }
-    .btn-filter.active { background: #D4AF37; color: #000; border-color: #D4AF37; font-weight: 600; }
+    /* 篩選按鈕列 */
+    .filter-group { display: flex; margin-bottom: 16px; gap: 8px; }
+    .btn-filter { background: transparent; border: 1px solid #CBD5E1; padding: 6px 12px; cursor: pointer; font-size: 12px; font-weight: 500; color: #475569; transition: 0.3s; letter-spacing: 1px; border-radius: 4px; }
+    .btn-filter:hover, .btn-filter.active { border-color: var(--luxury-gold); color: var(--luxury-gold); background: rgba(212, 175, 55, 0.05); font-weight: 600; }
 
-    .admin-table { width: 100%; border-collapse: collapse; font-size: 14px; text-align: left; }
-    .admin-table th { padding: 20px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); color: #8E9BAE; font-weight: 500; white-space: nowrap; font-size: 12px; letter-spacing: 2px; text-transform: uppercase;}
-    .admin-table td { padding: 20px 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); color: #FFFFFF; }
+    /* 表格本體 */
+    .table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .admin-table { width: 100%; border-collapse: collapse; text-align: left; color: #1E293B; font-size: 13px; }
+    .admin-table th { padding: 10px 8px; border-bottom: 2px solid #CBD5E1; color: #475569; font-weight: 600; white-space: nowrap; font-size: 12px; letter-spacing: 1px; background: #F8FAFC; }
+    .admin-table td { padding: 10px 8px; border-bottom: 1px solid #E2E8F0; vertical-align: middle; }
+    .admin-table tr:hover td { background: #F1F5F9; }
+
+    /* 欄位精密寬度控制 */
+    .col-name { white-space: nowrap; font-weight: 600; }
+    .col-phone { width: 90px; white-space: nowrap; font-family: 'Montserrat', sans-serif; letter-spacing: 0.5px; color: #64748B; }
+    .col-total { width: 60px; white-space: nowrap; font-family: 'Montserrat', sans-serif; font-weight: 600; color: #D4AF37; }
+    .col-transfer { min-width: 220px; }
+    .transfer-flex { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-family: 'Montserrat', sans-serif; color: #475569;}
+    .col-status { width: 70px; text-align: center; }
+
+    /* 狀態徽章 */
+    .status-badge { display: inline-block; padding: 4px 8px; font-size: 11px; font-weight: 600; border-radius: 4px; letter-spacing: 1px; text-align: center; min-width: 60px; }
+    .bg-green { background: #D1FAE5; color: #059669; }
+    .bg-yellow { background: #FEF3C7; color: #D97706; }
+    .bg-red { background: #FEE2E2; color: #DC2626; }
+    
+    /* 對帳確認按鈕 */
+    .btn-verify-pay { background: #10B981; color: #FFF; border: none; padding: 5px 12px; font-size: 12px; font-weight: 600; cursor: pointer; border-radius: 4px; transition: 0.3s; letter-spacing: 1px; white-space: nowrap; box-shadow: 0 2px 4px rgba(16,185,129,0.2); }
+    .btn-verify-pay:hover { background: #059669; transform: translateY(-1px); }
 
     .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.95); display: none; justify-content: center; align-items: center; z-index: 1000; padding: 20px; }
-    .modal-content { background: rgba(10, 19, 26, 0.98); width: 100%; max-width: 840px; height: 90vh; overflow-y: auto; border-radius: 0; position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.8); border: 1px solid rgba(255, 255, 255, 0.08); }
-    .modal-close { position: sticky; top: 16px; left: calc(100% - 56px); margin-bottom: -40px; z-index: 99; background: #131E26; border: 1px solid rgba(255, 255, 255, 0.08); width: 40px; height: 40px; border-radius: 0; font-size: 24px; line-height: 1; cursor: pointer; color: #8E9BAE; display: flex; justify-content: center; align-items: center; transition: 0.4s; }
+    .modal-content { background: rgba(10, 19, 26, 0.98); width: 100%; max-width: 840px; height: 90vh; overflow-y: auto; position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.8); border: 1px solid rgba(255, 255, 255, 0.08); }
+    .modal-close { position: sticky; top: 16px; left: calc(100% - 56px); margin-bottom: -40px; z-index: 99; background: #131E26; border: 1px solid rgba(255, 255, 255, 0.08); width: 40px; height: 40px; font-size: 24px; line-height: 1; cursor: pointer; color: var(--text-muted); display: flex; justify-content: center; align-items: center; transition: 0.4s; }
     .modal-close:hover { color: #FFF; background: rgba(255,255,255,0.1); border-color: #FFF; }
+
+    .custom-alert-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10, 19, 26, 0.85); backdrop-filter: blur(5px); display: none; justify-content: center; align-items: center; z-index: 9999; opacity: 0; transition: opacity 0.3s ease; }
+    .custom-alert-overlay.show { opacity: 1; }
+    .custom-alert-box { background: #131E26; border: 1px solid var(--luxury-gold); padding: 40px 32px; max-width: 360px; width: 90%; text-align: center; box-shadow: 0 30px 60px rgba(0,0,0,0.6); transform: translateY(20px); transition: transform 0.3s ease; }
+    .custom-alert-overlay.show .custom-alert-box { transform: translateY(0); }
+    .custom-alert-msg { color: #FFFFFF; font-size: 15px; line-height: 1.8; margin-bottom: 32px; white-space: pre-line; letter-spacing: 2px; }
+    .custom-alert-btn { background: var(--luxury-gold); color: #0A131A; border: none; padding: 12px 40px; font-size: 13px; font-weight: 600; cursor: pointer; letter-spacing: 3px; text-transform: uppercase; transition: 0.3s; }
+    .custom-alert-btn:hover { box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); transform: translateY(-2px); }
 
     .rules-wrap { padding: 0 40px 60px; font-family: "Noto Serif TC", "PMingLiU", serif; line-height: 1.8; }
     .rules-wrap .freeze-pane { position: sticky; top: 0; z-index: 90; background: rgba(10, 19, 26, 0.98); border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding: 24px 20px; text-align: center; margin: 0 -40px 40px; }
-    
     .rules-wrap .main-title { font-size: 22px; font-weight: 600; letter-spacing: 4px; color: #FFFFFF; }
-    .rules-wrap .intro { font-size: 14px; color: #8E9BAE; text-align: center; margin-bottom: 48px; line-height: 2; letter-spacing: 2px; }
-    
-    .rules-wrap .rule-card { 
-      background: #FFFFFF !important; 
-      border: 1px solid #E2E8F0 !important; 
-      border-radius: 0; 
-      padding: 40px; 
-      margin-bottom: 32px; 
-      transition: 0.3s; 
-    }
+    .rules-wrap .intro { font-size: 14px; color: var(--text-muted); text-align: center; margin-bottom: 48px; line-height: 2; letter-spacing: 2px; }
+    .rules-wrap .rule-card { background: #FFFFFF !important; border: 1px solid #E2E8F0 !important; padding: 40px; margin-bottom: 32px; transition: 0.3s; }
     .rules-wrap .rule-card:hover { border-color: #CBD5E1 !important; box-shadow: 0 10px 30px rgba(255,255,255,0.05); }
-    
-    .rules-wrap .rule-card p { margin: 0 0 16px 0; font-size: 14px; color: #333333 !important; font-family: 'Noto Sans TC', sans-serif; font-weight: 400; }
+    .rules-wrap .rule-card p, .rules-wrap .rule-card ul li { font-size: 14px; color: #333333 !important; font-family: 'Noto Sans TC', sans-serif; font-weight: 400; }
     .rules-wrap .rule-card ul { list-style: none; padding: 0; margin: 0 0 24px 0; }
-    .rules-wrap .rule-card ul li { position: relative; padding-left: 24px; margin-bottom: 12px; font-size: 14px; color: #333333 !important; font-family: 'Noto Sans TC', sans-serif; font-weight: 400; }
-    .rules-wrap .rule-card ul li::before { content: "\25C6"; position: absolute; left: 0; top: 1px; font-size: 10px; color: #D4AF37 !important; opacity: 1; }
-    
+    .rules-wrap .rule-card ul li { position: relative; padding-left: 24px; margin-bottom: 12px; }
+    .rules-wrap .rule-card ul li::before { content: "\25C6"; position: absolute; left: 0; top: 1px; font-size: 10px; color: var(--luxury-gold) !important; }
     .rules-wrap .rule-card .item-title { font-size: 16px; font-weight: 700 !important; color: #000000 !important; margin: 24px 0 12px 0; letter-spacing: 1px; }
     .rules-wrap .rule-card .item-title:first-child { margin-top: 0; }
-    
-    .rules-wrap .rule-card .section-title { font-size: 16px; font-weight: 700; color: #D4AF37 !important; margin: 0 0 24px 0; padding-bottom: 16px; border-bottom: 1px solid rgba(212, 175, 55, 0.3) !important; letter-spacing: 3px; text-transform: uppercase; }
-    
+    .rules-wrap .rule-card .section-title { font-size: 16px; font-weight: 700; color: var(--luxury-gold) !important; margin: 0 0 24px 0; padding-bottom: 16px; border-bottom: 1px solid rgba(212, 175, 55, 0.3) !important; letter-spacing: 3px; text-transform: uppercase; }
     .rules-wrap .rule-card .highlight { color: #4A8C93 !important; font-family: 'Montserrat', sans-serif; font-weight: 600 !important; letter-spacing: 1px; }
     .rules-wrap .rule-card .price-tag { display: inline-block; background: rgba(74, 140, 147, 0.1) !important; border: 1px solid rgba(74, 140, 147, 0.3) !important; color: #4A8C93 !important; padding: 4px 12px; font-family: 'Montserrat', sans-serif; font-weight: 600 !important; font-size: 14px; margin: 4px 0; letter-spacing: 1px; }
-    .rules-wrap .rule-card .danger-text { color: #EF4444 !important; font-weight: 600 !important; }
-    
-    .rules-wrap .rule-card .price-table { margin-top: 24px; border: 1px solid #E2E8F0 !important; border-radius: 0; overflow: hidden; background: #FFFFFF !important; }
-    .rules-wrap .rule-card .pt-row { display: flex; justify-content: space-between; padding: 16px 24px; border-bottom: 1px solid #E2E8F0 !important; font-family: 'Noto Sans TC', sans-serif; font-size: 14px; font-weight: 400; color: #333333 !important; }
+    .rules-wrap .rule-card .danger-text { color: var(--danger) !important; font-weight: 600 !important; }
+    .rules-wrap .rule-card .price-table { margin-top: 24px; border: 1px solid #E2E8F0 !important; overflow: hidden; background: #FFFFFF !important; }
+    .rules-wrap .rule-card .pt-row { display: flex; justify-content: space-between; padding: 16px 24px; border-bottom: 1px solid #E2E8F0 !important; font-family: 'Noto Sans TC', sans-serif; font-size: 14px; color: #333333 !important; }
     .rules-wrap .rule-card .pt-row:last-child { border-bottom: none !important; }
     .rules-wrap .rule-card .pt-header { background: #F8FAFC !important; font-weight: 600 !important; color: #000000 !important; letter-spacing: 2px; }
     .rules-wrap .rule-card .pt-val { font-family: 'Montserrat', sans-serif; color: #4A8C93 !important; font-weight: 600 !important; letter-spacing: 1px; }
 
-    @media(max-width: 600px) {
-      .nav-container { flex-direction: column; padding: 16px 20px; }
+    /* 手機版適配：確保白底黑字區域不會破版 */
+    @media(max-width: 768px) {
+      .container { max-width: 100%; margin: 24px auto 60px; padding: 0 16px; }
+      .nav-container { flex-direction: column; padding: 16px; }
       .tabs { margin-bottom: 16px; width: 100%; }
       .tab-btn { padding: 12px 0; margin-right: 20px; }
       .btn-open-rules { width: 100%; text-align: center; padding: 12px; }
-      .main-card { padding: 40px 24px 0 24px; }
-      .checkout-wrapper { margin: 48px -24px 0 -24px; padding: 40px 24px; }
-      
-      .bank-banner { padding: 40px 20px; }
+      .main-card { padding: 32px 20px 0 20px; }
+      .edit-status-card { flex-direction: column; padding: 20px; }
+      .status-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding-right: 0; padding-bottom: 12px; margin-bottom: 12px; text-align: center; }
+      .status-item:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; text-align: center; }
+      .checkout-wrapper { margin: 40px -20px 0 -20px; padding: 32px 20px; }
+      .bank-banner { padding: 32px 16px; }
       .bank-info .bank-acc { font-size: 28px; }
-
-      .form-row { display: block !important; width: 100% !important; }
-      .form-row .form-group { display: block !important; width: 100% !important; margin-bottom: 32px; margin-right: 0; }
-
-      .total-box { flex-direction: column; align-items: flex-end; }
-      .total-detail { margin-bottom: 24px; width: 100%; }
-      .total-summary { text-align: right; width: 100%; }
-
-      .stats-grid { grid-template-columns: 1fr 1fr; } 
       
-      .modal-overlay { padding: 0; } 
-      .modal-content { height: 100%; border: none; }
-      .modal-close { top: 12px; left: calc(100% - 52px); }
+      /* 後台手機版適配 */
+      .admin-white-card { padding: 16px !important; }
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .stat-card { padding: 12px; }
+      .stat-value { font-size: 20px; }
+      .admin-table th, .admin-table td { padding: 10px 6px; }
+      .col-phone { font-size: 12px; }
+      .transfer-flex { flex-direction: row; gap: 6px; font-size: 12px; }
+      .btn-verify-pay { padding: 4px 8px; font-size: 11px; }
+
       .rules-wrap { padding: 0 20px 40px; }
       .rules-wrap .freeze-pane { padding: 20px; margin: 0 -20px 32px; }
       .rules-wrap .main-title { font-size: 18px; }
-      .rules-wrap .rule-card { padding: 28px 20px; }
+      .rules-wrap .rule-card { padding: 24px 20px; }
     }
   </style>
 </head>
@@ -360,19 +327,9 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container" id="mainContainer">
     
     <div id="tab-create" class="view-section active">
-      
-      <div class="bank-banner">
-        <div class="bank-info">
-          <div class="bank-title">官方收款帳戶</div>
-          <div class="bank-name">連線商業銀行 (824) 總行 6880</div>
-          <div class="bank-acc">111009917651</div>
-          <button type="button" class="btn-copy" onclick="copyAccount()">一鍵複製帳號</button>
-        </div>
-      </div>
-
       <div class="main-card">
         <div class="card-title">報名資料填寫</div>
         <form id="createForm" onsubmit="submitForm(event, 'main')">
@@ -400,16 +357,13 @@
           <div class="vertical-check-group">
             <div class="check-title">必填確認項目</div>
             <label class="checkbox-label">
-              <input type="checkbox" required>
-              <span>入場費 NT.<span class="highlight-time">800元</span></span>
+              <input type="checkbox" required><span>入場費 NT.<span class="highlight-time">800元</span></span>
             </label>
             <label class="checkbox-label">
-              <input type="checkbox" required>
-              <span>遊覽車上車 <span class="highlight-time">13:15</span></span>
+              <input type="checkbox" required><span>遊覽車上車 <span class="highlight-time">13:15</span></span>
             </label>
             <label class="checkbox-label">
-              <input type="checkbox" required>
-              <span>回家發車 <span class="highlight-time">21:45</span></span>
+              <input type="checkbox" required><span>回家發車 <span class="highlight-time">21:45</span></span>
             </label>
           </div>
           <div class="form-group">
@@ -442,6 +396,15 @@
             </div>
             <button type="submit" class="btn-submit">送出報名</button>
           </div>
+
+          <div class="bank-banner">
+            <div class="bank-info">
+              <div class="bank-title">官方收款帳戶</div>
+              <div class="bank-name">連線商業銀行 (824) 總行 6880</div>
+              <div class="bank-acc">111009917651</div>
+              <button type="button" class="btn-copy" onclick="copyAccount()">一鍵複製帳號</button>
+            </div>
+          </div>
         </form>
       </div>
     </div>
@@ -459,9 +422,31 @@
           </div>
         </div>
       </div>
-      <div id="editFormArea" class="main-card" style="display:none; padding-bottom: 0; border: 1px solid #D4AF37;">
-        <p style="color:#D4AF37; font-weight:500; margin-top:0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 20px; font-size:13px; letter-spacing:1px;">已載入您的資料，請直接修改下方欄位後重新送出覆蓋。</p>
-        <form id="editForm" onsubmit="submitForm(event, 'edit')" style="margin-top: 32px;">
+      
+      <div id="editFormArea" class="main-card" style="display:none; padding-top: 40px; padding-bottom: 0;">
+        
+        <div class="edit-status-card">
+          <div class="status-item">
+            <div class="label">報名姓名</div>
+            <div class="value" id="dispName">--</div>
+          </div>
+          <div class="status-item">
+            <div class="label">繳費狀態</div>
+            <div class="value" id="dispPayStatus">--</div>
+          </div>
+          <div class="status-item">
+            <div class="label">接駁需求</div>
+            <div class="value" id="dispShuttle">--</div>
+          </div>
+          <div class="status-item">
+            <div class="label">報名狀態</div>
+            <div class="value highlight">報名成功</div>
+          </div>
+        </div>
+
+        <p style="color:var(--luxury-gold); font-weight:500; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 16px; font-size:13px; letter-spacing:1px; margin-bottom: 32px;">已載入您的資料，請直接修改下方欄位後重新送出覆蓋。</p>
+        
+        <form id="editForm" onsubmit="submitForm(event, 'edit')">
           <div class="form-group">
             <label>聯絡電話 (查詢憑證，不可修改)</label>
             <input type="tel" id="editPhone" readonly style="background: rgba(255,255,255,0.05); color: #6B7280; border-color: transparent;">
@@ -485,18 +470,9 @@
           </div>
           <div class="vertical-check-group">
             <div class="check-title">必填確認項目</div>
-            <label class="checkbox-label">
-              <input type="checkbox" required checked>
-              <span>入場費 NT.<span class="highlight-time">800元</span></span>
-            </label>
-            <label class="checkbox-label">
-              <input type="checkbox" required checked>
-              <span>遊覽車上車 <span class="highlight-time">13:15</span></span>
-            </label>
-            <label class="checkbox-label">
-              <input type="checkbox" required checked>
-              <span>回家發車 <span class="highlight-time">21:45</span></span>
-            </label>
+            <label class="checkbox-label"><input type="checkbox" required checked><span>入場費 NT.<span class="highlight-time">800元</span></span></label>
+            <label class="checkbox-label"><input type="checkbox" required checked><span>遊覽車上車 <span class="highlight-time">13:15</span></span></label>
+            <label class="checkbox-label"><input type="checkbox" required checked><span>回家發車 <span class="highlight-time">21:45</span></span></label>
           </div>
           <div class="form-group">
             <label>攜伴朋友</label>
@@ -534,52 +510,53 @@
 
     <div id="tab-admin" class="view-section">
       <div class="main-card" id="adminLoginArea" style="text-align:center; padding: 80px 40px; padding-bottom: 80px;">
-        <h2 style="margin-top:0; font-family:'Playfair Display', serif; font-weight:400; letter-spacing:4px; font-size: 24px; color: #D4AF37;">ADMIN ACCESS</h2>
-        <p style="color:#8E9BAE; margin-bottom:40px; font-size:12px; letter-spacing:2px; text-transform: uppercase;">請輸入主辦單位專屬密碼</p>
-        <input type="password" id="adminPwd" class="form-group" style="width:100%; max-width:320px; padding:18px; border:1px solid rgba(255, 255, 255, 0.08); text-align:center; display:block; margin:0 auto 32px; border-radius:0; letter-spacing: 4px;">
+        <h2 style="margin-top:0; font-family:'Playfair Display', serif; font-weight:400; letter-spacing:4px; font-size: 24px; color: var(--luxury-gold);">ADMIN ACCESS</h2>
+        <p style="color:var(--text-muted); margin-bottom:40px; font-size:12px; letter-spacing:2px; text-transform: uppercase;">請輸入主辦單位專屬密碼</p>
+        <input type="password" id="adminPwd" class="form-group" style="width:100%; max-width:320px; padding:18px; border:1px solid rgba(255, 255, 255, 0.08); text-align:center; display:block; margin:0 auto 32px; letter-spacing: 4px;">
         <div style="max-width: 320px; margin: 0 auto;">
           <button type="button" class="btn-submit" style="margin-top:0;" onclick="loadAdminDashboard(event)">登入查看</button>
         </div>
       </div>
-      <div class="main-card" id="adminTableArea" style="display:none; overflow-x: auto; padding: 48px 48px 64px 48px;">
+      
+      <div class="main-card admin-white-card" id="adminTableArea" style="display:none;">
         <div class="card-title">主辦單位儀表板</div>
         <div class="stats-grid">
           <div class="stat-card">
             <div class="stat-value" id="stat-total-groups">0</div>
             <div class="stat-label">總報名組數</div>
           </div>
-          <div class="stat-card" style="border-bottom: 2px solid #34D399;">
-            <div class="stat-value" id="stat-paid-groups" style="color: #34D399;">0</div>
+          <div class="stat-card" style="border-left: 4px solid var(--success);">
+            <div class="stat-value" id="stat-paid-groups" style="color: var(--success);">0</div>
             <div class="stat-label">已繳費組數</div>
           </div>
-          <div class="stat-card" style="border-bottom: 2px solid #F87171;">
-            <div class="stat-value" id="stat-unpaid-groups" style="color: #F87171;">0</div>
+          <div class="stat-card" style="border-left: 4px solid var(--danger);">
+            <div class="stat-value" id="stat-unpaid-groups" style="color: var(--danger);">0</div>
             <div class="stat-label">未繳費組數</div>
           </div>
-          <div class="stat-card" style="background: rgba(212, 175, 55, 0.05); border-color: rgba(212, 175, 55, 0.3);">
-            <div class="stat-value" id="stat-revenue" style="color: #D4AF37;">$0</div>
-            <div class="stat-label" style="color: #FFFFFF;">總預期金額</div>
+          <div class="stat-card" style="border-left: 4px solid var(--luxury-gold); background: #FFFBEB;">
+            <div class="stat-value" id="stat-revenue" style="color: var(--luxury-gold);">$0</div>
+            <div class="stat-label">總預期金額</div>
           </div>
         </div>
-        <div style="display: flex; margin-bottom: 24px;">
-          <div class="filter-group">
-            <button class="btn-filter active" onclick="filterAdminTable('all', this)">全部名單</button>
-            <button class="btn-filter" onclick="filterAdminTable('unpaid', this)">未繳款清單</button>
-            <button class="btn-filter" onclick="filterAdminTable('paid', this)">已繳款清單</button>
-          </div>
+        <div class="filter-group">
+          <button class="btn-filter active" onclick="filterAdminTable('all', this)">全部名單</button>
+          <button class="btn-filter" onclick="filterAdminTable('unpaid', this)">待確認/未繳款</button>
+          <button class="btn-filter" onclick="filterAdminTable('paid', this)">已繳款清單</button>
         </div>
-        <table class="admin-table">
-          <thead>
-            <tr>
-              <th>姓名</th>
-              <th>電話</th>
-              <th>總額</th>
-              <th>匯款日期/後五碼</th>
-              <th>狀態</th>
-            </tr>
-          </thead>
-          <tbody id="adminTbody"></tbody>
-        </table>
+        <div class="table-responsive">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th class="col-name">姓名</th>
+                <th class="col-phone">電話</th>
+                <th class="col-total">總額</th>
+                <th class="col-transfer">匯款日期 ｜ 後五碼</th>
+                <th class="col-status">狀態</th>
+              </tr>
+            </thead>
+            <tbody id="adminTbody"></tbody>
+          </table>
+        </div>
       </div>
     </div>
 
@@ -589,12 +566,8 @@
     <div class="modal-content">
       <button class="modal-close" onclick="toggleModal(false)">&times;</button>
       <div class="rules-wrap">
-        <div class="freeze-pane">
-          <div class="main-title">包場活動須知暨場地使用規範</div>
-        </div>
-        <div class="intro">
-          歡迎參加本次包場活動。<br>為維護活動品質、場地安全及所有參與者權益，<br>入場即視為已閱讀並同意遵守以下規範。
-        </div>
+        <div class="freeze-pane"><div class="main-title">包場活動須知暨場地使用規範</div></div>
+        <div class="intro">歡迎參加本次包場活動。<br>為維護活動品質、場地安全及所有參與者權益，<br>入場即視為已閱讀並同意遵守以下規範。</div>
 
         <div class="rule-card">
           <div class="section-title">一、活動資訊</div>
@@ -623,10 +596,6 @@
             <li>活動日前7日至13天取消：退還保證金50%。</li>
             <li>活動日前7天內取消：保證金恕不退還。</li>
           </ul>
-          <div class="item-title">保證金扣抵項目</div>
-          <p>活動結束後，如有以下情形，場地方得自保證金中扣除相關費用：</p>
-          <ul><li>設備損壞或遺失</li><li>場地設施毀損</li><li>額外清潔費</li><li>垃圾清運費</li><li>浴池區設備損害</li><li>其他因活動產生之損失或費用</li></ul>
-          <p>如實際損失超過保證金金額，承租人仍應補足差額。</p>
         </div>
 
         <div class="rule-card" style="box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);">
@@ -636,75 +605,40 @@
             <li>總行代碼：6880</li>
             <li>匯款帳號：<span class="highlight" style="font-size: 18px;">111009917651</span></li>
           </ul>
-          <p style="color: #D4AF37 !important; font-weight: 700; margin-top: 24px;">請於匯款完成後提供帳號後五碼或匯款證明，以利核對款項。</p>
-        </div>
-
-        <div class="rule-card">
-          <div class="section-title">四、違禁品管理</div>
-          <p>本場地<span class="danger-text">全面禁止</span>攜帶、持有、使用、販售或散布：</p>
-          <ul><li>違禁藥品</li><li>管制物品</li><li>危險物品</li><li>其他違法物品</li></ul>
-          <p>如發現違法情事，現場有權立即請相關人員離場，並視情況通報警方處理。<br>因個人違法行為所衍生之一切法律責任，均由當事人自行負責。</p>
-        </div>
-
-        <div class="rule-card">
-          <div class="section-title">五、場地清潔規範</div>
-          <p>暢飲時段結束後，參與者應自行整理活動產生之個人物品及垃圾。</p>
-          <p>非本店營運所產生之垃圾、活動用品、佈置物及其他廢棄物，應由承租人及參與者自行清除。</p>
-          <p>如未完成清潔或需額外安排人力進行清運、復原及特殊清潔作業：<br>酌收場地清潔費 <span class="price-tag">NT$20,000</span></p>
-        </div>
-
-        <div class="rule-card">
-          <div class="section-title">六、設備及場地損害責任</div>
-          <p>活動期間請愛惜場地設備及設施。</p>
-          <p>如因個人或同行賓客行為造成任何設備、設施、裝潢或空間損壞，應負修復責任或照價賠償。<br>包含但不限於：</p>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; margin-bottom: 16px;">
-            <ul style="margin: 0;"><li>DJ設備</li><li>音響設備</li><li>電腦及軟硬體設備</li><li>桌椅家具</li></ul>
-            <ul style="margin: 0;"><li>店內裝潢</li><li>浴池設備</li><li>廁所設備</li><li>監視器設備</li></ul>
-          </div>
-          <ul><li>其他場地設施</li></ul>
-          <p style="color: #D4AF37 !important; font-weight: 700; margin-top: 24px;">承租人應協助管理同行賓客，並對同行賓客造成之損害負連帶責任。</p>
-        </div>
-
-        <div class="rule-card">
-          <div class="section-title">七、浴池 VIP 區使用公告</div>
-          <p>浴池區域為私人空間，平時未對外開放。<br>浴池 VIP 區設有監視錄影設備，購買手環並進入該區域，即視為已知悉並同意相關錄影管理措施。</p>
-          <div class="item-title">使用費用</div>
-          <p><span class="price-tag">NT$2,000／人</span><br>如欲使用浴池 VIP 區，請至吧台購買 VIP 入場手環。</p>
-          <div class="item-title">入場規定</div>
-          <p>未配戴 VIP 手環者不得進入浴池區域。<br>經現場查驗發現未配戴手環進入者：<br>需補繳入場費 <span class="price-tag">NT$2,000／人</span></p>
-          <div class="item-title" style="color: #D4AF37 !important;">巨蟹座壽星好友優惠</div>
-          <p>巨蟹座壽星本人可持身分證件至吧台免費兌換 VIP 手環乙支。</p>
-        </div>
-
-        <div class="rule-card">
-          <div class="section-title">八、浴池區設備賠償標準</div>
-          <p>使用期間請愛惜設備。<br>如因人為因素造成設備或設施損壞，應負修復責任或照價賠償。<br>主要設備價值如下：</p>
-          <div class="price-table">
-            <div class="pt-row pt-header"><div>設備名稱</div><div>設備價值</div></div>
-            <div class="pt-row"><div>淋浴設備</div><div class="pt-val">NT$98,000</div></div>
-            <div class="pt-row"><div>浴池設備</div><div class="pt-val">NT$800,000</div></div>
-            <div class="pt-row"><div>烤箱設備</div><div class="pt-val">NT$280,000</div></div>
-          </div>
-        </div>
-
-        <div class="rule-card">
-          <div class="section-title">九、場地方終止權</div>
-          <p>如有下列情形之一，場地方有權立即終止活動並要求相關人員離場：</p>
-          <ul><li>持有或使用違禁品</li><li>打架鬥毆</li><li>危害公共安全</li><li>蓄意破壞設備</li><li>嚴重影響其他客人或鄰近環境</li><li>拒絕配合工作人員管理</li></ul>
-          <p>相關費用恕不退還。</p>
-          <div class="item-title" style="margin-top: 40px;">監視錄影公告</div>
-          <p>為維護場地安全、設備管理、活動秩序及保障參與者權益，本場地設有監視錄影設備。<br>本場地公共區域及浴池 VIP 區均有錄影監控系統運作中。<br>錄影資料僅供下列用途使用：</p>
-          <ul><li>場地安全管理</li><li>設備損害認定</li><li>糾紛處理</li><li>配合警方或主管機關依法調查</li></ul>
-          <p>不另作其他用途。<br>進入本場地即視為知悉並同意於公共空間範圍內接受錄影紀錄。</p>
+          <p style="color: var(--luxury-gold) !important; font-weight: 700; margin-top: 24px;">請於匯款完成後提供帳號後五碼或匯款證明，以利核對款項。</p>
         </div>
       </div>
     </div>
   </div>
 
+  <div class="custom-alert-overlay" id="customAlert">
+    <div class="custom-alert-box">
+      <div class="custom-alert-msg" id="customAlertMsg"></div>
+      <button class="custom-alert-btn" onclick="closeCustomAlert()">確認</button>
+    </div>
+  </div>
+
   <script>
     try {
+      // ⚠️ 請務必將此處替換為你最新部署的 GAS Web App URL
       var GAS_URL = "https://script.google.com/macros/s/AKfycbwVL5tggzYX-BoHT88uRUKEo4OFdFuuQ1y5E3ILOtIY4NYXYUk_kRHoj4A3YZX2jm-W/exec";
       var adminGlobalData = []; 
+
+      function showCustomAlert(msg) {
+        document.getElementById('customAlertMsg').innerText = msg;
+        var overlay = document.getElementById('customAlert');
+        overlay.style.display = 'flex';
+        void overlay.offsetWidth;
+        overlay.classList.add('show');
+      }
+      window.showCustomAlert = showCustomAlert;
+
+      function closeCustomAlert() {
+        var overlay = document.getElementById('customAlert');
+        overlay.classList.remove('show');
+        setTimeout(function() { overlay.style.display = 'none'; }, 300);
+      }
+      window.closeCustomAlert = closeCustomAlert;
 
       function switchTab(event, tabId) {
         var views = document.querySelectorAll('.view-section');
@@ -715,6 +649,15 @@
         
         document.getElementById('tab-' + tabId).classList.add('active');
         if(event) { event.currentTarget.classList.add('active'); }
+        
+        // 切換到後台時展開寬度
+        var container = document.getElementById('mainContainer');
+        if(tabId === 'admin') {
+          container.classList.add('admin-mode');
+        } else {
+          container.classList.remove('admin-mode');
+        }
+        
         window.scrollTo({ top: document.querySelector('.hero-title-section').offsetTop, behavior: 'smooth' });
       }
       window.switchTab = switchTab;
@@ -725,17 +668,13 @@
       }
       window.toggleModal = toggleModal;
 
-      // --- 一鍵複製帳號功能 ---
       function copyAccount() {
         var accountText = "111009917651";
-        
-        // 使用現代 clipboard API
         if (navigator.clipboard && window.isSecureContext) {
           navigator.clipboard.writeText(accountText).then(function() {
-            alert('✅ 帳號「111009917651」已複製！\n\n請前往您的網銀 App 貼上帳號進行轉帳。');
+            showCustomAlert('已複製帳號');
           }).catch(fallbackCopyTextToClipboard);
         } else {
-          // 備用複製方案 (相容性用)
           fallbackCopyTextToClipboard();
         }
 
@@ -744,12 +683,8 @@
           tempInput.value = accountText;
           document.body.appendChild(tempInput);
           tempInput.select();
-          try {
-            document.execCommand("copy");
-            alert('✅ 帳號「111009917651」已複製！\n\n請前往您的網銀 App 貼上帳號進行轉帳。');
-          } catch (err) {
-            alert('❌ 複製失敗，請手動長按選取數字複製。');
-          }
+          try { document.execCommand("copy"); showCustomAlert('已複製帳號'); } 
+          catch (err) { showCustomAlert('複製失敗，請手動選取複製'); }
           document.body.removeChild(tempInput);
         }
       }
@@ -765,25 +700,10 @@
         div.id = 'comp-' + type + '-' + compCounters[type];
         
         var htmlString = '<button type="button" class="btn-remove" onclick="removeComp(\'' + type + '\', ' + compCounters[type] + ')">\u2715 移除</button>' +
-          '<div class="form-group" style="margin-bottom:24px;">' +
-            '<label>朋友姓名</label>' +
-            '<input type="text" class="c-name" required>' +
-          '</div>' +
+          '<div class="form-group" style="margin-bottom:24px;"><label>朋友姓名</label><input type="text" class="c-name" required></div>' +
           '<div class="form-row">' +
-            '<div class="form-group">' +
-              '<label>交通接駁</label>' +
-              '<select class="c-shuttle" onchange="calcTotal(\'' + type + '\')">' +
-                '<option value="0">自行前往</option>' +
-                '<option value="400">需要遊覽車接駁 ($400)</option>' +
-              '</select>' +
-            '</div>' +
-            '<div class="form-group">' +
-              '<label>費用支付</label>' +
-              '<select class="c-pay" onchange="calcTotal(\'' + type + '\')">' +
-                '<option value="merged">合併結帳 (算在總金額)</option>' +
-                '<option value="split">各自繳費 (朋友自行匯款)</option>' +
-              '</select>' +
-            '</div>' +
+            '<div class="form-group"><label>交通接駁</label><select class="c-shuttle" onchange="calcTotal(\'' + type + '\')"><option value="0">自行前往</option><option value="400">需要遊覽車接駁 ($400)</option></select></div>' +
+            '<div class="form-group"><label>費用支付</label><select class="c-pay" onchange="calcTotal(\'' + type + '\')"><option value="merged">合併結帳 (算在總金額)</option><option value="split">各自繳費 (朋友自行匯款)</option></select></div>' +
           '</div>';
           
         div.innerHTML = htmlString;
@@ -814,21 +734,16 @@
           var cShuttle = parseInt(box.querySelector('.c-shuttle').value) || 0;
           var cPay = box.querySelector('.c-pay').value;
           var cCost = BASE_FEE + cShuttle;
-          
           if (cPay === 'merged') {
-            total += cCost;
-            detailHtml += '朋友 ' + (i+1) + ' (合併): $' + cCost + '<br>';
+            total += cCost; detailHtml += '朋友 ' + (i+1) + ' (合併): $' + cCost + '<br>';
           } else {
-            detailHtml += '朋友 ' + (i+1) + ' (自付): $' + cCost + ' <span style="color:#EF4444; font-size:11px; letter-spacing:1px;">(不計入總額)</span><br>';
+            detailHtml += '朋友 ' + (i+1) + ' (自付): $' + cCost + ' <span style="color:#EF4444; font-size:11px;">(不計總額)</span><br>';
           }
         }
-
         var calcDetailEl = document.getElementById(type + 'CalcDetail');
-        if(calcDetailEl) { calcDetailEl.innerHTML = detailHtml; }
-        
+        if(calcDetailEl) calcDetailEl.innerHTML = detailHtml;
         var totalPriceEl = document.getElementById(type + 'TotalPrice');
-        if(totalPriceEl) { totalPriceEl.innerText = 'NT$ ' + total; }
-        
+        if(totalPriceEl) totalPriceEl.innerText = 'NT$ ' + total;
         return total;
       }
       window.calcTotal = calcTotal;
@@ -837,7 +752,6 @@
         e.preventDefault();
         var btn = e.target.querySelector('button[type="submit"]');
         var originalText = btn.innerText;
-        
         btn.innerHTML = '<span class="spinner"></span> 處理中...';
         btn.disabled = true;
 
@@ -865,48 +779,35 @@
           total: calcTotal(type)
         };
 
-        fetch(GAS_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-          body: JSON.stringify(payload)
-        })
+        fetch(GAS_URL, { method: 'POST', body: JSON.stringify(payload) })
         .then(function(res) { return res.json(); })
         .then(function(data) {
           if(data.status === 'success') {
-            alert('\u2705 報名資料已成功處理！\n\n(您的資料已安全寫入資料庫，請記得完成匯款作業)');
+            showCustomAlert('資料已成功送出！\n\n(若尚未匯款，請盡快完成匯款作業)');
             if(type === 'main') {
-              e.target.reset(); 
-              document.getElementById('main-companions-container').innerHTML = ''; 
-              calcTotal('main'); 
+              e.target.reset(); document.getElementById('main-companions-container').innerHTML = ''; calcTotal('main'); 
             } else {
               document.getElementById('editFormArea').style.display = 'none';
             }
           } else {
-            alert('\u274C 發生錯誤：' + data.message);
+            showCustomAlert('發生錯誤：' + data.message);
           }
         })
-        .catch(function(err) { alert('連線失敗，請檢查網路狀態。'); })
-        .finally(function() {
-          btn.innerHTML = originalText;
-          btn.disabled = false;
-        });
+        .catch(function(err) { showCustomAlert('連線失敗，請檢查網路狀態。'); })
+        .finally(function() { btn.innerHTML = originalText; btn.disabled = false; });
       }
       window.submitForm = submitForm;
 
       function fetchDataForEdit(e) {
         var phone = document.getElementById('searchPhone').value;
-        if(!phone) { return alert('請先輸入查詢電話'); }
+        if(!phone) return showCustomAlert('請先輸入查詢電話');
         
         var btn = e.target;
         var originalText = btn.innerText;
         btn.innerHTML = '<span class="spinner"></span> 查詢中...';
         btn.disabled = true;
 
-        fetch(GAS_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-          body: JSON.stringify({ action: 'search', phone: phone })
-        })
+        fetch(GAS_URL, { method: 'POST', body: JSON.stringify({ action: 'search', phone: phone }) })
         .then(function(res) { return res.json(); })
         .then(function(res) {
           if(res.status === 'success') {
@@ -918,13 +819,26 @@
             var tDate = res.data.transferDate;
             if (tDate && tDate.length > 10 && tDate.indexOf('GMT') !== -1) {
               var d = new Date(tDate);
-              var month = d.getMonth() + 1;
-              var day = d.getDate();
-              tDate = d.getFullYear() + '-' + (month < 10 ? '0' + month : month) + '-' + (day < 10 ? '0' + day : day);
+              tDate = d.getFullYear() + '-' + ("0"+(d.getMonth()+1)).slice(-2) + '-' + ("0"+d.getDate()).slice(-2);
             }
             document.getElementById('editTransferDate').value = tDate || '';
             document.getElementById('editAccount5').value = res.data.account5 || '';
             document.getElementById('editNotes').value = res.data.notes || '';
+
+            var currentPayStatus = res.data.payStatus || "未付款";
+            var hasTransferData = (tDate || res.data.account5);
+            if (currentPayStatus !== "已付款" && hasTransferData) {
+              currentPayStatus = "帳款確認中";
+            }
+
+            document.getElementById('dispName').innerText = res.data.name;
+            document.getElementById('dispShuttle').innerText = res.data.shuttle;
+            
+            var payDisp = document.getElementById('dispPayStatus');
+            payDisp.innerText = currentPayStatus;
+            if (currentPayStatus === '已付款') { payDisp.style.color = 'var(--success)'; }
+            else if (currentPayStatus === '帳款確認中') { payDisp.style.color = 'var(--warning)'; }
+            else { payDisp.style.color = 'var(--danger)'; }
 
             document.getElementById('edit-companions-container').innerHTML = '';
             compCounters['edit'] = 0;
@@ -944,73 +858,56 @@
             calcTotal('edit');
             document.getElementById('editFormArea').style.display = 'block';
           } else {
-            alert('\u26A0\uFE0F ' + res.message);
-            document.getElementById('editFormArea').style.display = 'none';
+            showCustomAlert(res.message); document.getElementById('editFormArea').style.display = 'none';
           }
         })
-        .catch(function(err) { alert('連線失敗，請檢查網路狀態。'); })
-        .finally(function() {
-          btn.innerHTML = originalText;
-          btn.disabled = false;
-        });
+        .catch(function(err) { showCustomAlert('連線失敗，請檢查網路狀態。'); })
+        .finally(function() { btn.innerHTML = originalText; btn.disabled = false; });
       }
       window.fetchDataForEdit = fetchDataForEdit;
 
       function loadAdminDashboard(e) {
         var pwd = document.getElementById('adminPwd').value;
-        if(pwd !== '0706') { return alert('密碼錯誤，請重新輸入！'); }
+        if(pwd !== '0706') return showCustomAlert('密碼錯誤，請重新輸入！');
 
         var btn = e.target;
         var originalText = btn.innerText;
         btn.innerHTML = '<span class="spinner"></span> 載入中...';
         btn.disabled = true;
 
-        fetch(GAS_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-          body: JSON.stringify({ action: 'admin' })
-        })
+        fetch(GAS_URL, { method: 'POST', body: JSON.stringify({ action: 'admin' }) })
         .then(function(res) { return res.json(); })
         .then(function(res) {
           if(res.status === 'success') {
             adminGlobalData = res.data; 
             document.getElementById('adminLoginArea').style.display = 'none';
             document.getElementById('adminTableArea').style.display = 'block';
-            
-            calculateAdminStats();
-            renderAdminTable('all'); 
+            calculateAdminStats(); renderAdminTable('all'); 
           } else {
-            alert('發生錯誤：' + res.message);
+            showCustomAlert('發生錯誤：' + res.message);
           }
         })
-        .catch(function(err) { alert('連線失敗，請檢查網路狀態。'); })
-        .finally(function() {
-          btn.innerHTML = originalText;
-          btn.disabled = false;
-        });
+        .catch(function(err) { showCustomAlert('連線失敗，請檢查網路狀態。'); })
+        .finally(function() { btn.innerHTML = originalText; btn.disabled = false; });
       }
       window.loadAdminDashboard = loadAdminDashboard;
 
       function calculateAdminStats() {
         var totalGroups = adminGlobalData.length;
-        var paidGroups = 0;
-        var expectedRevenue = 0;
-        
+        var paidGroups = 0; var expectedRevenue = 0;
         for(var i=0; i<adminGlobalData.length; i++) {
-          if(adminGlobalData[i].payStatus === '已付款') { paidGroups++; }
+          if(adminGlobalData[i].payStatus === '已付款') paidGroups++;
           expectedRevenue += (parseInt(adminGlobalData[i].total) || 0);
         }
-        var unpaidGroups = totalGroups - paidGroups;
-
         document.getElementById('stat-total-groups').innerText = totalGroups;
         document.getElementById('stat-paid-groups').innerText = paidGroups;
-        document.getElementById('stat-unpaid-groups').innerText = unpaidGroups;
+        document.getElementById('stat-unpaid-groups').innerText = totalGroups - paidGroups;
         document.getElementById('stat-revenue').innerText = '$' + expectedRevenue.toLocaleString();
       }
 
       function filterAdminTable(filterType, btnElement) {
         var btns = document.querySelectorAll('.btn-filter');
-        for(var i=0; i<btns.length; i++) { btns[i].classList.remove('active'); }
+        for(var i=0; i<btns.length; i++) btns[i].classList.remove('active');
         btnElement.classList.add('active');
         renderAdminTable(filterType);
       }
@@ -1019,8 +916,8 @@
       function renderAdminTable(filterType) {
         var tbody = document.getElementById('adminTbody');
         tbody.innerHTML = ''; 
-        
         var filteredData = [];
+        
         for(var i=0; i<adminGlobalData.length; i++) {
           if (filterType === 'all') { filteredData.push(adminGlobalData[i]); }
           else if (filterType === 'paid' && adminGlobalData[i].payStatus === '已付款') { filteredData.push(adminGlobalData[i]); }
@@ -1028,26 +925,66 @@
         }
 
         if (filteredData.length === 0) {
-          tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 32px; color: #8E9BAE;">無符合條件的名單</td></tr>';
+          tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 40px; color: #64748B;">無符合條件的名單</td></tr>';
           return;
         }
 
         for(var j=0; j<filteredData.length; j++) {
           var row = filteredData[j];
-          var statusBadge = row.payStatus === '已付款' 
-            ? '<span style="background:rgba(52, 211, 153, 0.15); color:#34D399; border:1px solid rgba(52, 211, 153, 0.3); padding:6px 12px; font-size:11px; font-weight:600; border-radius:12px; letter-spacing:1px;">已付款</span>'
-            : '<span style="background:rgba(248, 113, 113, 0.15); color:#F87171; border:1px solid rgba(248, 113, 113, 0.3); padding:6px 12px; font-size:11px; font-weight:600; border-radius:12px; letter-spacing:1px;">未付款</span>';
+          var statusBadge = '';
+          var verifyBtn = '';
+          
+          if (row.payStatus === '已付款') {
+            statusBadge = '<span class="status-badge bg-green">已付款</span>';
+          } else if (row.payStatus === '帳款確認中' || row.hasTransferInfo) {
+            statusBadge = '<span class="status-badge bg-yellow">確認中</span>';
+            // 獨立的確認按鈕，放置於匯款資訊右側
+            verifyBtn = '<button class="btn-verify-pay" onclick="confirmPayment(\''+row.phone+'\')">帳款確認</button>';
+          } else {
+            statusBadge = '<span class="status-badge bg-red">未付款</span>';
+          }
+
+          // 不依賴 GAS 更新，強制將 <br> 轉換為全形 ｜ 呈現於同一行
+          var transferText = row.transferInfo.replace('<br>', ' ｜ ');
             
           var trStr = '<tr>' +
-              '<td style="font-weight:500; font-size:15px;">' + row.name + '</td>' +
-              '<td style="font-family:\'Montserrat\', sans-serif; font-size:13px; color:#8E9BAE;">' + row.phone + '</td>' +
-              '<td style="font-family:\'Montserrat\', sans-serif; font-weight:500; color:#D4AF37; font-size:15px;">$' + row.total + '</td>' +
-              '<td style="font-size:13px; color:#8E9BAE; font-family:\'Montserrat\', sans-serif;">' + row.transferInfo + '</td>' +
-              '<td>' + statusBadge + '</td>' +
+              '<td class="col-name">' + row.name + '</td>' +
+              '<td class="col-phone">' + row.phone + '</td>' +
+              '<td class="col-total">$' + row.total + '</td>' +
+              '<td class="col-transfer"><div class="transfer-flex"><span>' + transferText + '</span>' + verifyBtn + '</div></td>' +
+              '<td class="col-status">' + statusBadge + '</td>' +
             '</tr>';
           tbody.innerHTML += trStr;
         }
       }
+
+      function confirmPayment(phone) {
+        if (!confirm("確認已收到款項，將更新為已付款狀態是否正確?")) return;
+        
+        fetch(GAS_URL, {
+          method: 'POST',
+          body: JSON.stringify({ action: 'updateStatus', phone: phone, status: '已付款' })
+        })
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+          if(data.status === 'success') {
+            for(var i=0; i<adminGlobalData.length; i++) {
+              if (adminGlobalData[i].phone === phone) {
+                adminGlobalData[i].payStatus = '已付款';
+                break;
+              }
+            }
+            calculateAdminStats();
+            renderAdminTable(document.querySelector('.btn-filter.active').getAttribute('onclick').match(/'([^']+)'/)[1]);
+            showCustomAlert('狀態已成功更新為「已付款」');
+          } else {
+            showCustomAlert('更新失敗：' + data.message);
+          }
+        })
+        .catch(function(err) { showCustomAlert('連線失敗，請檢查網路'); });
+      }
+      window.confirmPayment = confirmPayment;
+
     } catch (error) {
       console.log("Script execution error:", error);
     }
