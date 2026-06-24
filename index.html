@@ -59,7 +59,7 @@
     .image-background-layer {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%;
       background: url('https://cdn-general.cybassets.com/s/files/35135/theme/127586/assets/C1.jpg') center 25%/cover no-repeat;
-      z-index: 0; opacity: 0.9; 
+      z-index: 0; opacity: 0.85; 
       transition: opacity 0.5s ease;
     }
     .overlay-layer {
@@ -123,7 +123,7 @@
     .card-title { font-size: 18px; font-weight: 500; margin: 0 0 40px; color: #FFFFFF; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 16px; letter-spacing: 3px; text-transform: uppercase;}
 
     .form-group { margin-bottom: 32px; width: 100%; }
-    .form-row { display: flex; flex-wrap: wrap; width: 100%; }
+    .form-row { display: flex; flex-wrap: wrap; width: 100%; margin-bottom: 32px; } /* 修正全域排版間距 */
     .form-row .form-group { flex: 1; min-width: 240px; margin-bottom: 0; margin-right: 24px; }
     .form-row .form-group:last-child { margin-right: 0; }
     .form-group label { display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; }
@@ -276,10 +276,12 @@
       .bank-banner { padding: 32px 16px; }
       .bank-info .bank-acc { font-size: 28px; }
       
-      /* ★ 修正 3：手機板查詢按鈕間距修復 */
+      /* ★ 修正：手機版表單並排欄位換行後的間距修復 */
+      .form-row .form-group { margin-bottom: 24px !important; margin-right: 0; }
+      .form-row .form-group:last-child { margin-bottom: 0 !important; }
+      
       .search-btn-wrapper { margin-top: 16px; }
       
-      /* ★ 修正 2：還原手機版專屬的 Banner 高度與裁切邏輯 */
       .hero-main-title { font-size: 26px; }
       .luxury-desc { font-size: 11px; }
       .hero-title-section { padding: 32px 20px 32px; }
@@ -287,7 +289,7 @@
       .image-background-layer { 
           background-image: url('https://cdn-general.cybassets.com/s/files/35135/theme/127586/assets/C2.jpg') !important; 
           background-position: center top !important; 
-          opacity: 1; 
+          opacity: 0.85; 
       }
       .overlay-layer { 
           background: linear-gradient(to bottom, rgba(19,30,38,0) 0%, rgba(19,30,38,0) 75%, rgba(19,30,38,1) 100%) !important; 
@@ -365,13 +367,16 @@
           <div class="vertical-check-group">
             <div class="check-title">必填確認項目</div>
             <label class="checkbox-label">
-              <input type="checkbox" required><span>入場費 NT.<span class="highlight-time">800元</span></span>
+              <input type="checkbox" required><span>我知道入場費 NT.<span class="highlight-time">800元</span></span>
             </label>
             <label class="checkbox-label">
-              <input type="checkbox" required><span>遊覽車上車 <span class="highlight-time">13:15</span></span>
+              <input type="checkbox" required><span>我知道暢飲時間為 <span class="highlight-time">15-19點</span></span>
             </label>
             <label class="checkbox-label">
-              <input type="checkbox" required><span>回家發車 <span class="highlight-time">21:45</span></span>
+              <input type="checkbox" required><span>我知道遊覽車時間為 <span class="highlight-time">13:30 / 22:00</span></span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" required><span>我會帶著一顆熱情愉快的心</span>
             </label>
           </div>
           <div class="form-group">
@@ -478,9 +483,10 @@
           </div>
           <div class="vertical-check-group">
             <div class="check-title">必填確認項目</div>
-            <label class="checkbox-label"><input type="checkbox" required checked><span>入場費 NT.<span class="highlight-time">800元</span></span></label>
-            <label class="checkbox-label"><input type="checkbox" required checked><span>遊覽車上車 <span class="highlight-time">13:15</span></span></label>
-            <label class="checkbox-label"><input type="checkbox" required checked><span>回家發車 <span class="highlight-time">21:45</span></span></label>
+            <label class="checkbox-label"><input type="checkbox" required checked><span>我知道入場費 NT.<span class="highlight-time">800元</span></span></label>
+            <label class="checkbox-label"><input type="checkbox" required checked><span>我知道暢飲時間為 <span class="highlight-time">15-19點</span></span></label>
+            <label class="checkbox-label"><input type="checkbox" required checked><span>我知道遊覽車時間為 <span class="highlight-time">13:30 / 22:00</span></span></label>
+            <label class="checkbox-label"><input type="checkbox" required checked><span>我會帶著一顆熱情愉快的心</span></label>
           </div>
           <div class="form-group">
             <label>攜伴朋友</label>
@@ -628,7 +634,6 @@
 
   <script>
     try {
-      // ⚠️ 這是你的 GAS API 網址，已原封不動保留
       var GAS_URL = "https://script.google.com/macros/s/AKfycbwVL5tggzYX-BoHT88uRUKEo4OFdFuuQ1y5E3ILOtIY4NYXYUk_kRHoj4A3YZX2jm-W/exec";
       var adminGlobalData = []; 
 
@@ -705,7 +710,7 @@
         
         var htmlString = '<button type="button" class="btn-remove" onclick="removeComp(\'' + type + '\', ' + compCounters[type] + ')">\u2715 移除</button>' +
           '<div class="form-group" style="margin-bottom:24px;"><label>朋友姓名</label><input type="text" class="c-name" required></div>' +
-          '<div class="form-row">' +
+          '<div class="form-row" style="margin-bottom: 0;">' +
             '<div class="form-group"><label>交通接駁</label><select class="c-shuttle" onchange="calcTotal(\'' + type + '\')"><option value="0">自行前往</option><option value="400">需要遊覽車接駁 ($400)</option></select></div>' +
             '<div class="form-group"><label>費用支付</label><select class="c-pay" onchange="calcTotal(\'' + type + '\')"><option value="merged">合併結帳 (算在總金額)</option><option value="split">各自繳費 (朋友自行匯款)</option></select></div>' +
           '</div>';
@@ -947,7 +952,6 @@
             statusBadge = '<span class="status-badge bg-red">未付款</span>';
           }
 
-          // ★ 自動在前端將 <br> 替換成全形 ｜ 讓它維持在一行
           var transferText = row.transferInfo.replace('<br>', ' ｜ ');
             
           var trStr = '<tr>' +
