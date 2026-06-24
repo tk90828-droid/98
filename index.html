@@ -56,7 +56,6 @@
     overflow: hidden;
   }
 
-  /* 調整圖片縮放比例(130%)與中心點，裁切邊緣凸顯主體 */
   .image-background-layer {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background: url('https://cdn-general.cybassets.com/s/files/35135/theme/127586/assets/C1.jpg') center 15%/130% no-repeat;
@@ -66,11 +65,7 @@
  @media(max-width: 768px) {
     .image-background-layer {
       background-image: url('https://cdn-general.cybassets.com/s/files/35135/theme/127586/assets/C2.jpg') !important;
-      
-      /* 比例不要放太大，110% 足以填滿兩側，又不會讓上下太長 */
       background-size: 110% !important; 
-      
-      /* 將視覺中心抓在從上面數來 15% 到 20% 的位置，這樣剛好能包住星星跟男性的上半身 */
       background-position: center 15% !important;
     }
     .luxury-hero-banner { min-height: 450px; height: 50vh; }
@@ -81,11 +76,10 @@
     background: linear-gradient(to bottom, rgba(10,14,26,0) 0%, rgba(10,14,26,0.2) 50%, rgba(10,14,26,1) 100%);
   }
 
-  /* 標題往下放 */
   .hero-content {
     position: relative;
     z-index: 10;
-    margin-top: 200px; 
+    margin-top: 220px; 
     padding-bottom: 20px;
   }
 
@@ -493,6 +487,10 @@
           <input class="form-input" id="pay-last5" type="text" maxlength="5" placeholder="XXXXX">
         </div>
       </div>
+      <div class="form-group">
+        <label class="form-label">實際匯款金額</label>
+        <input class="form-input" id="pay-amount" type="number" placeholder="填寫實際匯款金額（例：800）">
+      </div>
       <div class="form-group" style="margin-bottom:0">
         <label class="form-label">備註留言</label>
         <textarea class="form-textarea" id="pay-note" placeholder="如有特殊需求..."></textarea>
@@ -610,7 +608,7 @@
       <div class="admin-table-wrap">
         <table id="adminTable">
           <thead>
-            <tr><th>姓名</th><th>電話</th><th>總額</th><th>匯款憑證</th><th>狀態</th><th>操作</th></tr>
+            <tr><th>姓名</th><th>電話</th><th>總額</th><th>匯款憑證/金額</th><th>狀態</th><th>操作</th></tr>
           </thead>
           <tbody id="adminTableBody">
             <tr><td colspan="6" style="text-align:center;padding:24px">讀取中...</td></tr>
@@ -838,12 +836,12 @@ async function submitPaymentInfo(e) {
   const btn = document.getElementById('pay-submit-btn');
   setBtnLoading(btn, true);
 
-  // 因為後台已經拆單獨立，我們只需更新對應電話的那一列，不需再重新提交整包資料！
   const payload = {
     action: 'updatePayment',
     phone: phone,
     transferDate: document.getElementById('pay-date').value,
     account5: document.getElementById('pay-last5').value,
+    transferAmount: document.getElementById('pay-amount').value, // 加入匯款金額
     notes: document.getElementById('pay-note').value
   };
 
@@ -879,7 +877,7 @@ async function fetchDataForEdit() {
       
       const badge = document.getElementById('q-status-badge');
       let status = data.payStatus || "未付款";
-      if (status !== "已付款" && status !== "主揪代付" && (data.transferDate || data.account5)) status = "帳款確認中";
+      if (status !== "已付款" && status !== "主揪代付" && (data.transferDate || data.account5 || data.transferAmount)) status = "帳款確認中";
 
       badge.textContent = status;
       
@@ -902,7 +900,6 @@ async function fetchDataForEdit() {
       document.getElementById('edit-companions').innerHTML = '';
       compCounters['edit'] = 0;
       
-      // 如果是攜伴來查詢，隱藏編輯攜伴的區塊（因為他自己就是攜伴）
       if(data.mainPhone) {
          document.getElementById('edit-companion-section').style.display = 'none';
       } else {
@@ -996,14 +993,11 @@ async function adminLogin() {
 }
 
 function calcAdminStats() {
-  // 因為所有人都拆成獨立列了，所以 length 即為總人數
   const total = adminGlobalData.length;
   let paid = 0, revenue = 0, shuttleCount = 0;
 
   adminGlobalData.forEach(row => {
-    // 判斷是否付款完成
     if(row.payStatus === '已付款' || row.payStatus === '主揪代付') paid++;
-    // 合併結帳的攜伴 total 為 0，主揪 total 已包涵，直接加總即可
     revenue += (parseInt(row.total) || 0);
 
     const mShuttle = String(row.shuttle || '');
@@ -1047,7 +1041,6 @@ function filterAdminTable(type, btn) {
 
   filtered.forEach(row => {
     let dispName = row.name; 
-    // 若他是一筆攜伴資料，加個標籤好辨識
     if(row.mainPhone) {
        dispName += ` <span style="font-size:11px;color:var(--text2);background:rgba(255,255,255,0.05);padding:2px 6px;border-radius:4px;">(攜伴)</span>`;
     }
@@ -1067,7 +1060,7 @@ function filterAdminTable(type, btn) {
       statusHtml = '<span class="badge badge-red">未付款</span>';
     }
 
-    let transferText = row.transferInfo ? row.transferInfo.replace('<br>', '｜') : '--';
+    let transferText = row.transferInfo ? row.transferInfo.replace(/\|/g, '<br>') : '--';
     if(type === 'shuttle') transferText = '<span style="color:var(--blue2)">需安排接駁位</span>';
 
     tbody.innerHTML += `
@@ -1075,7 +1068,7 @@ function filterAdminTable(type, btn) {
         <td style="line-height:1.4;">${dispName}</td>
         <td style="font-family:monospace;letter-spacing:0.05em">${mPhone}</td>
         <td style="font-weight:600;color:var(--gold2)">$${row.total}</td>
-        <td><span style="font-size:11px;color:var(--text2)">${transferText}</span></td>
+        <td style="font-size:11px;color:var(--text2);line-height:1.5">${transferText}</td>
         <td>${statusHtml}</td>
         <td>${btnHtml}</td>
       </tr>
