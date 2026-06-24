@@ -44,8 +44,8 @@
  .luxury-hero-banner {
     position: relative;
     width: 100%;
-    min-height: 480px; /* 拉高基本高度 */
-    height: 55vh;      /* 拉高視窗佔比 */
+    min-height: 480px; 
+    height: 55vh;      
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,20 +65,14 @@
  @media(max-width: 768px) {
     .image-background-layer {
       background-image: url('https://cdn-general.cybassets.com/s/files/35135/theme/127586/assets/C2.jpg') !important;
-      
-      /* 捨棄寫死的百分比，改用 cover 讓系統自動完美裁切 */
       background-size: 120% !important; 
-      
-      /* 將視覺重心定在上方 25%，完美抓出重點 */
       background-position: center 25% !important;
     }
-    /* 確保手機版高度與電腦版一致拉高 */
     .luxury-hero-banner { min-height: 480px; height: 55vh; }
   }
 
   .overlay-layer {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
-    /* 讓 0% 到 75% 都是全透明，這樣上方的星星與人物就不會被蓋上一層黑影 */
     background: linear-gradient(to bottom, rgba(10,14,26,0) 0%, rgba(10,14,26,0) 75%, rgba(10,14,26,1) 100%);
   }
 
@@ -114,10 +108,9 @@
 
   .hero-sub {
     font-size: 14px;
-    color: #FFFFFF; /* 將文字顏色改為黑色 */
-    font-weight: 600; /* 稍微加粗一點讓黑字更扎實 */
+    color: #FFFFFF; 
+    font-weight: 600; 
     letter-spacing: 0.12em;
-    /* 利用多層次的文字陰影疊加出白色光暈效果 */
     text-shadow: 
       0 0 4px rgba(255, 255, 255, 0.9),
       0 0 8px rgba(255, 255, 255, 0.8),
@@ -318,21 +311,41 @@
   .admin-tab-btn { flex-shrink: 0; padding: 8px 16px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; color: var(--text3); font-size: 12px; font-family: inherit; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
   .admin-tab-btn.active { background: rgba(74,158,255,0.1); border-color: rgba(74,158,255,0.3); color: var(--blue2); }
 
-  /* ── RULES MODAL ── */
-  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); z-index: 200; display: none; align-items: flex-end; justify-content: center; }
+  /* ── RULES MODAL (NEW) ── */
+  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(5px); z-index: 1000; display: none; align-items: center; justify-content: center; padding: 20px; }
   .modal-overlay.show { display: flex; }
-  .modal-sheet { background: #131929; border-top: 1px solid var(--border); border-radius: 20px 20px 0 0; width: 100%; max-width: 640px; max-height: 85vh; overflow-y: auto; padding: 24px 20px 40px; }
-  .modal-handle { width: 36px; height: 4px; background: var(--border); border-radius: 2px; margin: 0 auto 20px; }
-  .modal-title { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 16px; text-align: center; letter-spacing: 0.08em; }
-  .modal-close { position: absolute; top: 20px; right: 20px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; color: var(--text2); padding: 6px 10px; cursor: pointer; font-family: inherit; font-size: 13px; }
+  .modal-content { background: rgba(10, 19, 26, 0.98); width: 100%; max-width: 840px; height: 90vh; overflow-y: auto; position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.8); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; }
+  .modal-close { position: sticky; top: 16px; left: calc(100% - 56px); margin-bottom: -40px; z-index: 99; background: #131E26; border: 1px solid rgba(255, 255, 255, 0.08); width: 40px; height: 40px; font-size: 24px; line-height: 1; cursor: pointer; color: var(--text2); display: flex; justify-content: center; align-items: center; transition: 0.4s; border-radius: 50%; }
+  .modal-close:hover { color: #FFF; background: rgba(255,255,255,0.1); border-color: #FFF; }
+  
+  .rules-wrap { padding: 0 40px 60px; line-height: 1.8; }
+  .rules-wrap .freeze-pane { position: sticky; top: 0; z-index: 90; background: rgba(10, 19, 26, 0.98); border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding: 24px 20px; text-align: center; margin: 0 -40px 40px; }
+  .rules-wrap .main-title { font-size: 22px; font-weight: 600; letter-spacing: 4px; color: #FFFFFF; }
+  .rules-wrap .intro { font-size: 14px; color: var(--text2); text-align: center; margin-bottom: 48px; line-height: 2; letter-spacing: 2px; }
+  .rules-wrap .rule-card { background: #FFFFFF !important; border: 1px solid #E2E8F0 !important; padding: 40px; margin-bottom: 32px; transition: 0.3s; border-radius: 8px; }
+  .rules-wrap .rule-card:hover { border-color: #CBD5E1 !important; box-shadow: 0 10px 30px rgba(255,255,255,0.05); }
+  .rules-wrap .rule-card p, .rules-wrap .rule-card ul li { font-size: 14px; color: #333333 !important; font-weight: 400; }
+  .rules-wrap .rule-card ul { list-style: none; padding: 0; margin: 0 0 24px 0; }
+  .rules-wrap .rule-card ul li { position: relative; padding-left: 24px; margin-bottom: 12px; }
+  .rules-wrap .rule-card ul li::before { content: "\25C6"; position: absolute; left: 0; top: 1px; font-size: 10px; color: var(--gold) !important; }
+  .rules-wrap .rule-card .item-title { font-size: 16px; font-weight: 700 !important; color: #000000 !important; margin: 24px 0 12px 0; letter-spacing: 1px; }
+  .rules-wrap .rule-card .item-title:first-child { margin-top: 0; }
+  .rules-wrap .rule-card .section-title { font-size: 16px; font-weight: 700; color: var(--gold) !important; margin: 0 0 24px 0; padding-bottom: 16px; border-bottom: 1px solid rgba(212, 175, 55, 0.3) !important; letter-spacing: 3px; text-transform: uppercase; }
+  .rules-wrap .rule-card .highlight { color: #4A8C93 !important; font-weight: 600 !important; letter-spacing: 1px; }
+  .rules-wrap .rule-card .price-tag { display: inline-block; background: rgba(74, 140, 147, 0.1) !important; border: 1px solid rgba(74, 140, 147, 0.3) !important; color: #4A8C93 !important; padding: 4px 12px; font-weight: 600 !important; font-size: 14px; margin: 4px 0; letter-spacing: 1px; border-radius: 4px; }
+  .rules-wrap .rule-card .danger-text { color: var(--error) !important; font-weight: 600 !important; }
+  .rules-wrap .rule-card .price-table { margin-top: 24px; border: 1px solid #E2E8F0 !important; overflow: hidden; background: #FFFFFF !important; border-radius: 6px; }
+  .rules-wrap .rule-card .pt-row { display: flex; justify-content: space-between; padding: 16px 24px; border-bottom: 1px solid #E2E8F0 !important; font-size: 14px; color: #333333 !important; }
+  .rules-wrap .rule-card .pt-row:last-child { border-bottom: none !important; }
+  .rules-wrap .rule-card .pt-header { background: #F8FAFC !important; font-weight: 600 !important; color: #000000 !important; letter-spacing: 2px; }
+  .rules-wrap .rule-card .pt-val { color: #4A8C93 !important; font-weight: 600 !important; letter-spacing: 1px; }
 
-  .rules-section { margin-bottom: 24px; }
-  .rules-section-title { font-size: 14px; font-weight: 700; color: var(--gold2); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid rgba(201,168,76,0.2); letter-spacing: 0.08em; }
-  .rules-item { padding: 10px 0; font-size: 13px; color: var(--text2); line-height: 1.65; }
-  .rules-item strong { color: var(--text); font-weight: 600; }
-  .rules-highlight { background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; padding: 12px 14px; margin: 10px 0; font-size: 13px; color: var(--text2); line-height: 1.65; }
-  .price-tag { display: inline-block; background: rgba(74,158,255,0.1); border: 1px solid rgba(74,158,255,0.3); color: var(--blue2); padding: 2px 8px; border-radius: 4px; font-weight: 600; margin: 2px 0; }
-  .danger-text { color: var(--error); font-weight: 600; }
+  @media(max-width: 768px) {
+    .rules-wrap { padding: 0 20px 40px; }
+    .rules-wrap .freeze-pane { padding: 20px; margin: 0 -20px 32px; }
+    .rules-wrap .main-title { font-size: 18px; }
+    .rules-wrap .rule-card { padding: 24px 20px; }
+  }
 
   /* ── DIVIDER & ALERTS & TOAST ── */
   .divider { height: 1px; background: var(--border); margin: 20px 0; }
@@ -631,45 +644,128 @@
   </div>
 </section>
 
+<!-- ======================= -->
+<!--   活動規範與須知區塊    -->
+<!-- ======================= -->
 <div class="modal-overlay" id="rulesModal" onclick="closeRulesOnBg(event)">
-  <div class="modal-sheet">
-    <div class="modal-handle"></div>
-    <button class="modal-close" onclick="closeRules()">關閉</button>
-    <div class="modal-title">包場活動須知暨場地使用規範</div>
+  <div class="modal-content">
+    <button class="modal-close" onclick="toggleModal(false)">&times;</button>
+    <div class="rules-wrap">
+      <div class="freeze-pane">
+        <div class="main-title">包場活動須知暨場地使用規範</div>
+      </div>
+      <div class="intro">
+        歡迎參加本次包場活動。<br>為維護活動品質、場地安全及所有參與者權益，<br>入場即視為已閱讀並同意遵守以下規範。
+      </div>
 
-    <p style="font-size:13px;color:var(--text2);text-align:center;line-height:1.7;margin-bottom:24px">
-      歡迎參加本次包場活動。<br>
-      為維護活動品質、場地安全及所有參與者權益，<br>
-      入場即視為已閱讀並同意遵守以下規範。
-    </p>
+      <div class="rule-card">
+        <div class="section-title">一、活動資訊</div>
+        <div class="item-title">暢飲時段</div>
+        <p>酒水供應時間共 <span class="highlight">4 小時</span>：<br><span class="highlight">15:00－19:00</span><br>活動期間提供店內指定酒水暢飲服務。</p>
+        <div class="item-title">入場費用</div>
+        <p><span class="price-tag">NT$800／人</span></p>
+        <div class="item-title">最低消費人數</div>
+        <p>本次包場活動最低消費以 <span class="highlight">60人</span> 計算。</p>
+        <ul>
+          <li>未滿60人，仍以60人計費.</li>
+          <li>超過60人則依實際入場人數計算。</li>
+          <li>本活動不設入場人數上限，但仍須遵守場地安全規範及現場工作人員管理。</li>
+        </ul>
+        <div class="item-title">供應時段後入場</div>
+        <p>19:00後入場者仍須支付：<br><span class="price-tag">NT$800／人</span><br>並可兌換：軟性飲料 2 瓶</p>
+      </div>
 
-    <div class="rules-section">
-      <div class="rules-section-title">一、活動資訊</div>
-      <div class="rules-item"><strong>暢飲時段</strong><br>酒水供應時間共 4 小時：<span class="price-tag">15:00 – 19:00</span><br>活動期間提供店內指定酒水暢飲服務。</div>
-      <div class="rules-item"><strong>入場費用</strong><br><span class="price-tag">NT$800 ／人</span></div>
-      <div class="rules-item">
-        <strong>最低消費人數</strong><br>本次包場活動最低消費以 <strong>60 人</strong> 計算。
-        <div class="rules-highlight">
-          · 未滿 60 人，仍以 60 人計費<br>
-          · 超過 60 人則依實際入場人數計算<br>
-          · 本活動不設入場人數上限，但仍須遵守場地安全規範及現場工作人員管理。
+      <div class="rule-card">
+        <div class="section-title">二、預訂與取消政策</div>
+        <div class="item-title">場地保證金</div>
+        <p>預訂場地需支付：<br>場地保證金 <span class="price-tag">NT$20,000</span><br>完成付款後即視為確認預訂，場地方將保留該活動日期及時段，不再接受其他預約。</p>
+        <div class="item-title">取消與退款規則</div>
+        <ul>
+          <li>活動日前14天（含）以上取消：全額退還保證金。</li>
+          <li>活動日前7日至13天取消：退還保證金50%。</li>
+          <li>活動日前7天內取消：保證金恕不退還。</li>
+        </ul>
+        <div class="item-title">保證金扣抵項目</div>
+        <p>活動結束後，如有以下情形，場地方得自保證金中扣除相關費用：</p>
+        <ul><li>設備損壞或遺失</li><li>場地設施毀損</li><li>額外清潔費</li><li>垃圾清運費</li><li>浴池區設備損害</li><li>其他因活動產生之損失或費用</li></ul>
+        <p>如實際損失超過保證金金額，承租人仍應補足差額。</p>
+      </div>
+
+      <div class="rule-card" style="box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);">
+        <div class="section-title">三、匯款資訊</div>
+        <ul>
+          <li>銀行名稱：連線商業銀行（824）</li>
+          <li>總行代碼：6880</li>
+          <li>匯款帳號：<span class="highlight" style="font-size: 18px;">111009917651</span></li>
+        </ul>
+        <p style="color: #D4AF37 !important; font-weight: 700; margin-top: 24px;">請於匯款完成後提供帳號後五碼或匯款證明，以利核對款項。</p>
+      </div>
+
+      <div class="rule-card">
+        <div class="section-title">四、違禁品管理</div>
+        <p>本場地<span class="danger-text">全面禁止</span>攜帶、持有、使用、販售或散布：</p>
+        <ul><li>違禁藥品</li><li>管制物品</li><li>危險物品</li><li>其他違法物品</li></ul>
+        <p>如發現違法情事，現場有權立即請相關人員離場，並視情況通報警方處理。<br>因個人違法行為所衍生之一切法律責任，均由當事人自行負責。</p>
+      </div>
+
+      <div class="rule-card">
+        <div class="section-title">五、場地清潔規範</div>
+        <p>暢飲時段結束後，參與者應自行整理活動產生之個人物品及垃圾。</p>
+        <p>非本店營運所產生之垃圾、活動用品、佈置物及其他廢棄物，應由承租人及參與者自行清除。</p>
+        <p>如未完成清潔或需額外安排人力進行清運、復原及特殊清潔作業：<br>酌收場地清潔費 <span class="price-tag">NT$20,000</span></p>
+      </div>
+
+      <div class="rule-card">
+        <div class="section-title">六、設備及場地損害責任</div>
+        <p>活動期間請愛惜場地設備及設施。</p>
+        <p>如因個人或同行賓客行為造成任何設備、設施、裝潢或空間損壞，應負修復責任或照價賠償。<br>包含但不限於：</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; margin-bottom: 16px;">
+          <ul style="margin: 0;"><li>DJ設備</li><li>音響設備</li><li>電腦及軟硬體設備</li><li>桌椅家具</li></ul>
+          <ul style="margin: 0;"><li>店內裝潢</li><li>浴池設備</li><li>廁所設備</li><li>監視器設備</li></ul>
+        </div>
+        <ul><li>其他場地設施</li></ul>
+        <p style="color: #D4AF37 !important; font-weight: 700; margin-top: 24px;">承租人應協助管理同行賓客，並對同行賓客造成之損害負連帶責任。</p>
+      </div>
+
+      <div class="rule-card">
+        <div class="section-title">七、浴池 VIP 區使用公告</div>
+        <p>浴池區域為私人空間，平時未對外開放。<br>浴池 VIP 區設有監視錄影設備，購買手環並進入該區域，即視為已知悉並同意相關錄影管理措施。</p>
+        <div class="item-title">使用費用</div>
+        <p><span class="price-tag">NT$2,000／人</span><br>如欲使用浴池 VIP 區，請至吧台購買 VIP 入場手環。</p>
+        <div class="item-title">入場規定</div>
+        <p>未配戴 VIP 手環者不得進入浴池區域。<br>經現場查驗發現未配戴手環進入者：<br>需補繳入場費 <span class="price-tag">NT$2,000／人</span></p>
+        <div class="item-title" style="color: #D4AF37 !important;">巨蟹座壽星好友優惠</div>
+        <p>巨蟹座壽星本人可持身分證件至吧台免費兌換 VIP 手環乙支。</p>
+      </div>
+
+      <div class="rule-card">
+        <div class="section-title">八、浴池區設備賠償標準</div>
+        <p>使用期間請愛惜設備。<br>如因人為因素造成設備或設施損壞，應負修復責任或照價賠償。<br>主要設備價值如下：</p>
+        <div class="price-table">
+          <div class="pt-row pt-header"><div>設備名稱</div><div>設備價值</div></div>
+          <div class="pt-row"><div>淋浴設備</div><div class="pt-val">NT$98,000</div></div>
+          <div class="pt-row"><div>浴池設備</div><div class="pt-val">NT$800,000</div></div>
+          <div class="pt-row"><div>烤箱設備</div><div class="pt-val">NT$280,000</div></div>
         </div>
       </div>
-    </div>
-    <div class="rules-section" style="border:1px solid var(--gold); border-radius:10px; padding:16px;">
-      <div class="rules-section-title" style="border-bottom:none; margin-bottom:4px;">二、匯款資訊</div>
-      <div class="rules-item" style="font-size:14px;">
-        · 銀行名稱：連線商業銀行（824）<br>
-        · 總行代碼：6880<br>
-        · 匯款帳號：<strong style="color:var(--gold2);font-size:18px;">111009917651</strong><br><br>
-        <span style="color:var(--gold)">請於匯款完成後提供帳號後五碼或匯款證明，以利核對款項。</span>
+
+      <div class="rule-card">
+        <div class="section-title">九、場地方終止權</div>
+        <p>如有下列情形之一，場地方有權立即終止活動並要求相關人員離場：</p>
+        <ul><li>持有或使用違禁品</li><li>打架鬥毆</li><li>危害公共安全</li><li>蓄意破壞設備</li><li>嚴重影響其他客人或鄰近環境</li><li>拒絕配合工作人員管理</li></ul>
+        <p>相關費用恕不退還。</p>
+        <div class="item-title" style="margin-top: 40px;">監視錄影公告</div>
+        <p>為維護場地安全、設備管理、活動秩序及保障參與者權益，本場地設有監視錄影設備。<br>本場地公共區域及浴池 VIP 區均有錄影監控系統運作中。<br>錄影資料僅供下列用途使用：</p>
+        <ul><li>場地安全管理</li><li>設備損害認定</li><li>糾紛處理</li><li>配合警方或主管機關依法調查</li></ul>
+        <p>不另作其他用途。<br>進入本場地即視為知悉並同意於公共空間範圍內接受錄影紀錄。</p>
       </div>
     </div>
   </div>
 </div>
+<!-- ======================= -->
 
 <div style="position:fixed;bottom:20px;right:16px;z-index:50">
-  <button onclick="openRules()" style="padding:10px 16px;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);border-radius:100px;color:var(--gold2);font-size:12px;font-family:inherit;cursor:pointer;font-weight:600;letter-spacing:0.06em;backdrop-filter:blur(8px)">
+  <button onclick="toggleModal(true)" style="padding:10px 16px;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);border-radius:100px;color:var(--gold2);font-size:12px;font-family:inherit;cursor:pointer;font-weight:600;letter-spacing:0.06em;backdrop-filter:blur(8px)">
     活動規範與須知
   </button>
 </div>
@@ -853,7 +949,7 @@ async function submitPaymentInfo(e) {
     phone: phone,
     transferDate: document.getElementById('pay-date').value,
     account5: document.getElementById('pay-last5').value,
-    transferAmount: document.getElementById('pay-amount').value, // 加入匯款金額
+    transferAmount: document.getElementById('pay-amount').value, 
     notes: document.getElementById('pay-note').value
   };
 
@@ -1107,10 +1203,22 @@ async function confirmPayment(phone) {
   }
 }
 
-// ── RULES MODAL ──
-function openRules() { document.getElementById('rulesModal').classList.add('show'); document.body.style.overflow = 'hidden'; }
-function closeRules() { document.getElementById('rulesModal').classList.remove('show'); document.body.style.overflow = ''; }
-function closeRulesOnBg(e) { if (e.target === document.getElementById('rulesModal')) closeRules(); }
+// ── RULES MODAL SCRIPT ──
+function toggleModal(show) { 
+  const modal = document.getElementById('rulesModal');
+  if(show) {
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  } else {
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+}
+function closeRulesOnBg(e) { 
+  if (e.target === document.getElementById('rulesModal')) {
+    toggleModal(false); 
+  }
+}
 
 // INIT
 updatePrice('reg');
