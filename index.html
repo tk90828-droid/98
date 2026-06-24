@@ -1,1128 +1,1233 @@
-<!doctype html>
-<html lang="zh-Hant">
+<!DOCTYPE html>
+<html lang="zh-TW">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
-  
-  <title>巨蟹夏日海灘趴報名表｜淺水灣 VIP EXCLUSIVE</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="https://cdn-general.cybassets.com/s/files/35135/theme/127586/assets/C1.jpg">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@400;600;900&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      --bg-body: #0A131A;    
-      --bg-card: #131E26;    
-      --text-main: #FFFFFF;  
-      --text-muted: #8E9BAE; 
-      --border-color: rgba(255, 255, 255, 0.08); 
-      --input-bg: #050B10;   
-      
-      --luxury-teal: #8AC5CB; 
-      --luxury-gold: #D4AF37; 
-      --danger: #EF4444;
-      --success: #10B981;
-      --warning: #F59E0B;
-    }
+<meta charset="UTF-8">
+<meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>巨蟹夏日海灘趴｜淺水灣 VIP EXCLUSIVE</title>
 
-    * { box-sizing: border-box; }
-    
-    html, body { 
-      margin: 0; padding: 0; 
-      width: 100%; height: 100%; max-width: 100%; 
-      overflow-x: hidden; 
-      -webkit-overflow-scrolling: touch;
-      scroll-behavior: smooth;
-    }
-    
-    body {
-      font-family: 'Montserrat', "Noto Sans TC", sans-serif;
-      background-color: #0A131A !important;  
-      color: #FFFFFF !important;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
-    /* 電腦版主視覺設定 */
-    .luxury-hero-banner {
-      position: relative; width: 100%; min-height: 480px; height: 55vh;
-      overflow: hidden; display: flex; justify-content: center; align-items: center;
-      background: #131E26;
-      margin: 0 auto;
-    }
+<style>
+  :root {
+    --bg: #0a0e1a;
+    --bg2: #0f1628;
+    --card: rgba(255,255,255,0.04);
+    --card-hover: rgba(255,255,255,0.07);
+    --border: rgba(255,255,255,0.08);
+    --border-active: rgba(120,180,255,0.4);
+    --gold: #c9a84c;
+    --gold2: #e8c97a;
+    --blue: #4a9eff;
+    --blue2: #7ab8ff;
+    --text: #e8eaf0;
+    --text2: #9aa0b0;
+    --text3: #6a7080;
+    --success: #4caf82;
+    --error: #e05a5a;
+    --warn: #e8a84c;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, 'SF Pro Text', 'Helvetica Neue', 'Montserrat', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO BANNER (移植舊版背景 + 新版排版) ── */
+  .luxury-hero-banner {
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    height: 45vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px 48px;
+    background: var(--bg);
+    overflow: hidden;
+  }
+
+  .image-background-layer {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://cdn-general.cybassets.com/s/files/35135/theme/127586/assets/C1.jpg') center 25%/cover no-repeat;
+    z-index: 0; opacity: 0.85;
+  }
+  
+  @media(max-width: 768px) {
     .image-background-layer {
-      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      background: url('https://cdn-general.cybassets.com/s/files/35135/theme/127586/assets/C1.jpg') center 25%/cover no-repeat;
-      z-index: 0; opacity: 0.85; 
-      transition: opacity 0.5s ease;
+      background-image: url('https://cdn-general.cybassets.com/s/files/35135/theme/127586/assets/C2.jpg') !important;
+      background-position: center top !important;
     }
-    .overlay-layer {
-      position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
-      background: linear-gradient(to bottom, rgba(19,30,38,0) 0%, rgba(19,30,38,0) 75%, rgba(19,30,38,1) 100%);
-    }
+    .luxury-hero-banner { min-height: 450px; height: 50vh; }
+  }
 
-    .hero-title-section {
-      text-align: center; padding: 24px 20px 40px; position: relative;
-      background: #131E26; border-bottom: 1px solid rgba(255, 255, 255, 0.08); z-index: 10;
-    }
-    .gold-diamond {
-      position: absolute; top: -20px; left: 50%; margin-left: -20px;
-      width: 40px; height: 40px; background: #0A131A; 
-      border: 1px solid var(--luxury-gold); 
-      transform: rotate(45deg);
-      display: flex; justify-content: center; align-items: center; z-index: 10;
-      box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.1);
-    }
-    .gold-diamond::after {
-      content: ''; width: 10px; height: 10px; background: var(--luxury-gold); 
-      box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
-    }
-    .sub-title { font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 0.5em; font-weight: 500; text-transform: uppercase; margin-bottom: 12px; color: var(--luxury-gold) !important; opacity: 0.9; margin-top: 16px; }
-    .hero-main-title { font-family: 'Playfair Display', "Noto Serif TC", serif; font-weight: 600; font-size: 32px; letter-spacing: 6px; margin-bottom: 12px; line-height: 1.2; color: #ffffff !important; }
-    .luxury-desc { font-family: 'Montserrat', "Noto Sans TC", sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 3px; color: var(--text-muted) !important; text-transform: uppercase;}
-    .luxury-desc span { color: var(--luxury-gold); margin: 0 8px; font-size: 10px; opacity: 0.7;}
+  .overlay-layer {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
+    background: linear-gradient(to bottom, rgba(10,14,26,0) 0%, rgba(10,14,26,0.2) 60%, rgba(10,14,26,1) 100%);
+  }
 
-    .nav-wrapper {
-      position: sticky; top: 0; z-index: 90; background: rgba(10, 19, 26, 0.98) !important;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
-    .nav-container { max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-    .tabs { display: flex; overflow-x: auto; flex: 1; }
-    .tabs::-webkit-scrollbar { display: none; }
-    .tab-btn {
-      background: transparent; border: none; color: var(--text-muted); font-size: 14px; font-weight: 500; padding: 20px 0; margin-right: 32px;
-      cursor: pointer; position: relative; white-space: nowrap; transition: 0.4s ease; letter-spacing: 2px;
-    }
-    .tab-btn:hover { color: #FFF; }
-    .tab-btn.active { color: var(--luxury-gold); font-weight: 600; }
-    .tab-btn.active::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--luxury-gold); box-shadow: 0 -2px 10px rgba(212, 175, 55, 0.4); }
-    
-    .btn-open-rules {
-      background: transparent; border: 1px solid rgba(255, 255, 255, 0.08); color: #FFFFFF;
-      padding: 8px 20px; font-size: 12px; font-weight: 500; cursor: pointer; transition: 0.4s ease; letter-spacing: 2px;
-    }
-    .btn-open-rules:hover { background: #FFFFFF; color: #0A131A; }
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    margin-top: auto;
+    padding-bottom: 20px;
+  }
 
-    .container { max-width: 760px; margin: 40px auto 80px; padding: 0 20px; transition: max-width 0.4s ease; }
-    .container.admin-mode { max-width: 1200px; }
-    
-    .view-section { display: none; }
-    .view-section.active { display: block; animation: fadeIn 0.4s ease forwards; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    opacity: 0.9;
+  }
 
-    .main-card {
-      background: #131E26; padding: 56px 48px 0 48px; border-radius: 0;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.4); margin-bottom: 24px; border: 1px solid rgba(255, 255, 255, 0.08); overflow: hidden;
-    }
-    .card-title { font-size: 18px; font-weight: 500; margin: 0 0 40px; color: #FFFFFF; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 16px; letter-spacing: 3px; text-transform: uppercase;}
+  .luxury-hero-banner h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 6vw, 52px);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.15;
+    background: linear-gradient(135deg, #fff 30%, var(--gold2) 70%, var(--blue2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+  }
 
-    .form-group { margin-bottom: 32px; width: 100%; }
-    .form-row { display: flex; flex-wrap: wrap; width: 100%; margin-bottom: 32px; }
-    .form-row .form-group { flex: 1; min-width: 240px; margin-bottom: 0; margin-right: 24px; }
-    .form-row .form-group:last-child { margin-right: 0; }
-    .form-group label { display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; }
-    
-    .form-group input:not([type="checkbox"]), .form-group select, .form-group textarea {
-      -webkit-appearance: none !important; appearance: none !important;
-      width: 100%; box-sizing: border-box; padding: 16px 20px; border-radius: 0; border: 1px solid rgba(255, 255, 255, 0.08); background: #050B10;
-      color: #FFFFFF; font-size: 16px !important; font-family: inherit; transition: all 0.4s ease; outline: none; height: 56px; 
-    }
-    .form-group textarea { height: auto !important; }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--luxury-gold); box-shadow: 0 0 0 1px var(--luxury-gold); background: rgba(212, 175, 55, 0.02); }
-    
-    select { background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%238E9BAE%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"); background-repeat: no-repeat; background-position: right 1rem top 50%; background-size: 0.65rem auto; }
-    input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1) brightness(100); cursor: pointer; opacity: 0.8; }
+  .hero-sub {
+    font-size: 14px;
+    color: var(--text2);
+    letter-spacing: 0.12em;
+  }
 
-    .vertical-check-group { display: flex; flex-direction: column; background: rgba(0,0,0,0.2); padding: 24px; margin-bottom: 40px; border: 1px solid rgba(255, 255, 255, 0.08); }
-    .check-title { color: #FFFFFF; font-weight: 500; font-size: 13px; letter-spacing: 2px; margin-bottom: 16px;}
-    .checkbox-label { display: flex; align-items: center; font-size: 13px; color: #FFFFFF; cursor: pointer; line-height: 1.4; letter-spacing: 1px; margin-bottom: 16px; }
-    .checkbox-label:last-child { margin-bottom: 0; }
-    .checkbox-label input[type="checkbox"] { appearance: none; -webkit-appearance: none; flex: 0 0 14px; width: 14px; height: 14px; margin: 0 12px 0 0; border: 1px solid rgba(255, 255, 255, 0.08); display: flex; justify-content: center; align-items: center; cursor: pointer; transition: 0.3s; }
-    .checkbox-label input[type="checkbox"]::before { content: ""; width: 6px; height: 6px; transform: scale(0); transition: 0.2s; background-color: var(--luxury-gold); }
-    .checkbox-label input[type="checkbox"]:checked { border-color: var(--luxury-gold); }
-    .checkbox-label input[type="checkbox"]:checked::before { transform: scale(1); }
-    .highlight-time { color: var(--luxury-gold); font-weight: 600; font-family: 'Montserrat', sans-serif; font-size: 14px;}
+  .hero-date-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 100px;
+    font-size: 13px;
+    color: var(--gold2);
+    letter-spacing: 0.06em;
+    backdrop-filter: blur(4px);
+  }
 
-    .companion-box { background: rgba(255,255,255,0.02); border: 1px solid rgba(255, 255, 255, 0.08); padding: 32px 24px; margin-bottom: 24px; position: relative; transition: 0.3s; }
-    .companion-box:hover { border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.04); }
-    .btn-remove { position: absolute; right: 16px; top: 16px; background: transparent; border: 1px solid rgba(255, 255, 255, 0.08); color: var(--text-muted); cursor: pointer; font-size: 11px; padding: 6px 12px; transition: 0.3s; letter-spacing: 2px; text-transform: uppercase;}
-    .btn-remove:hover { border-color: var(--danger); color: var(--danger); background: rgba(239, 68, 68, 0.1); }
-    
-    .btn-outline { width: 100%; padding: 18px; background: transparent; border: 1px dashed rgba(212, 175, 55, 0.4); color: var(--luxury-gold); cursor: pointer; font-weight: 500; font-size: 13px; transition: 0.4s; letter-spacing: 3px; text-transform: uppercase; }
-    .btn-outline:hover { border-color: var(--luxury-gold); background: rgba(212, 175, 55, 0.05); }
+  /* ── TABS ── */
+  .tab-nav {
+    display: flex;
+    gap: 2px;
+    padding: 0 16px;
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .tab-nav::-webkit-scrollbar { display: none; }
 
-    .checkout-wrapper { background: rgba(0, 0, 0, 0.3); margin: 56px -48px 0 -48px; padding: 48px; border-top: 1px solid rgba(255, 255, 255, 0.08); }
-    .total-box { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 32px; margin-bottom: 40px; }
-    .total-detail { font-size: 13px; color: var(--text-muted); line-height: 2; letter-spacing: 1px; }
-    .total-summary { text-align: right; width: 100%; }
-    .total-price { font-size: 36px; font-family: 'Montserrat', sans-serif; font-weight: 300; color: var(--luxury-gold); letter-spacing: 2px; margin-top: 8px;}
+  .tab-btn {
+    flex-shrink: 0;
+    padding: 14px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text3);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    letter-spacing: 0.03em;
+  }
 
-    .spinner { display: inline-block; width: 16px; height: 16px; margin-right: 12px; vertical-align: middle; border: 2px solid rgba(255,255,255,0.2); border-radius: 50%; border-top-color: #fff; animation: spin 0.8s ease-in-out infinite; }
-    @keyframes spin { to { transform: rotate(360deg); } }
+  .tab-btn:hover { color: var(--text2); }
+  .tab-btn.active { color: var(--blue2); border-bottom-color: var(--blue); }
 
-    .btn-submit { position: relative; display: block; width: 100%; font-family: 'Montserrat', "Noto Sans TC", sans-serif; background: linear-gradient(135deg, #8AC5CB 0%, #4A8C93 100%); color: #0A131A !important; border: none; padding: 20px 2.5em; font-size: 14px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; transition: 0.4s; cursor: pointer; text-align: center; overflow: hidden; }
-    .btn-submit:hover:not(:disabled) { box-shadow: 0 0 20px rgba(138, 197, 203, 0.4); transform: translateY(-2px); }
-    .btn-submit:active:not(:disabled) { transform: translateY(0); }
-    .btn-submit:disabled { background: #1F2937; color: #6B7280 !important; cursor: not-allowed; box-shadow: none; }
+  .tab-panel { display: none; padding: 28px 16px 80px; max-width: 640px; margin: 0 auto; }
+  .tab-panel.active { display: block; animation: fadeIn 0.4s ease forwards; }
 
-    .bank-banner { display: flex; flex-direction: column; align-items: center; justify-content: center; background: #131E26; border: 1px solid rgba(212, 175, 55, 0.2); padding: 48px 24px; margin-top: 40px; margin-bottom: 0; box-shadow: 0 20px 40px rgba(0,0,0,0.3); text-align: center; position: relative; }
-    .bank-banner::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--luxury-gold), transparent); }
-    .bank-info .bank-title { font-size: 12px; color: var(--luxury-gold); font-weight: 600; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 16px; }
-    .bank-info .bank-name { font-size: 13px; color: var(--text-muted); font-weight: 500; letter-spacing: 2px; margin-bottom: 8px; }
-    .bank-info .bank-acc { font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 300; color: #FFFFFF; letter-spacing: 4px; margin-bottom: 32px; }
-    .btn-copy { background: rgba(212, 175, 55, 0.05); border: 1px solid var(--luxury-gold); color: var(--luxury-gold); padding: 14px 40px; font-size: 13px; font-weight: 500; cursor: pointer; transition: 0.4s; letter-spacing: 4px; text-transform: uppercase; }
-    .btn-copy:hover { background: var(--luxury-gold); color: #0A131A; box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); transform: translateY(-2px); }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-    .edit-status-card { display: flex; justify-content: space-between; align-items: center; background: rgba(212, 175, 55, 0.05); border: 1px solid rgba(212, 175, 55, 0.3); padding: 24px 32px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-    .status-item { text-align: left; border-right: 1px solid rgba(255,255,255,0.08); padding-right: 24px; flex: 1; }
-    .status-item:last-child { border-right: none; padding-right: 0; text-align: right; }
-    .status-item .label { font-size: 11px; color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; font-weight: 500; }
-    .status-item .value { font-size: 15px; color: #FFF; font-weight: 600; letter-spacing: 1px; }
-    .status-item .value.highlight { color: var(--luxury-gold); font-family: 'Montserrat', sans-serif; }
+  /* ── CARDS ── */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 20px;
+    margin-bottom: 14px;
+  }
 
-    /* 後台白底黑字、高密度設計 */
-    .admin-white-card {
-      background: #FFFFFF !important;
-      padding: 32px 32px 48px 32px !important;
-      border-radius: 8px;
-    }
-    .admin-white-card .card-title { color: #111827 !important; border-bottom: 2px solid #F1F5F9 !important; margin-bottom: 24px !important; }
+  .card-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
-    .stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 24px; }
-    .stat-card { background: #F8FAFC; border: 1px solid #E2E8F0; padding: 16px; text-align: center; border-radius: 4px; }
-    .stat-value { font-size: 24px; font-weight: 600; color: #111827; font-family: 'Montserrat', sans-serif; margin-bottom: 4px; }
-    .stat-label { font-size: 11px; color: #64748B; font-weight: 500; letter-spacing: 1px; text-transform: uppercase;}
-    
-    .filter-group { display: flex; flex-wrap: wrap; margin-bottom: 16px; gap: 8px; }
-    .btn-filter { background: transparent; border: 1px solid #CBD5E1; padding: 6px 12px; cursor: pointer; font-size: 12px; font-weight: 500; color: #475569; transition: 0.3s; letter-spacing: 1px; border-radius: 4px; }
-    .btn-filter:hover, .btn-filter.active { border-color: var(--luxury-gold); color: var(--luxury-gold); background: rgba(212, 175, 55, 0.05); font-weight: 600; }
+  /* ── INFO ROWS ── */
+  .info-row { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--border); gap: 12px; }
+  .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .info-label { font-size: 13px; color: var(--text2); flex-shrink: 0; }
+  .info-value { font-size: 13px; color: var(--text); text-align: right; font-weight: 500; }
+  .info-value.highlight { color: var(--gold2); font-weight: 600; }
 
-    .table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-    .admin-table { width: 100%; border-collapse: collapse; text-align: left; color: #1E293B; font-size: 13px; }
-    .admin-table th { padding: 10px 8px; border-bottom: 2px solid #CBD5E1; color: #475569; font-weight: 600; white-space: nowrap; font-size: 12px; letter-spacing: 1px; background: #F8FAFC; }
-    .admin-table td { padding: 10px 8px; border-bottom: 1px solid #E2E8F0; vertical-align: middle; }
-    .admin-table tr:hover td { background: #F1F5F9; }
+  /* ── SHUTTLE CARD ── */
+  .shuttle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 4px; }
+  .shuttle-item { background: rgba(74,158,255,0.06); border: 1px solid rgba(74,158,255,0.15); border-radius: 10px; padding: 14px; text-align: center; }
+  .shuttle-dir { font-size: 10px; color: var(--blue2); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; }
+  .shuttle-time { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.02em; }
+  .shuttle-note { font-size: 11px; color: var(--text3); margin-top: 4px; }
+  .shuttle-price { display: inline-block; margin-top: 12px; padding: 6px 14px; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.2); border-radius: 100px; font-size: 12px; color: var(--gold2); font-weight: 600; letter-spacing: 0.06em; }
 
-    .col-name { white-space: nowrap; font-weight: 600; }
-    .col-phone { width: 90px; white-space: nowrap; font-family: 'Montserrat', sans-serif; letter-spacing: 0.5px; color: #64748B; }
-    .col-total { width: 60px; white-space: nowrap; font-family: 'Montserrat', sans-serif; font-weight: 600; color: #D4AF37; }
-    .col-transfer { min-width: 220px; }
-    .transfer-flex { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-family: 'Montserrat', sans-serif; color: #475569;}
-    .col-status { width: 70px; text-align: center; }
+  .notice-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .notice-list li { font-size: 13px; color: var(--text2); padding-left: 18px; position: relative; line-height: 1.6; }
+  .notice-list li::before { content: '◆'; position: absolute; left: 0; color: var(--gold); font-size: 8px; top: 5px; }
 
-    .status-badge { display: inline-block; padding: 4px 8px; font-size: 11px; font-weight: 600; border-radius: 4px; letter-spacing: 1px; text-align: center; min-width: 60px; }
-    .bg-green { background: #D1FAE5; color: #059669; }
-    .bg-yellow { background: #FEF3C7; color: #D97706; }
-    .bg-red { background: #FEE2E2; color: #DC2626; }
-    
-    .btn-verify-pay { background: #10B981; color: #FFF; border: none; padding: 5px 12px; font-size: 12px; font-weight: 600; cursor: pointer; border-radius: 4px; transition: 0.3s; letter-spacing: 1px; white-space: nowrap; box-shadow: 0 2px 4px rgba(16,185,129,0.2); }
-    .btn-verify-pay:hover { background: #059669; transform: translateY(-1px); }
+  /* ── FORM ── */
+  .form-group { margin-bottom: 16px; }
+  .form-row { display: flex; gap: 12px; margin-bottom: 16px; }
+  .form-row .form-group { flex: 1; margin-bottom: 0; }
+  .form-label { display: block; font-size: 12px; font-weight: 600; color: var(--text2); letter-spacing: 0.08em; margin-bottom: 7px; text-transform: uppercase; }
+  
+  .form-input, .form-select, .form-textarea {
+    width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 10px;
+    padding: 12px 14px; font-size: 14px; color: var(--text); font-family: inherit; transition: border-color 0.2s, background 0.2s;
+    -webkit-appearance: none; appearance: none; outline: none;
+  }
+  .form-input::placeholder { color: var(--text3); }
+  .form-textarea { resize: vertical; min-height: 80px; }
+  .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--border-active); background: rgba(255,255,255,0.07); }
+  
+  .form-select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236a7080' fill='none' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px;
+  }
+  input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1) brightness(0.8); cursor: pointer; }
 
-    .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.95); display: none; justify-content: center; align-items: center; z-index: 1000; padding: 20px; }
-    .modal-content { background: rgba(10, 19, 26, 0.98); width: 100%; max-width: 840px; height: 90vh; overflow-y: auto; position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.8); border: 1px solid rgba(255, 255, 255, 0.08); }
-    .modal-close { position: sticky; top: 16px; left: calc(100% - 56px); margin-bottom: -40px; z-index: 99; background: #131E26; border: 1px solid rgba(255, 255, 255, 0.08); width: 40px; height: 40px; font-size: 24px; line-height: 1; cursor: pointer; color: var(--text-muted); display: flex; justify-content: center; align-items: center; transition: 0.4s; }
-    .modal-close:hover { color: #FFF; background: rgba(255,255,255,0.1); border-color: #FFF; }
+  /* ── CHECKBOX ROW ── */
+  .checkbox-confirm { display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 10px; cursor: pointer; }
+  .checkbox-confirm input[type="checkbox"] { width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px; accent-color: var(--blue); cursor: pointer; }
+  .checkbox-label { font-size: 13px; color: var(--text2); line-height: 1.5; }
+  .checkbox-label strong { color: var(--text); font-weight: 600; }
 
-    .custom-alert-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10, 19, 26, 0.85); backdrop-filter: blur(5px); display: none; justify-content: center; align-items: center; z-index: 9999; opacity: 0; transition: opacity 0.3s ease; }
-    .custom-alert-overlay.show { opacity: 1; }
-    .custom-alert-box { background: #131E26; border: 1px solid var(--luxury-gold); padding: 40px 32px; max-width: 360px; width: 90%; text-align: center; box-shadow: 0 30px 60px rgba(0,0,0,0.6); transform: translateY(20px); transition: transform 0.3s ease; }
-    .custom-alert-overlay.show .custom-alert-box { transform: translateY(0); }
-    .custom-alert-msg { color: #FFFFFF; font-size: 15px; line-height: 1.8; margin-bottom: 32px; white-space: pre-line; letter-spacing: 2px; }
-    .custom-alert-btn { background: var(--luxury-gold); color: #0A131A; border: none; padding: 12px 40px; font-size: 13px; font-weight: 600; cursor: pointer; letter-spacing: 3px; text-transform: uppercase; transition: 0.3s; }
-    .custom-alert-btn:hover { box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); transform: translateY(-2px); }
+  /* ── COMPANION ── */
+  .companion-item { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 10px; padding: 14px; margin-bottom: 10px; position: relative; }
+  .companion-header { font-size: 11px; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
+  .companion-remove { position: absolute; top: 12px; right: 12px; background: rgba(224,90,90,0.15); border: 1px solid rgba(224,90,90,0.3); border-radius: 6px; color: var(--error); font-size: 11px; padding: 4px 8px; cursor: pointer; font-family: inherit; }
+  .add-companion-btn { width: 100%; padding: 12px; background: rgba(74,158,255,0.06); border: 1px dashed rgba(74,158,255,0.25); border-radius: 10px; color: var(--blue2); font-size: 13px; font-family: inherit; cursor: pointer; transition: all 0.2s; letter-spacing: 0.04em; }
+  .add-companion-btn:hover { background: rgba(74,158,255,0.1); border-color: rgba(74,158,255,0.4); }
 
-    .rules-wrap { padding: 0 40px 60px; font-family: "Noto Serif TC", "PMingLiU", serif; line-height: 1.8; }
-    .rules-wrap .freeze-pane { position: sticky; top: 0; z-index: 90; background: rgba(10, 19, 26, 0.98); border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding: 24px 20px; text-align: center; margin: 0 -40px 40px; }
-    .rules-wrap .main-title { font-size: 22px; font-weight: 600; letter-spacing: 4px; color: #FFFFFF; }
-    .rules-wrap .intro { font-size: 14px; color: var(--text-muted); text-align: center; margin-bottom: 48px; line-height: 2; letter-spacing: 2px; }
-    .rules-wrap .rule-card { background: #FFFFFF !important; border: 1px solid #E2E8F0 !important; padding: 40px; margin-bottom: 32px; transition: 0.3s; }
-    .rules-wrap .rule-card:hover { border-color: #CBD5E1 !important; box-shadow: 0 10px 30px rgba(255,255,255,0.05); }
-    .rules-wrap .rule-card p, .rules-wrap .rule-card ul li { font-size: 14px; color: #333333 !important; font-family: 'Noto Sans TC', sans-serif; font-weight: 400; }
-    .rules-wrap .rule-card ul { list-style: none; padding: 0; margin: 0 0 24px 0; }
-    .rules-wrap .rule-card ul li { position: relative; padding-left: 24px; margin-bottom: 12px; }
-    .rules-wrap .rule-card ul li::before { content: "\25C6"; position: absolute; left: 0; top: 1px; font-size: 10px; color: var(--luxury-gold) !important; }
-    .rules-wrap .rule-card .item-title { font-size: 16px; font-weight: 700 !important; color: #000000 !important; margin: 24px 0 12px 0; letter-spacing: 1px; }
-    .rules-wrap .rule-card .item-title:first-child { margin-top: 0; }
-    .rules-wrap .rule-card .section-title { font-size: 16px; font-weight: 700; color: var(--luxury-gold) !important; margin: 0 0 24px 0; padding-bottom: 16px; border-bottom: 1px solid rgba(212, 175, 55, 0.3) !important; letter-spacing: 3px; text-transform: uppercase; }
-    .rules-wrap .rule-card .highlight { color: #4A8C93 !important; font-family: 'Montserrat', sans-serif; font-weight: 600 !important; letter-spacing: 1px; }
-    .rules-wrap .rule-card .price-tag { display: inline-block; background: rgba(74, 140, 147, 0.1) !important; border: 1px solid rgba(74, 140, 147, 0.3) !important; color: #4A8C93 !important; padding: 4px 12px; font-family: 'Montserrat', sans-serif; font-weight: 600 !important; font-size: 14px; margin: 4px 0; letter-spacing: 1px; }
-    .rules-wrap .rule-card .danger-text { color: var(--danger) !important; font-weight: 600 !important; }
-    .rules-wrap .rule-card .price-table { margin-top: 24px; border: 1px solid #E2E8F0 !important; overflow: hidden; background: #FFFFFF !important; }
-    .rules-wrap .rule-card .pt-row { display: flex; justify-content: space-between; padding: 16px 24px; border-bottom: 1px solid #E2E8F0 !important; font-family: 'Noto Sans TC', sans-serif; font-size: 14px; color: #333333 !important; }
-    .rules-wrap .rule-card .pt-row:last-child { border-bottom: none !important; }
-    .rules-wrap .rule-card .pt-header { background: #F8FAFC !important; font-weight: 600 !important; color: #000000 !important; letter-spacing: 2px; }
-    .rules-wrap .rule-card .pt-val { font-family: 'Montserrat', sans-serif; color: #4A8C93 !important; font-weight: 600 !important; letter-spacing: 1px; }
+  /* ── PRICE SUMMARY ── */
+  .price-summary { background: linear-gradient(135deg, rgba(201,168,76,0.1), rgba(74,158,255,0.06)); border: 1px solid rgba(201,168,76,0.2); border-radius: 12px; padding: 16px 18px; margin: 16px 0; }
+  .price-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--text2); padding: 4px 0; }
+  .price-total-row { display: flex; justify-content: space-between; align-items: baseline; padding-top: 12px; margin-top: 8px; border-top: 1px solid rgba(201,168,76,0.2); }
+  .price-total-label { font-size: 13px; color: var(--text2); font-weight: 600; }
+  .price-total-amount { font-size: 24px; font-weight: 700; color: var(--gold2); letter-spacing: -0.01em; }
 
-    /* =========================================
-       手機版優化與修復
-       ========================================= */
-    @media(max-width: 768px) {
-      .container { max-width: 100%; margin: 24px auto 60px; padding: 0 16px; }
-      .nav-container { flex-direction: column; padding: 16px; }
-      .tabs { margin-bottom: 16px; width: 100%; }
-      .tab-btn { padding: 12px 0; margin-right: 20px; }
-      .btn-open-rules { width: 100%; text-align: center; padding: 12px; }
-      .main-card { padding: 32px 20px 0 20px; }
-      .edit-status-card { flex-direction: column; padding: 20px; }
-      .status-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding-right: 0; padding-bottom: 12px; margin-bottom: 12px; text-align: center; }
-      .status-item:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; text-align: center; }
-      .checkout-wrapper { margin: 40px -20px 0 -20px; padding: 32px 20px; }
-      .bank-banner { padding: 32px 16px; }
-      .bank-info .bank-acc { font-size: 28px; }
-      
-      .form-row .form-group { margin-bottom: 24px !important; margin-right: 0; }
-      .form-row .form-group:last-child { margin-bottom: 0 !important; }
-      
-      .search-btn-wrapper { margin-top: 16px; }
-      
-      .hero-main-title { font-size: 26px; }
-      .luxury-desc { font-size: 11px; }
-      .hero-title-section { padding: 32px 20px 32px; }
-      .luxury-hero-banner { min-height: 500px; height: 75vh; }
-      .image-background-layer { 
-          background-image: url('https://cdn-general.cybassets.com/s/files/35135/theme/127586/assets/C2.jpg') !important; 
-          background-position: center top !important; 
-          opacity: 0.85; 
-      }
-      .overlay-layer { 
-          background: linear-gradient(to bottom, rgba(19,30,38,0) 0%, rgba(19,30,38,0) 75%, rgba(19,30,38,1) 100%) !important; 
-      }
+  /* ── SUBMIT BTN ── */
+  .submit-btn { width: 100%; padding: 15px; background: linear-gradient(135deg, #1a5fd4, #2a7fff); border: none; border-radius: 12px; color: #fff; font-size: 15px; font-weight: 600; font-family: inherit; cursor: pointer; letter-spacing: 0.06em; transition: all 0.2s; box-shadow: 0 4px 20px rgba(42,127,255,0.3); display: flex; justify-content: center; align-items: center; }
+  .submit-btn:hover:not(:disabled) { background: linear-gradient(135deg, #2169e0, #3a8fff); transform: translateY(-1px); box-shadow: 0 6px 24px rgba(42,127,255,0.4); }
+  .submit-btn:active:not(:disabled) { transform: translateY(0); }
+  .submit-btn:disabled { background: var(--card); color: var(--text3); cursor: not-allowed; box-shadow: none; }
+  
+  .spinner { display: inline-block; width: 16px; height: 16px; margin-right: 12px; border: 2px solid rgba(255,255,255,0.2); border-radius: 50%; border-top-color: #fff; animation: spin 0.8s ease-in-out infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
 
-      .admin-white-card { padding: 16px !important; }
-      .stats-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
-      .stat-card { padding: 12px; }
-      .stat-value { font-size: 20px; }
-      .admin-table th, .admin-table td { padding: 10px 6px; }
-      .col-phone { font-size: 12px; }
-      .transfer-flex { flex-direction: row; gap: 6px; font-size: 12px; }
-      .btn-verify-pay { padding: 4px 8px; font-size: 11px; }
+  /* ── PAYMENT TAB ── */
+  .payment-method { background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(74,158,255,0.05)); border: 1px solid rgba(201,168,76,0.2); border-radius: 14px; padding: 20px; margin-bottom: 14px; text-align: center; }
+  .bank-name { font-size: 12px; color: var(--text3); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+  .account-number { font-size: 26px; font-weight: 700; color: var(--gold2); letter-spacing: 0.08em; margin: 10px 0; font-variant-numeric: tabular-nums; }
+  .copy-btn { padding: 9px 22px; background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3); border-radius: 8px; color: var(--gold2); font-size: 13px; font-family: inherit; cursor: pointer; transition: all 0.2s; font-weight: 600; }
+  .copy-btn:hover { background: rgba(201,168,76,0.25); border-color: rgba(201,168,76,0.5); }
+  
+  .payment-step { display: flex; align-items: flex-start; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+  .payment-step:last-child { border-bottom: none; }
+  .step-num { width: 26px; height: 26px; flex-shrink: 0; background: rgba(74,158,255,0.15); border: 1px solid rgba(74,158,255,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: var(--blue2); }
+  .step-text { font-size: 13px; color: var(--text2); line-height: 1.6; padding-top: 3px; }
+  .step-text strong { color: var(--text); font-weight: 600; }
 
-      .rules-wrap { padding: 0 20px 40px; }
-      .rules-wrap .freeze-pane { padding: 20px; margin: 0 -20px 32px; }
-      .rules-wrap .main-title { font-size: 18px; }
-      .rules-wrap .rule-card { padding: 24px 20px; }
-    }
-  </style>
+  /* ── QUERY TAB ── */
+  .result-card { background: rgba(74,158,255,0.06); border: 1px solid rgba(74,158,255,0.15); border-radius: 12px; padding: 16px; margin-top: 14px; display: none; }
+  .result-card.show { display: block; }
+  .result-status { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 100px; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; }
+  .status-paid { background: rgba(76,175,130,0.15); border: 1px solid rgba(76,175,130,0.3); color: var(--success); }
+  .status-pending { background: rgba(232,168,76,0.15); border: 1px solid rgba(232,168,76,0.3); color: var(--warn); }
+  .status-verifying { background: rgba(74,158,255,0.15); border: 1px solid rgba(74,158,255,0.3); color: var(--blue2); }
+
+  .edit-section { display: none; margin-top: 16px; }
+  .edit-section.show { display: block; }
+
+  /* ── ADMIN ── */
+  .admin-login { text-align: center; padding: 20px; }
+  .admin-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 16px; }
+  .stat-box { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; text-align: center; }
+  .stat-box.full-width { grid-column: 1 / -1; }
+  .stat-num { font-size: 28px; font-weight: 700; color: var(--blue2); }
+  .stat-label { font-size: 11px; color: var(--text3); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px; }
+  .stat-box.gold .stat-num { color: var(--gold2); }
+  .stat-box.red .stat-num { color: var(--error); }
+  .stat-box.green .stat-num { color: var(--success); }
+
+  .admin-table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; min-width: 600px; }
+  th { text-align: left; padding: 10px 12px; background: rgba(255,255,255,0.04); color: var(--text3); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+  td { padding: 10px 12px; color: var(--text2); border-bottom: 1px solid rgba(255,255,255,0.04); }
+  tr:last-child td { border-bottom: none; }
+  .badge { padding: 3px 9px; border-radius: 100px; font-size: 11px; font-weight: 600; }
+  .badge-green { background: rgba(76,175,130,0.15); color: var(--success); border: 1px solid rgba(76,175,130,0.25); }
+  .badge-warn { background: rgba(232,168,76,0.15); color: var(--warn); border: 1px solid rgba(232,168,76,0.25); }
+  .badge-red { background: rgba(224,90,90,0.15); color: var(--error); border: 1px solid rgba(224,90,90,0.25); }
+
+  .admin-tabs { display: flex; gap: 6px; margin-bottom: 14px; overflow-x: auto; }
+  .admin-tab-btn { flex-shrink: 0; padding: 8px 16px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; color: var(--text3); font-size: 12px; font-family: inherit; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+  .admin-tab-btn.active { background: rgba(74,158,255,0.1); border-color: rgba(74,158,255,0.3); color: var(--blue2); }
+
+  /* ── RULES MODAL ── */
+  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); z-index: 200; display: none; align-items: flex-end; justify-content: center; }
+  .modal-overlay.show { display: flex; }
+  .modal-sheet { background: #131929; border-top: 1px solid var(--border); border-radius: 20px 20px 0 0; width: 100%; max-width: 640px; max-height: 85vh; overflow-y: auto; padding: 24px 20px 40px; }
+  .modal-handle { width: 36px; height: 4px; background: var(--border); border-radius: 2px; margin: 0 auto 20px; }
+  .modal-title { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 16px; text-align: center; letter-spacing: 0.08em; }
+  .modal-close { position: absolute; top: 20px; right: 20px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; color: var(--text2); padding: 6px 10px; cursor: pointer; font-family: inherit; font-size: 13px; }
+
+  .rules-section { margin-bottom: 24px; }
+  .rules-section-title { font-size: 14px; font-weight: 700; color: var(--gold2); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid rgba(201,168,76,0.2); letter-spacing: 0.08em; }
+  .rules-item { padding: 10px 0; font-size: 13px; color: var(--text2); line-height: 1.65; }
+  .rules-item strong { color: var(--text); font-weight: 600; }
+  .rules-highlight { background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; padding: 12px 14px; margin: 10px 0; font-size: 13px; color: var(--text2); line-height: 1.65; }
+  .price-tag { display: inline-block; background: rgba(74,158,255,0.1); border: 1px solid rgba(74,158,255,0.3); color: var(--blue2); padding: 2px 8px; border-radius: 4px; font-weight: 600; margin: 2px 0; }
+  .danger-text { color: var(--error); font-weight: 600; }
+
+  /* ── DIVIDER & ALERTS & TOAST ── */
+  .divider { height: 1px; background: var(--border); margin: 20px 0; }
+  .alert { padding: 12px 14px; border-radius: 10px; font-size: 13px; line-height: 1.5; margin-bottom: 14px; display: none; }
+  .alert.show { display: block; }
+  .alert-error { background: rgba(224,90,90,0.12); border: 1px solid rgba(224,90,90,0.3); color: var(--error); }
+  
+  .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(80px); background: rgba(30,40,60,0.95); border: 1px solid var(--border-active); backdrop-filter: blur(12px); border-radius: 12px; padding: 12px 20px; font-size: 13px; color: var(--text); z-index: 999; transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1); white-space: nowrap; text-align: center; }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  .text-sm { font-size: 12px; color: var(--text3); line-height: 1.6; }
+  .mt-4 { margin-top: 4px; } .mt-8 { margin-top: 8px; }
+
+  input[type="password"] { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; font-size: 14px; color: var(--text); font-family: inherit; outline: none; -webkit-appearance: none; text-align: center; letter-spacing: 0.2em; }
+  input[type="password"]:focus { border-color: var(--border-active); background: rgba(255,255,255,0.07); }
+</style>
 </head>
 <body>
 
-  <section class="luxury-hero-banner">
-    <div class="image-background-layer"></div>
-    <div class="overlay-layer"></div>
-  </section>
-
-  <div class="hero-title-section">
-    <div class="gold-diamond"></div>
-    <h3 class="sub-title">VIP EXCLUSIVE</h3>
-    <h1 class="hero-main-title">巨蟹夏日海灘趴</h1>
-    <p class="luxury-desc">Summer Beach Party <span>✦</span> 淺水灣</p>
-  </div>
-
-  <div class="nav-wrapper">
-    <div class="nav-container">
-      <div class="tabs">
-        <button class="tab-btn active" onclick="switchTab(event, 'create')">填寫報名</button>
-        <button class="tab-btn" onclick="switchTab(event, 'edit')">查詢報名</button>
-        <button class="tab-btn" onclick="switchTab(event, 'admin')">後台</button>
-      </div>
-      <button class="btn-open-rules" onclick="toggleModal(true)">活動規範與須知</button>
+<header class="luxury-hero-banner">
+  <div class="image-background-layer"></div>
+  <div class="overlay-layer"></div>
+  <div class="hero-content">
+    <p class="eyebrow">VIP Exclusive · Summer 2025</p>
+    <h1>巨蟹夏日海灘趴</h1>
+    <p class="hero-sub">Summer Beach Party ✦ 淺水灣</p>
+    <div class="hero-date-badge">
+      <span>🗓</span>
+      <span>7 月 4 日（六）· 15:00 開始</span>
     </div>
   </div>
+</header>
 
-  <div class="container" id="mainContainer">
+<nav class="tab-nav" id="tabNav">
+  <button class="tab-btn active" onclick="switchTab('info', this)">🏖 活動資訊</button>
+  <button class="tab-btn" onclick="switchTab('register', this)">✍️ 填寫報名</button>
+  <button class="tab-btn" onclick="switchTab('payment', this)">💳 付款資訊</button>
+  <button class="tab-btn" onclick="switchTab('query', this)">🔍 查詢修改</button>
+  <button class="tab-btn" onclick="switchTab('admin', this)">⚙️ 後台</button>
+</nav>
+
+<section class="tab-panel active" id="tab-info">
+  <div class="card">
+    <div class="card-title">派對資訊</div>
+    <div class="info-row"><span class="info-label">活動日期</span><span class="info-value highlight">2025 年 7 月 4 日（六）</span></div>
+    <div class="info-row"><span class="info-label">活動地點</span><span class="info-value">淺水灣海灘 VIP 場地</span></div>
+    <div class="info-row"><span class="info-label">暢飲時段</span><span class="info-value">15:00 － 19:00（共 4 小時）</span></div>
+    <div class="info-row"><span class="info-label">入場費用</span><span class="info-value highlight">NT$ 800 ／人</span></div>
+    <div class="info-row"><span class="info-label">最低消費人數</span><span class="info-value">60 人</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">接駁資訊</div>
+    <div class="shuttle-grid">
+      <div class="shuttle-item"><div class="shuttle-dir">↗ 前往</div><div class="shuttle-time">13:15</div><div class="shuttle-note">遊覽車上車時間</div></div>
+      <div class="shuttle-item"><div class="shuttle-dir">↙ 回程</div><div class="shuttle-time">21:45</div><div class="shuttle-note">回家發車時間</div></div>
+    </div>
+    <div style="text-align:center"><span class="shuttle-price">遊覽車接駁費 NT$ 400</span></div>
+    <div class="divider"></div>
+    <ul class="notice-list">
+      <li>請提早 10 分鐘抵達集合地點，遊覽車不等候遲到者</li>
+      <li>上下車地點將於報名確認後另行通知</li>
+      <li>未加購接駁者請自行規劃交通</li>
+    </ul>
+  </div>
+</section>
+
+<section class="tab-panel" id="tab-register">
+  <form id="regForm" onsubmit="submitRegistration(event)">
+    <div class="card">
+      <div class="card-title">基本資料</div>
+      <div class="form-group">
+        <label class="form-label">聯絡電話 <span style="color:var(--error)">*</span></label>
+        <input class="form-input" id="reg-phone" type="tel" placeholder="0912 345 678" required>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">姓名 <span style="color:var(--error)">*</span></label>
+          <input class="form-input" id="reg-name" type="text" placeholder="真實姓名" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">IG 帳號</label>
+          <input class="form-input" id="reg-ig" type="text" placeholder="@ig_handle">
+        </div>
+      </div>
+      <div class="form-group" style="margin-bottom:0">
+        <label class="form-label">交通接駁需求 <span style="color:var(--error)">*</span></label>
+        <select class="form-select" id="reg-shuttle" onchange="updatePrice('reg')">
+          <option value="0">自行前往</option>
+          <option value="400">需要遊覽車接駁（+NT$ 400）</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">確認項目</div>
+      <label class="checkbox-confirm" style="margin-bottom:10px">
+        <input type="checkbox" required>
+        <span class="checkbox-label"><strong>我知道入場費 NT$800</strong>（含 4 小時指定酒水暢飲）</span>
+      </label>
+      <label class="checkbox-confirm" style="margin-bottom:10px">
+        <input type="checkbox" required>
+        <span class="checkbox-label"><strong>我知道暢飲時間為 15-19點</strong></span>
+      </label>
+      <label class="checkbox-confirm" style="margin-bottom:10px">
+        <input type="checkbox" required>
+        <span class="checkbox-label"><strong>我知道遊覽車時間為 13:15 / 21:45</strong></span>
+      </label>
+      <label class="checkbox-confirm">
+        <input type="checkbox" required>
+        <span class="checkbox-label"><strong>我會帶著一顆熱情愉快的心</strong></span>
+      </label>
+    </div>
+
+    <div class="card">
+      <div class="card-title">攜伴朋友</div>
+      <div id="reg-companions"></div>
+      <button type="button" class="add-companion-btn" onclick="addCompanion('reg')">＋ 增加攜伴人數</button>
+    </div>
+
+    <div class="price-summary">
+      <div id="reg-calc-detail" style="font-size:13px; color:var(--text2); line-height:1.8;">入場費: $800<br>接駁費: $0</div>
+      <div class="price-total-row">
+        <span class="price-total-label">總結帳金額</span>
+        <span class="price-total-amount" id="reg-total">NT$ 800</span>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn" id="reg-submit-btn">送出報名 →</button>
+    <p class="text-sm mt-8" style="text-align:center">送出後請前往「付款資訊」頁面完成匯款</p>
+  </form>
+</section>
+
+<section class="tab-panel" id="tab-payment">
+  <div class="payment-method">
+    <div class="bank-name">官方收款帳戶</div>
+    <div style="font-size:13px;color:var(--text2);margin-bottom:4px">連線商業銀行（824）總行 6880</div>
+    <div class="account-number">111009917651</div>
+    <button class="copy-btn" onclick="copyAccount()">一鍵複製帳號</button>
+    <p class="text-sm" style="margin-top:16px">手動輸入帳號轉帳完成後，請於下方回填資訊</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">付款步驟</div>
+    <div class="payment-step"><div class="step-num">1</div><div class="step-text">依系統顯示之<strong>總結帳金額</strong>進行轉帳</div></div>
+    <div class="payment-step"><div class="step-num">2</div><div class="step-text">轉帳後記下<strong>匯款日期</strong>及<strong>帳號後五碼</strong></div></div>
+    <div class="payment-step"><div class="step-num">3</div><div class="step-text">於下方填寫憑證資料，主辦方確認後狀態即會更新</div></div>
+  </div>
+
+  <form id="payForm" onsubmit="submitPaymentInfo(event)">
+    <div class="card">
+      <div class="card-title">匯款資訊填寫</div>
+      <div class="form-group">
+        <label class="form-label">聯絡電話（查詢憑證） <span style="color:var(--error)">*</span></label>
+        <input class="form-input" id="pay-phone" type="tel" placeholder="報名時使用的電話" required>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">匯款日期</label>
+          <input class="form-input" id="pay-date" type="date">
+        </div>
+        <div class="form-group">
+          <label class="form-label">帳號後五碼</label>
+          <input class="form-input" id="pay-last5" type="text" maxlength="5" placeholder="XXXXX">
+        </div>
+      </div>
+      <div class="form-group" style="margin-bottom:0">
+        <label class="form-label">備註留言</label>
+        <textarea class="form-textarea" id="pay-note" placeholder="如有特殊需求..."></textarea>
+      </div>
+    </div>
+    <button type="submit" class="submit-btn" id="pay-submit-btn">送出付款資訊</button>
+  </form>
+</section>
+
+<section class="tab-panel" id="tab-query">
+  <div class="card">
+    <div class="card-title">查詢報名資料</div>
+    <div class="form-group">
+      <label class="form-label">請輸入電話</label>
+      <input class="form-input" id="q-phone" type="tel" placeholder="0912 345 678">
+    </div>
+    <button class="submit-btn" id="q-submit-btn" onclick="fetchDataForEdit()">查詢資料</button>
+  </div>
+
+  <div class="result-card" id="queryResult">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+      <span class="info-label">繳費狀態</span>
+      <span class="result-status" id="q-status-badge">--</span>
+    </div>
+    <div class="info-row"><span class="info-label">報名姓名</span><span class="info-value" id="q-name">--</span></div>
+    <div class="info-row"><span class="info-label">接駁需求</span><span class="info-value" id="q-shuttle">--</span></div>
+    <div class="info-row"><span class="info-label">報名狀態</span><span class="info-value" style="color:var(--success)">報名成功</span></div>
+  </div>
+
+  <div class="edit-section" id="editSection">
+    <form id="editForm" onsubmit="submitEdit(event)">
+      <div class="card" style="margin-top:0">
+        <div class="card-title">修改資料</div>
+        <p class="text-sm" style="margin-bottom:14px">直接修改下方欄位後重新送出覆蓋資料</p>
+
+        <div class="form-group">
+          <label class="form-label">聯絡電話（不可修改）</label>
+          <input class="form-input" id="edit-phone" type="tel" readonly style="opacity:0.5;cursor:not-allowed">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">姓名</label>
+            <input class="form-input" id="edit-name" type="text" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">IG 帳號</label>
+            <input class="form-input" id="edit-ig" type="text">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">交通接駁需求</label>
+          <select class="form-select" id="edit-shuttle" onchange="updatePrice('edit')">
+            <option value="0">自行前往</option>
+            <option value="400">需要遊覽車接駁（+NT$ 400）</option>
+          </select>
+        </div>
+        
+        <div class="card-title" style="margin-top:24px">攜伴朋友</div>
+        <div id="edit-companions"></div>
+        <button type="button" class="add-companion-btn" onclick="addCompanion('edit')">＋ 增加攜伴人數</button>
+
+        <div class="divider"></div>
+        <div class="price-summary">
+          <div id="edit-calc-detail" style="font-size:13px; color:var(--text2); line-height:1.8;">入場費: $800<br>接駁費: $0</div>
+          <div class="price-total-row">
+            <span class="price-total-label">總結帳金額</span>
+            <span class="price-total-amount" id="edit-total">NT$ 800</span>
+          </div>
+        </div>
+        <button type="submit" class="submit-btn" id="edit-submit-btn" style="background:linear-gradient(135deg,#1a6e3c,#2a9d5a);box-shadow:0 4px 20px rgba(42,157,90,0.3)">儲存修改並送出</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="tab-panel" id="tab-admin">
+  <div id="adminLogin" class="card" style="padding: 40px 20px">
+    <div class="card-title" style="justify-content:center;font-size:14px;letter-spacing:0.2em;margin-bottom:24px">ADMIN ACCESS</div>
+    <div class="form-group">
+      <input id="adminPw" type="password" placeholder="輸入密碼">
+    </div>
+    <button class="submit-btn" id="admin-btn" onclick="adminLogin()" style="margin-top:16px">登入查看</button>
+    <div class="alert alert-error mt-8" id="adminLoginError">密碼錯誤</div>
+  </div>
+
+  <div id="adminDashboard" style="display:none">
+    <div class="admin-stats">
+      <div class="stat-box">
+        <div class="stat-num" id="stat-total">0</div><div class="stat-label">總報名組數</div>
+      </div>
+      <div class="stat-box green">
+        <div class="stat-num" id="stat-paid">0</div><div class="stat-label">已繳費組數</div>
+      </div>
+      <div class="stat-box red">
+        <div class="stat-num" id="stat-unpaid">0</div><div class="stat-label">未繳費組數</div>
+      </div>
+      <div class="stat-box gold">
+        <div class="stat-num" id="stat-amount">$0</div><div class="stat-label">總預期金額</div>
+      </div>
+      <div class="stat-box full-width" style="border-color:var(--blue); background:rgba(74,158,255,0.05)">
+        <div class="stat-num" id="stat-shuttle" style="color:var(--blue)">0</div><div class="stat-label">接駁總人數</div>
+      </div>
+    </div>
+
+    <div class="admin-tabs">
+      <button class="admin-tab-btn active" onclick="filterAdminTable('all', this)">全部名單</button>
+      <button class="admin-tab-btn" onclick="filterAdminTable('unpaid', this)">未繳款/確認中</button>
+      <button class="admin-tab-btn" onclick="filterAdminTable('paid', this)">已繳款</button>
+      <button class="admin-tab-btn" onclick="filterAdminTable('shuttle', this)">接駁名單</button>
+    </div>
+
+    <div class="card" style="padding:0;overflow:hidden">
+      <div class="admin-table-wrap">
+        <table id="adminTable">
+          <thead>
+            <tr><th>姓名</th><th>電話</th><th>總額</th><th>匯款憑證</th><th>狀態</th><th>操作</th></tr>
+          </thead>
+          <tbody id="adminTableBody">
+            <tr><td colspan="6" style="text-align:center;padding:24px">讀取中...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="modal-overlay" id="rulesModal" onclick="closeRulesOnBg(event)">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <button class="modal-close" onclick="closeRules()">關閉</button>
+    <div class="modal-title">包場活動須知暨場地使用規範</div>
+
+    <p style="font-size:13px;color:var(--text2);text-align:center;line-height:1.7;margin-bottom:24px">
+      歡迎參加本次包場活動。<br>
+      為維護活動品質、場地安全及所有參與者權益，<br>
+      入場即視為已閱讀並同意遵守以下規範。
+    </p>
+
+    <div class="rules-section">
+      <div class="rules-section-title">一、活動資訊</div>
+      <div class="rules-item"><strong>暢飲時段</strong><br>酒水供應時間共 4 小時：<span class="price-tag">15:00 – 19:00</span><br>活動期間提供店內指定酒水暢飲服務。</div>
+      <div class="rules-item"><strong>入場費用</strong><br><span class="price-tag">NT$800 ／人</span></div>
+      <div class="rules-item">
+        <strong>最低消費人數</strong><br>本次包場活動最低消費以 <strong>60 人</strong> 計算。
+        <div class="rules-highlight">
+          · 未滿 60 人，仍以 60 人計費<br>
+          · 超過 60 人則依實際入場人數計算<br>
+          · 本活動不設入場人數上限，但仍須遵守場地安全規範及現場工作人員管理。
+        </div>
+      </div>
+      <div class="rules-item"><strong>供應時段後入場</strong><br>19:00 後入場者仍須支付 <span class="price-tag">NT$800</span>，並可兌換軟性飲料 2 瓶。</div>
+    </div>
+
+    <div class="rules-section">
+      <div class="rules-section-title">二、預訂與取消政策</div>
+      <div class="rules-item">
+        <strong>場地保證金</strong><br>預訂場地需支付 <span class="price-tag">NT$20,000</span><br>完成付款後即視為確認預訂，場地方將保留該活動日期及時段，不再接受其他預約。
+        <div class="rules-highlight">
+          · 活動日前 14 天（含）以上取消：全額退還保證金。<br>
+          · 活動日前 7 至 13 天取消：退還保證金 50%。<br>
+          · 活動日前 7 天內取消：保證金恕不退還。
+        </div>
+      </div>
+      <div class="rules-item">
+        <strong>保證金扣抵項目</strong><br>活動結束後，如有以下情形，場地方得自保證金中扣除相關費用：設備損壞或遺失、場地設施毀損、額外清潔費、垃圾清運費、浴池區設備損害等。<br>如實際損失超過保證金金額，承租人仍應補足差額。
+      </div>
+    </div>
+
+    <div class="rules-section" style="border:1px solid var(--gold); border-radius:10px; padding:16px;">
+      <div class="rules-section-title" style="border-bottom:none; margin-bottom:4px;">三、匯款資訊</div>
+      <div class="rules-item" style="font-size:14px;">
+        · 銀行名稱：連線商業銀行（824）<br>
+        · 總行代碼：6880<br>
+        · 匯款帳號：<strong style="color:var(--gold2);font-size:18px;">111009917651</strong><br><br>
+        <span style="color:var(--gold)">請於匯款完成後提供帳號後五碼或匯款證明，以利核對款項。</span>
+      </div>
+    </div>
+
+    <div class="rules-section" style="margin-top:24px;">
+      <div class="rules-section-title">四、違禁品管理</div>
+      <div class="rules-item">
+        本場地 <span class="danger-text">全面禁止</span> 攜帶、持有、使用、販售或散布：<br>
+        違禁藥品、管制物品、危險物品、其他違法物品。<br>
+        如發現違法情事，現場有權立即請相關人員離場，並視情況通報警方處理。因個人違法行為所衍生之一切法律責任，均由當事人自行負責。
+      </div>
+    </div>
+
+    <div class="rules-section">
+      <div class="rules-section-title">五、場地清潔規範</div>
+      <div class="rules-item">
+        暢飲時段結束後，參與者應自行整理活動產生之個人物品及垃圾。非本店營運所產生之垃圾應由承租人及參與者自行清除。<br>
+        如未完成清潔或需額外安排人力進行清運，酌收場地清潔費 <span class="price-tag">NT$20,000</span>
+      </div>
+    </div>
+
+    <div class="rules-section">
+      <div class="rules-section-title">六、設備及場地損害責任</div>
+      <div class="rules-item">
+        活動期間請愛惜場地設備。如因個人或同行賓客行為造成任何設備、裝潢或空間損壞，應負修復責任或照價賠償。<br>
+        <strong style="color:var(--gold2)">承租人應協助管理同行賓客，並對同行賓客造成之損害負連帶責任。</strong>
+      </div>
+    </div>
+
+    <div class="rules-section">
+      <div class="rules-section-title">七、浴池 VIP 區使用公告</div>
+      <div class="rules-item">
+        浴池區域為私人空間，平時未對外開放。設有監視錄影設備，購買手環並進入即視為已知悉並同意錄影管理。<br><br>
+        <strong>使用費用：</strong> <span class="price-tag">NT$2,000／人</span> (請至吧台購買 VIP 入場手環)<br>
+        <strong>入場規定：</strong> 未配戴手環不得進入，經查驗未配戴者需補繳 <span class="price-tag">NT$2,000／人</span><br>
+        <strong style="color:var(--gold)">巨蟹座壽星好友優惠：</strong> 巨蟹座壽星本人可持身分證件至吧台免費兌換 VIP 手環乙支。
+      </div>
+    </div>
+
+    <div class="rules-section">
+      <div class="rules-section-title">八、浴池區設備賠償標準</div>
+      <div class="rules-item">
+        使用期間請愛惜設備。如因人為造成損壞，應照價賠償。<br>
+        · 淋浴設備價值：NT$98,000<br>
+        · 浴池設備價值：NT$800,000<br>
+        · 烤箱設備價值：NT$280,000
+      </div>
+    </div>
+
+    <div class="rules-section">
+      <div class="rules-section-title">九、場地方終止權</div>
+      <div class="rules-item">
+        如有下列情形之一，場地方有權立即終止活動並要求相關人員離場 (相關費用恕不退還)：<br>
+        持有違禁品、打架鬥毆、危害公共安全、蓄意破壞設備、嚴重影響他人、拒絕配合工作人員管理。<br><br>
+        <strong>監視錄影公告：</strong><br>
+        為維護場地安全與活動秩序，本場地設有監視錄影設備。進入本場地即視為知悉並同意於公共空間範圍內接受錄影紀錄。
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div style="position:fixed;bottom:20px;right:16px;z-index:50">
+  <button onclick="openRules()" style="padding:10px 16px;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);border-radius:100px;color:var(--gold2);font-size:12px;font-family:inherit;cursor:pointer;font-weight:600;letter-spacing:0.06em;backdrop-filter:blur(8px)">
+    活動規範與須知
+  </button>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ── CONFIG ──
+const GAS_URL = "https://script.google.com/macros/s/AKfycbwVL5tggzYX-BoHT88uRUKEo4OFdFuuQ1y5E3ILOtIY4NYXYUk_kRHoj4A3YZX2jm-W/exec";
+let adminGlobalData = [];
+
+// ── UTILS ──
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: document.querySelector('.tab-nav').offsetTop - 20, behavior: 'smooth' });
+}
+
+function showToast(msg, duration = 3000) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), duration);
+}
+
+function copyAccount() {
+  navigator.clipboard.writeText('111009917651').then(() => {
+    showToast('✅ 帳號已複製：111009917651');
+  }).catch(() => {
+    showToast('帳號：111009917651 (請手動複製)');
+  });
+}
+
+// ── COMPANIONS & PRICE ──
+let compCounters = { reg: 0, edit: 0 };
+
+function addCompanion(type) {
+  compCounters[type]++;
+  const container = document.getElementById(type + '-companions');
+  const div = document.createElement('div');
+  div.className = 'companion-item';
+  div.id = `comp-${type}-${compCounters[type]}`;
+  
+  div.innerHTML = `
+    <div class="companion-header">攜伴 ${compCounters[type]}</div>
+    <button type="button" class="companion-remove" onclick="removeCompanion('${type}', ${compCounters[type]})">移除</button>
+    <div class="form-group">
+      <label class="form-label">姓名</label>
+      <input class="form-input c-name" type="text" placeholder="朋友姓名" required>
+    </div>
+    <div class="form-row" style="margin-bottom:0">
+      <div class="form-group">
+        <label class="form-label">交通接駁</label>
+        <select class="form-select c-shuttle" onchange="updatePrice('${type}')">
+          <option value="0">自行前往</option>
+          <option value="400">需要遊覽車接駁 ($400)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">費用支付</label>
+        <select class="form-select c-pay" onchange="updatePrice('${type}')">
+          <option value="merged">合併結帳 (算在總金額)</option>
+          <option value="split">各自繳費 (朋友自行匯款)</option>
+        </select>
+      </div>
+    </div>
+  `;
+  container.appendChild(div);
+  updatePrice(type);
+}
+
+function removeCompanion(type, id) {
+  const el = document.getElementById(`comp-${type}-${id}`);
+  if(el) { el.remove(); updatePrice(type); }
+}
+
+function updatePrice(type) {
+  const BASE_FEE = 800;
+  let total = BASE_FEE;
+  const mShuttle = parseInt(document.getElementById(type + '-shuttle').value) || 0;
+  
+  let detailHtml = `入場費: $${BASE_FEE}<br>接駁費: $${mShuttle}<br>`;
+  total += mShuttle;
+
+  const boxes = document.getElementById(type + '-companions').querySelectorAll('.companion-item');
+  boxes.forEach((box, i) => {
+    const cShuttle = parseInt(box.querySelector('.c-shuttle').value) || 0;
+    const cPay = box.querySelector('.c-pay').value;
+    const cCost = BASE_FEE + cShuttle;
     
-    <div id="tab-create" class="view-section active">
-      <div class="main-card">
-        <div class="card-title">報名資料填寫</div>
-        <form id="createForm" onsubmit="submitForm(event, 'main')">
-          <div class="form-group">
-            <label>聯絡電話(必填)</label>
-            <input type="tel" id="mainPhone" required>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Name</label>
-              <input type="text" id="mainName" required>
-            </div>
-            <div class="form-group">
-              <label>IG 帳號</label>
-              <input type="text" id="mainIg" required>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>交通接駁需求</label>
-            <select id="mainShuttle" onchange="calcTotal()">
-              <option value="0">自行前往</option>
-              <option value="400">需要遊覽車接駁 ($400)</option>
-            </select>
-          </div>
-          <div class="vertical-check-group">
-            <div class="check-title">必填確認項目</div>
-            <label class="checkbox-label">
-              <input type="checkbox" required><span>我知道入場費 NT.<span class="highlight-time">800元</span></span>
-            </label>
-            <label class="checkbox-label">
-              <input type="checkbox" required><span>我知道暢飲時間為 <span class="highlight-time">15-19點</span></span>
-            </label>
-            <label class="checkbox-label">
-              <input type="checkbox" required><span>我知道遊覽車時間為 <span class="highlight-time">13:30 / 22:00</span></span>
-            </label>
-            <label class="checkbox-label">
-              <input type="checkbox" required><span>我會帶著一顆熱情愉快的心</span>
-            </label>
-          </div>
-          <div class="form-group">
-            <label>攜伴朋友</label>
-            <div id="main-companions-container"></div>
-            <button type="button" class="btn-outline" onclick="addCompanion('main')">＋ 增加攜伴人數</button>
-          </div>
-          <div class="card-title" style="margin-top: 64px; font-size: 16px;">備註 (可於查詢報名更新匯款資訊)</div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>匯款日期</label>
-              <input type="date" id="mainTransferDate">
-            </div>
-            <div class="form-group">
-              <label>帳號後五碼</label>
-              <input type="text" id="mainAccount5" maxlength="5" pattern="\d{5}" title="請輸入5位數字">
-            </div>
-          </div>
-          <div class="form-group">
-            <label>我聽!你說說看~</label>
-            <textarea rows="3" id="mainNotes"></textarea>
-          </div>
-          <div class="checkout-wrapper">
-            <div class="total-box">
-              <div class="total-detail" id="mainCalcDetail">入場費: $800<br>接駁費: $0</div>
-              <div class="total-summary">
-                <div style="font-size:11px; color:#8E9BAE; font-weight:500; letter-spacing:2px; text-transform:uppercase;">總結帳金額</div>
-                <div class="total-price" id="mainTotalPrice">NT$ 800</div>
-              </div>
-            </div>
-            <button type="submit" class="btn-submit">送出報名</button>
-          </div>
+    if (cPay === 'merged') {
+      total += cCost;
+      detailHtml += `朋友 ${i+1} (合併): $${cCost}<br>`;
+    } else {
+      detailHtml += `朋友 ${i+1} (自付): $${cCost} <span style="color:var(--error);font-size:11px">(不計總額)</span><br>`;
+    }
+  });
 
-          <div class="bank-banner">
-            <div class="bank-info">
-              <div class="bank-title">官方收款帳戶</div>
-              <div class="bank-name">連線商業銀行 (824) 總行 6880</div>
-              <div class="bank-acc">111009917651</div>
-              <button type="button" class="btn-copy" onclick="copyAccount()">一鍵複製帳號</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
+  document.getElementById(type + '-calc-detail').innerHTML = detailHtml;
+  document.getElementById(type + '-total').textContent = 'NT$ ' + total.toLocaleString();
+  return total;
+}
 
-    <div id="tab-edit" class="view-section">
-      <div class="main-card" style="padding-bottom: 48px;">
-        <div class="card-title">查詢與修改報名資料</div>
-        <div class="form-row" style="align-items: flex-end;">
-          <div class="form-group">
-            <label>請輸入電話</label>
-            <input type="tel" id="searchPhone">
-          </div>
-          <div class="form-group search-btn-wrapper">
-            <button type="button" class="btn-submit" style="margin-top:0; padding:16px; background:#FFFFFF; color:#0A131A!important;" onclick="fetchDataForEdit(event)">查詢資料</button>
-          </div>
-        </div>
-      </div>
-      
-      <div id="editFormArea" class="main-card" style="display:none; padding-top: 40px; padding-bottom: 0;">
-        
-        <div class="edit-status-card">
-          <div class="status-item">
-            <div class="label">報名姓名</div>
-            <div class="value" id="dispName">--</div>
-          </div>
-          <div class="status-item">
-            <div class="label">繳費狀態</div>
-            <div class="value" id="dispPayStatus">--</div>
-          </div>
-          <div class="status-item">
-            <div class="label">接駁需求</div>
-            <div class="value" id="dispShuttle">--</div>
-          </div>
-          <div class="status-item">
-            <div class="label">報名狀態</div>
-            <div class="value highlight">報名成功</div>
-          </div>
-        </div>
+// ── API HELPERS ──
+function getCompanionsData(type) {
+  const comps = [];
+  const boxes = document.getElementById(type + '-companions').querySelectorAll('.companion-item');
+  boxes.forEach(box => {
+    comps.push({
+      name: box.querySelector('.c-name').value,
+      shuttle: box.querySelector('.c-shuttle').value,
+      pay: box.querySelector('.c-pay').value
+    });
+  });
+  return comps;
+}
 
-        <p style="color:var(--luxury-gold); font-weight:500; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 16px; font-size:13px; letter-spacing:1px; margin-bottom: 32px;">已載入您的資料，請直接修改下方欄位後重新送出覆蓋。</p>
-        
-        <form id="editForm" onsubmit="submitForm(event, 'edit')">
-          <div class="form-group">
-            <label>聯絡電話 (查詢憑證，不可修改)</label>
-            <input type="tel" id="editPhone" readonly style="background: rgba(255,255,255,0.05); color: #6B7280; border-color: transparent;">
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Name</label>
-              <input type="text" id="editName" required>
-            </div>
-            <div class="form-group">
-              <label>IG 帳號</label>
-              <input type="text" id="editIg" required>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>交通接駁需求</label>
-            <select id="editShuttle" onchange="calcTotal('edit')">
-              <option value="0">自行前往</option>
-              <option value="400">需要遊覽車接駁 ($400)</option>
-            </select>
-          </div>
-          <div class="vertical-check-group">
-            <div class="check-title">必填確認項目</div>
-            <label class="checkbox-label"><input type="checkbox" required checked><span>我知道入場費 NT.<span class="highlight-time">800元</span></span></label>
-            <label class="checkbox-label"><input type="checkbox" required checked><span>我知道暢飲時間為 <span class="highlight-time">15-19點</span></span></label>
-            <label class="checkbox-label"><input type="checkbox" required checked><span>我知道遊覽車時間為 <span class="highlight-time">13:30 / 22:00</span></span></label>
-            <label class="checkbox-label"><input type="checkbox" required checked><span>我會帶著一顆熱情愉快的心</span></label>
-          </div>
-          <div class="form-group">
-            <label>攜伴朋友</label>
-            <div id="edit-companions-container"></div>
-            <button type="button" class="btn-outline" onclick="addCompanion('edit')">＋ 增加攜伴人數</button>
-          </div>
-          <div class="card-title" style="margin-top: 56px; font-size: 16px;">備註 (可於查詢報名更新匯款資訊)</div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>匯款日期</label>
-              <input type="date" id="editTransferDate">
-            </div>
-            <div class="form-group">
-              <label>帳號後五碼</label>
-              <input type="text" id="editAccount5" maxlength="5">
-            </div>
-          </div>
-          <div class="form-group">
-            <label>我聽!你說說看~</label>
-            <textarea rows="3" id="editNotes"></textarea>
-          </div>
-          <div class="checkout-wrapper">
-            <div class="total-box">
-              <div class="total-detail" id="editCalcDetail">入場費: $800<br>接駁費: $0</div>
-              <div class="total-summary">
-                <div style="font-size:11px; color:#8E9BAE; font-weight:500; letter-spacing:2px; text-transform:uppercase;">總結帳金額</div>
-                <div class="total-price" id="editTotalPrice">NT$ 800</div>
-              </div>
-            </div>
-            <button type="submit" class="btn-submit">儲存修改並送出</button>
-          </div>
-        </form>
-      </div>
-    </div>
+function setBtnLoading(btn, isLoading, text) {
+  if (isLoading) {
+    btn.dataset.original = btn.innerHTML;
+    btn.innerHTML = `<span class="spinner"></span> 處理中...`;
+    btn.disabled = true;
+  } else {
+    btn.innerHTML = btn.dataset.original || text;
+    btn.disabled = false;
+  }
+}
 
-    <div id="tab-admin" class="view-section">
-      <div class="main-card" id="adminLoginArea" style="text-align:center; padding: 80px 40px; padding-bottom: 80px;">
-        <h2 style="margin-top:0; font-family:'Playfair Display', serif; font-weight:400; letter-spacing:4px; font-size: 24px; color: var(--luxury-gold);">ADMIN ACCESS</h2>
-        <p style="color:var(--text-muted); margin-bottom:40px; font-size:12px; letter-spacing:2px; text-transform: uppercase;">請輸入主辦單位專屬密碼</p>
-        <input type="password" id="adminPwd" class="form-group" style="width:100%; max-width:320px; padding:18px; border:1px solid rgba(255, 255, 255, 0.08); text-align:center; display:block; margin:0 auto 32px; letter-spacing: 4px;">
-        <div style="max-width: 320px; margin: 0 auto;">
-          <button type="button" class="btn-submit" style="margin-top:0;" onclick="loadAdminDashboard(event)">登入查看</button>
-        </div>
-      </div>
-      
-      <div class="main-card admin-white-card" id="adminTableArea" style="display:none;">
-        <div class="card-title">主辦單位儀表板</div>
-        <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-value" id="stat-total-groups">0</div>
-            <div class="stat-label">總報名組數</div>
-          </div>
-          <div class="stat-card" style="border-left: 4px solid var(--success);">
-            <div class="stat-value" id="stat-paid-groups" style="color: var(--success);">0</div>
-            <div class="stat-label">已繳費組數</div>
-          </div>
-          <div class="stat-card" style="border-left: 4px solid var(--danger);">
-            <div class="stat-value" id="stat-unpaid-groups" style="color: var(--danger);">0</div>
-            <div class="stat-label">未繳費組數</div>
-          </div>
-          <div class="stat-card" style="border-left: 4px solid var(--luxury-gold); background: #FFFBEB;">
-            <div class="stat-value" id="stat-revenue" style="color: var(--luxury-gold);">$0</div>
-            <div class="stat-label">總預期金額</div>
-          </div>
-          <div class="stat-card" style="border-left: 4px solid var(--luxury-teal); background: #F4F9F9;">
-            <div class="stat-value" id="stat-shuttle" style="color: var(--luxury-teal);">0</div>
-            <div class="stat-label">接駁總人數</div>
-          </div>
-        </div>
-        <div class="filter-group">
-          <button class="btn-filter active" onclick="filterAdminTable('all', this)">全部名單</button>
-          <button class="btn-filter" onclick="filterAdminTable('unpaid', this)">待確認/未繳款</button>
-          <button class="btn-filter" onclick="filterAdminTable('paid', this)">已繳款清單</button>
-          <button class="btn-filter" onclick="filterAdminTable('shuttle', this)">接駁名單</button>
-        </div>
-        <div class="table-responsive">
-          <table class="admin-table">
-            <thead>
-              <tr>
-                <th class="col-name">姓名</th>
-                <th class="col-phone">電話</th>
-                <th class="col-total">總額</th>
-                <th class="col-transfer">匯款日期 ｜ 後五碼</th>
-                <th class="col-status">狀態</th>
-              </tr>
-            </thead>
-            <tbody id="adminTbody"></tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+// ── TAB 2: REGISTER ──
+async function submitRegistration(e) {
+  e.preventDefault();
+  const btn = document.getElementById('reg-submit-btn');
+  setBtnLoading(btn, true);
 
-  </div>
+  const payload = {
+    action: 'submit',
+    phone: "'" + document.getElementById('reg-phone').value.trim(),
+    name: document.getElementById('reg-name').value.trim(),
+    ig: document.getElementById('reg-ig').value.trim(),
+    shuttle: document.getElementById('reg-shuttle').value,
+    companions: getCompanionsData('reg'),
+    transferDate: "", account5: "", notes: "",
+    total: updatePrice('reg')
+  };
 
-  <div class="modal-overlay" id="rulesModal">
-    <div class="modal-content">
-      <button class="modal-close" onclick="toggleModal(false)">&times;</button>
-      <div class="rules-wrap">
-        <div class="freeze-pane">
-          <div class="main-title">包場活動須知暨場地使用規範</div>
-        </div>
-        <div class="intro">
-          歡迎參加本次包場活動。<br>為維護活動品質、場地安全及所有參與者權益，<br>入場即視為已閱讀並同意遵守以下規範。
-        </div>
+  try {
+    let res = await fetch(GAS_URL, { method: 'POST', body: JSON.stringify(payload) }).then(r=>r.json());
+    if(res.status === 'success') {
+      showToast('🎉 報名成功！請前往「付款資訊」完成後續作業', 5000);
+      e.target.reset();
+      document.getElementById('reg-companions').innerHTML = '';
+      updatePrice('reg');
+      switchTab('payment', document.querySelectorAll('.tab-btn')[2]);
+    } else {
+      showToast('⚠️ 錯誤：' + res.message);
+    }
+  } catch (err) {
+    showToast('⚠️ 連線失敗，請檢查網路');
+  } finally {
+    setBtnLoading(btn, false, '送出報名 →');
+  }
+}
 
-        <div class="rule-card">
-          <div class="section-title">一、活動資訊</div>
-          <div class="item-title">暢飲時段</div>
-          <p>酒水供應時間共 <span class="highlight">4 小時</span>：<br><span class="highlight">15:00－19:00</span><br>活動期間提供店內指定酒水暢飲服務。</p>
-          <div class="item-title">入場費用</div>
-          <p><span class="price-tag">NT$800／人</span></p>
-          <div class="item-title">最低消費人數</div>
-          <p>本次包場活動最低消費以 <span class="highlight">60人</span> 計算。</p>
-          <ul>
-            <li>未滿60人，仍以60人計費.</li>
-            <li>超過60人則依實際入場人數計算。</li>
-            <li>本活動不設入場人數上限，但仍須遵守場地安全規範及現場工作人員管理。</li>
-          </ul>
-          <div class="item-title">供應時段後入場</div>
-          <p>19:00後入場者仍須支付：<br><span class="price-tag">NT$800／人</span><br>並可兌換：軟性飲料 2 瓶</p>
-        </div>
+// ── TAB 3: PAYMENT SUBMIT ──
+async function submitPaymentInfo(e) {
+  e.preventDefault();
+  const phone = document.getElementById('pay-phone').value.trim();
+  const btn = document.getElementById('pay-submit-btn');
+  setBtnLoading(btn, true);
 
-        <div class="rule-card">
-          <div class="section-title">二、預訂與取消政策</div>
-          <div class="item-title">場地保證金</div>
-          <p>預訂場地需支付：<br>場地保證金 <span class="price-tag">NT$20,000</span><br>完成付款後即視為確認預訂，場地方將保留該活動日期及時段，不再接受其他預約。</p>
-          <div class="item-title">取消與退款規則</div>
-          <ul>
-            <li>活動日前14天（含）以上取消：全額退還保證金。</li>
-            <li>活動日前7日至13天取消：退還保證金50%。</li>
-            <li>活動日前7天內取消：保證金恕不退還。</li>
-          </ul>
-          <div class="item-title">保證金扣抵項目</div>
-          <p>活動結束後，如有以下情形，場地方得自保證金中扣除相關費用：</p>
-          <ul><li>設備損壞或遺失</li><li>場地設施毀損</li><li>額外清潔費</li><li>垃圾清運費</li><li>浴池區設備損害</li><li>其他因活動產生之損失或費用</li></ul>
-          <p>如實際損失超過保證金金額，承租人仍應補足差額。</p>
-        </div>
+  try {
+    // 1. Fetch existing data
+    let searchRes = await fetch(GAS_URL, { method: 'POST', body: JSON.stringify({ action: 'search', phone: phone }) }).then(r=>r.json());
+    if(searchRes.status !== 'success') {
+      showToast('⚠️ 找不到此電話的報名資料');
+      setBtnLoading(btn, false, '送出付款資訊');
+      return;
+    }
 
-        <div class="rule-card" style="box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);">
-          <div class="section-title">三、匯款資訊</div>
-          <ul>
-            <li>銀行名稱：連線商業銀行（824）</li>
-            <li>總行代碼：6880</li>
-            <li>匯款帳號：<span class="highlight" style="font-size: 18px;">111009917651</span></li>
-          </ul>
-          <p style="color: #D4AF37 !important; font-weight: 700; margin-top: 24px;">請於匯款完成後提供帳號後五碼或匯款證明，以利核對款項。</p>
-        </div>
-
-        <div class="rule-card">
-          <div class="section-title">四、違禁品管理</div>
-          <p>本場地<span class="danger-text">全面禁止</span>攜帶、持有、使用、販售或散布：</p>
-          <ul><li>違禁藥品</li><li>管制物品</li><li>危險物品</li><li>其他違法物品</li></ul>
-          <p>如發現違法情事，現場有權立即請相關人員離場，並視情況通報警方處理。<br>因個人違法行為所衍生之一切法律責任，均由當事人自行負責。</p>
-        </div>
-
-        <div class="rule-card">
-          <div class="section-title">五、場地清潔規範</div>
-          <p>暢飲時段結束後，參與者應自行整理活動產生之個人物品及垃圾。</p>
-          <p>非本店營運所產生之垃圾、活動用品、佈置物及其他廢棄物，應由承租人及參與者自行清除。</p>
-          <p>如未完成清潔或需額外安排人力進行清運、復原及特殊清潔作業：<br>酌收場地清潔費 <span class="price-tag">NT$20,000</span></p>
-        </div>
-
-        <div class="rule-card">
-          <div class="section-title">六、設備及場地損害責任</div>
-          <p>活動期間請愛惜場地設備及設施。</p>
-          <p>如因個人或同行賓客行為造成任何設備、設施、裝潢或空間損壞，應負修復責任或照價賠償。<br>包含但不限於：</p>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; margin-bottom: 16px;">
-            <ul style="margin: 0;"><li>DJ設備</li><li>音響設備</li><li>電腦及軟硬體設備</li><li>桌椅家具</li></ul>
-            <ul style="margin: 0;"><li>店內裝潢</li><li>浴池設備</li><li>廁所設備</li><li>監視器設備</li></ul>
-          </div>
-          <ul><li>其他場地設施</li></ul>
-          <p style="color: #D4AF37 !important; font-weight: 700; margin-top: 24px;">承租人應協助管理同行賓客，並對同行賓客造成之損害負連帶責任。</p>
-        </div>
-
-        <div class="rule-card">
-          <div class="section-title">七、浴池 VIP 區使用公告</div>
-          <p>浴池區域為私人空間，平時未對外開放。<br>浴池 VIP 區設有監視錄影設備，購買手環並進入該區域，即視為已知悉並同意相關錄影管理措施。</p>
-          <div class="item-title">使用費用</div>
-          <p><span class="price-tag">NT$2,000／人</span><br>如欲使用浴池 VIP 區，請至吧台購買 VIP 入場手環。</p>
-          <div class="item-title">入場規定</div>
-          <p>未配戴 VIP 手環者不得進入浴池區域。<br>經現場查驗發現未配戴手環進入者：<br>需補繳入場費 <span class="price-tag">NT$2,000／人</span></p>
-          <div class="item-title" style="color: #D4AF37 !important;">巨蟹座壽星好友優惠</div>
-          <p>巨蟹座壽星本人可持身分證件至吧台免費兌換 VIP 手環乙支。</p>
-        </div>
-
-        <div class="rule-card">
-          <div class="section-title">八、浴池區設備賠償標準</div>
-          <p>使用期間請愛惜設備。<br>如因人為因素造成設備或設施損壞，應負修復責任或照價賠償。<br>主要設備價值如下：</p>
-          <div class="price-table">
-            <div class="pt-row pt-header"><div>設備名稱</div><div>設備價值</div></div>
-            <div class="pt-row"><div>淋浴設備</div><div class="pt-val">NT$98,000</div></div>
-            <div class="pt-row"><div>浴池設備</div><div class="pt-val">NT$800,000</div></div>
-            <div class="pt-row"><div>烤箱設備</div><div class="pt-val">NT$280,000</div></div>
-          </div>
-        </div>
-
-        <div class="rule-card">
-          <div class="section-title">九、場地方終止權</div>
-          <p>如有下列情形之一，場地方有權立即終止活動並要求相關人員離場：</p>
-          <ul><li>持有或使用違禁品</li><li>打架鬥毆</li><li>危害公共安全</li><li>蓄意破壞設備</li><li>嚴重影響其他客人或鄰近環境</li><li>拒絕配合工作人員管理</li></ul>
-          <p>相關費用恕不退還。</p>
-          <div class="item-title" style="margin-top: 40px;">監視錄影公告</div>
-          <p>為維護場地安全、設備管理、活動秩序及保障參與者權益，本場地設有監視錄影設備。<br>本場地公共區域及浴池 VIP 區均有錄影監控系統運作中。<br>錄影資料僅供下列用途使用：</p>
-          <ul><li>場地安全管理</li><li>設備損害認定</li><li>糾紛處理</li><li>配合警方或主管機關依法調查</li></ul>
-          <p>不另作其他用途。<br>進入本場地即視為知悉並同意於公共空間範圍內接受錄影紀錄。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="custom-alert-overlay" id="customAlert">
-    <div class="custom-alert-box">
-      <div class="custom-alert-msg" id="customAlertMsg"></div>
-      <button class="custom-alert-btn" onclick="closeCustomAlert()">確認</button>
-    </div>
-  </div>
-
-  <script>
-    try {
-      var GAS_URL = "https://script.google.com/macros/s/AKfycbwVL5tggzYX-BoHT88uRUKEo4OFdFuuQ1y5E3ILOtIY4NYXYUk_kRHoj4A3YZX2jm-W/exec";
-      var adminGlobalData = []; 
-
-      function showCustomAlert(msg) {
-        document.getElementById('customAlertMsg').innerText = msg;
-        var overlay = document.getElementById('customAlert');
-        overlay.style.display = 'flex';
-        void overlay.offsetWidth;
-        overlay.classList.add('show');
-      }
-      window.showCustomAlert = showCustomAlert;
-
-      function closeCustomAlert() {
-        var overlay = document.getElementById('customAlert');
-        overlay.classList.remove('show');
-        setTimeout(function() { overlay.style.display = 'none'; }, 300);
-      }
-      window.closeCustomAlert = closeCustomAlert;
-
-      function switchTab(event, tabId) {
-        var views = document.querySelectorAll('.view-section');
-        for(var i=0; i<views.length; i++) { views[i].classList.remove('active'); }
-        
-        var btns = document.querySelectorAll('.tab-btn');
-        for(var j=0; j<btns.length; j++) { btns[j].classList.remove('active'); }
-        
-        document.getElementById('tab-' + tabId).classList.add('active');
-        if(event) { event.currentTarget.classList.add('active'); }
-        
-        var container = document.getElementById('mainContainer');
-        if(tabId === 'admin') { container.classList.add('admin-mode'); } 
-        else { container.classList.remove('admin-mode'); }
-        
-        window.scrollTo({ top: document.querySelector('.hero-title-section').offsetTop, behavior: 'smooth' });
-      }
-      window.switchTab = switchTab;
-
-      function toggleModal(show) {
-        document.getElementById('rulesModal').style.display = show ? 'flex' : 'none';
-        document.body.style.overflow = show ? 'hidden' : ''; 
-      }
-      window.toggleModal = toggleModal;
-
-      function copyAccount() {
-        var accountText = "111009917651";
-        if (navigator.clipboard && window.isSecureContext) {
-          navigator.clipboard.writeText(accountText).then(function() {
-            showCustomAlert('已複製帳號');
-          }).catch(fallbackCopyTextToClipboard);
-        } else {
-          fallbackCopyTextToClipboard();
-        }
-
-        function fallbackCopyTextToClipboard() {
-          var tempInput = document.createElement("input");
-          tempInput.value = accountText;
-          document.body.appendChild(tempInput);
-          tempInput.select();
-          try { document.execCommand("copy"); showCustomAlert('已複製帳號'); } 
-          catch (err) { showCustomAlert('複製失敗，請手動選取複製'); }
-          document.body.removeChild(tempInput);
-        }
-      }
-      window.copyAccount = copyAccount;
-
-      var compCounters = { main: 0, edit: 0 };
-      
-      function addCompanion(type) {
-        compCounters[type]++;
-        var container = document.getElementById(type + '-companions-container');
-        var div = document.createElement('div');
-        div.className = 'companion-box';
-        div.id = 'comp-' + type + '-' + compCounters[type];
-        
-        var htmlString = '<button type="button" class="btn-remove" onclick="removeComp(\'' + type + '\', ' + compCounters[type] + ')">\u2715 移除</button>' +
-          '<div class="form-group" style="margin-bottom:24px;"><label>朋友姓名</label><input type="text" class="c-name" required></div>' +
-          '<div class="form-row" style="margin-bottom: 0;">' +
-            '<div class="form-group"><label>交通接駁</label><select class="c-shuttle" onchange="calcTotal(\'' + type + '\')"><option value="0">自行前往</option><option value="400">需要遊覽車接駁 ($400)</option></select></div>' +
-            '<div class="form-group"><label>費用支付</label><select class="c-pay" onchange="calcTotal(\'' + type + '\')"><option value="merged">合併結帳 (算在總金額)</option><option value="split">各自繳費 (朋友自行匯款)</option></select></div>' +
-          '</div>';
-          
-        div.innerHTML = htmlString;
-        container.appendChild(div);
-        calcTotal(type);
-      }
-      window.addCompanion = addCompanion;
-
-      function removeComp(type, id) {
-        var el = document.getElementById('comp-' + type + '-' + id);
-        if(el) { el.parentNode.removeChild(el); calcTotal(type); }
-      }
-      window.removeComp = removeComp;
-
-      function calcTotal(type) {
-        type = type || 'main';
-        var BASE_FEE = 800;
-        var total = BASE_FEE;
-        var mShuttleSelect = document.getElementById(type + 'Shuttle');
-        var mShuttle = mShuttleSelect ? (parseInt(mShuttleSelect.value) || 0) : 0;
-        
-        var detailHtml = '入場費: $' + BASE_FEE + '<br>接駁費: $' + mShuttle + '<br>';
-        total += mShuttle;
-
-        var companionBoxes = document.getElementById(type + '-companions-container').querySelectorAll('.companion-box');
-        for (var i = 0; i < companionBoxes.length; i++) {
-          var box = companionBoxes[i];
-          var cShuttle = parseInt(box.querySelector('.c-shuttle').value) || 0;
-          var cPay = box.querySelector('.c-pay').value;
-          var cCost = BASE_FEE + cShuttle;
-          if (cPay === 'merged') {
-            total += cCost; detailHtml += '朋友 ' + (i+1) + ' (合併): $' + cCost + '<br>';
-          } else {
-            detailHtml += '朋友 ' + (i+1) + ' (自付): $' + cCost + ' <span style="color:#EF4444; font-size:11px;">(不計總額)</span><br>';
-          }
-        }
-        var calcDetailEl = document.getElementById(type + 'CalcDetail');
-        if(calcDetailEl) calcDetailEl.innerHTML = detailHtml;
-        var totalPriceEl = document.getElementById(type + 'TotalPrice');
-        if(totalPriceEl) totalPriceEl.innerText = 'NT$ ' + total;
-        return total;
-      }
-      window.calcTotal = calcTotal;
-
-      function submitForm(e, type) {
-        e.preventDefault();
-        var btn = e.target.querySelector('button[type="submit"]');
-        var originalText = btn.innerText;
-        btn.innerHTML = '<span class="spinner"></span> 處理中...';
-        btn.disabled = true;
-
-        var companions = [];
-        var companionBoxes = document.getElementById(type + '-companions-container').querySelectorAll('.companion-box');
-        for (var i = 0; i < companionBoxes.length; i++) {
-          var box = companionBoxes[i];
-          companions.push({
-            name: box.querySelector('.c-name').value,
-            shuttle: box.querySelector('.c-shuttle').value,
-            pay: box.querySelector('.c-pay').value
+    // 2. Parse existing companions
+    let comps = [];
+    const compStr = searchRes.data.compDetails;
+    if(compStr && compStr !== "無攜伴") {
+      const lines = compStr.split('\n');
+      for(let line of lines) {
+        let match = line.match(/朋友\d+:\s+(.*?)\s+\((.*?),\s+(.*?)\)/);
+        if(match) {
+          comps.push({
+            name: match[1],
+            shuttle: match[2] === '接駁' ? '400' : '0',
+            pay: match[3] === '合併結帳' ? 'merged' : 'split'
           });
         }
-
-        var payload = {
-          action: 'submit',
-          phone: "'" + document.getElementById(type + 'Phone').value,
-          name: document.getElementById(type + 'Name').value,
-          ig: document.getElementById(type + 'Ig').value,
-          shuttle: document.getElementById(type + 'Shuttle').value,
-          companions: companions,
-          transferDate: document.getElementById(type + 'TransferDate').value,
-          account5: document.getElementById(type + 'Account5').value,
-          notes: document.getElementById(type + 'Notes').value,
-          total: calcTotal(type)
-        };
-
-        fetch(GAS_URL, { method: 'POST', body: JSON.stringify(payload) })
-        .then(function(res) { return res.json(); })
-        .then(function(data) {
-          if(data.status === 'success') {
-            showCustomAlert('資料已成功送出！\n\n(若尚未匯款，請盡快完成匯款作業)');
-            if(type === 'main') {
-              e.target.reset(); document.getElementById('main-companions-container').innerHTML = ''; calcTotal('main'); 
-            } else {
-              document.getElementById('editFormArea').style.display = 'none';
-            }
-          } else {
-            showCustomAlert('發生錯誤：' + data.message);
-          }
-        })
-        .catch(function(err) { showCustomAlert('連線失敗，請檢查網路狀態。'); })
-        .finally(function() { btn.innerHTML = originalText; btn.disabled = false; });
       }
-      window.submitForm = submitForm;
-
-      function fetchDataForEdit(e) {
-        var phone = document.getElementById('searchPhone').value;
-        if(!phone) return showCustomAlert('請先輸入查詢電話');
-        
-        var btn = e.target;
-        var originalText = btn.innerText;
-        btn.innerHTML = '<span class="spinner"></span> 查詢中...';
-        btn.disabled = true;
-
-        fetch(GAS_URL, { method: 'POST', body: JSON.stringify({ action: 'search', phone: phone }) })
-        .then(function(res) { return res.json(); })
-        .then(function(res) {
-          if(res.status === 'success') {
-            document.getElementById('editPhone').value = res.data.phone;
-            document.getElementById('editName').value = res.data.name;
-            document.getElementById('editIg').value = res.data.ig;
-            document.getElementById('editShuttle').value = res.data.shuttle === '需要接駁' ? '400' : '0';
-            
-            var tDate = res.data.transferDate;
-            if (tDate && tDate.length > 10 && tDate.indexOf('GMT') !== -1) {
-              var d = new Date(tDate);
-              tDate = d.getFullYear() + '-' + ("0"+(d.getMonth()+1)).slice(-2) + '-' + ("0"+d.getDate()).slice(-2);
-            }
-            document.getElementById('editTransferDate').value = tDate || '';
-            document.getElementById('editAccount5').value = res.data.account5 || '';
-            document.getElementById('editNotes').value = res.data.notes || '';
-
-            var currentPayStatus = res.data.payStatus || "未付款";
-            var hasTransferData = (tDate || res.data.account5);
-            if (currentPayStatus !== "已付款" && hasTransferData) {
-              currentPayStatus = "帳款確認中";
-            }
-
-            document.getElementById('dispName').innerText = res.data.name;
-            document.getElementById('dispShuttle').innerText = res.data.shuttle;
-            
-            var payDisp = document.getElementById('dispPayStatus');
-            payDisp.innerText = currentPayStatus;
-            if (currentPayStatus === '已付款') { payDisp.style.color = 'var(--success)'; }
-            else if (currentPayStatus === '帳款確認中') { payDisp.style.color = 'var(--warning)'; }
-            else { payDisp.style.color = 'var(--danger)'; }
-
-            document.getElementById('edit-companions-container').innerHTML = '';
-            compCounters['edit'] = 0;
-            if(res.data.compDetails && res.data.compDetails !== "無攜伴") {
-              var lines = res.data.compDetails.split('\n');
-              for(var i = 0; i < lines.length; i++) {
-                var match = lines[i].match(/朋友\d+:\s+(.*?)\s+\((.*?),\s+(.*?)\)/);
-                if(match) {
-                  addCompanion('edit');
-                  var lastBox = document.getElementById('comp-edit-' + compCounters['edit']);
-                  lastBox.querySelector('.c-name').value = match[1];
-                  lastBox.querySelector('.c-shuttle').value = match[2] === '接駁' ? '400' : '0';
-                  lastBox.querySelector('.c-pay').value = match[3] === '合併結帳' ? 'merged' : 'split';
-                }
-              }
-            }
-            calcTotal('edit');
-            document.getElementById('editFormArea').style.display = 'block';
-          } else {
-            showCustomAlert(res.message); document.getElementById('editFormArea').style.display = 'none';
-          }
-        })
-        .catch(function(err) { showCustomAlert('連線失敗，請檢查網路狀態。'); })
-        .finally(function() { btn.innerHTML = originalText; btn.disabled = false; });
-      }
-      window.fetchDataForEdit = fetchDataForEdit;
-
-      function loadAdminDashboard(e) {
-        var pwd = document.getElementById('adminPwd').value;
-        if(pwd !== '0706') return showCustomAlert('密碼錯誤，請重新輸入！');
-
-        var btn = e.target;
-        var originalText = btn.innerText;
-        btn.innerHTML = '<span class="spinner"></span> 載入中...';
-        btn.disabled = true;
-
-        fetch(GAS_URL, { method: 'POST', body: JSON.stringify({ action: 'admin' }) })
-        .then(function(res) { return res.json(); })
-        .then(function(res) {
-          if(res.status === 'success') {
-            adminGlobalData = res.data; 
-            document.getElementById('adminLoginArea').style.display = 'none';
-            document.getElementById('adminTableArea').style.display = 'block';
-            calculateAdminStats(); renderAdminTable('all'); 
-          } else {
-            showCustomAlert('發生錯誤：' + res.message);
-          }
-        })
-        .catch(function(err) { showCustomAlert('連線失敗，請檢查網路狀態。'); })
-        .finally(function() { btn.innerHTML = originalText; btn.disabled = false; });
-      }
-      window.loadAdminDashboard = loadAdminDashboard;
-
-      function calculateAdminStats() {
-        var totalGroups = adminGlobalData.length;
-        var paidGroups = 0; 
-        var expectedRevenue = 0;
-        var shuttleCount = 0; 
-        
-        for(var i=0; i<adminGlobalData.length; i++) {
-          var row = adminGlobalData[i];
-          if(row.payStatus === '已付款') paidGroups++;
-          expectedRevenue += (parseInt(row.total) || 0);
-          
-          // 更強健的主辦人接駁判斷：符合 "400"、"接駁" 或是 "需要" 皆算入
-          var mainShuttle = String(row.shuttle || '');
-          if(mainShuttle === '400' || mainShuttle.indexOf('接駁') !== -1 || mainShuttle.indexOf('需要') !== -1) {
-            shuttleCount++;
-          }
-          
-          // 攜伴接駁判斷
-          var compStr = String(row.compDetails || '');
-          if(compStr && compStr !== "無攜伴" && compStr !== "undefined") {
-            var lines = compStr.split('\n');
-            for(var k=0; k<lines.length; k++) {
-              if(lines[k].indexOf('接駁') !== -1 || lines[k].indexOf('400') !== -1) {
-                shuttleCount++;
-              }
-            }
-          }
-        }
-        
-        document.getElementById('stat-total-groups').innerText = totalGroups;
-        document.getElementById('stat-paid-groups').innerText = paidGroups;
-        document.getElementById('stat-unpaid-groups').innerText = totalGroups - paidGroups;
-        document.getElementById('stat-revenue').innerText = '$' + expectedRevenue.toLocaleString();
-        document.getElementById('stat-shuttle').innerText = shuttleCount;
-      }
-
-      function filterAdminTable(filterType, btnElement) {
-        var btns = document.querySelectorAll('.btn-filter');
-        for(var i=0; i<btns.length; i++) btns[i].classList.remove('active');
-        btnElement.classList.add('active');
-        renderAdminTable(filterType);
-      }
-      window.filterAdminTable = filterAdminTable;
-
-      function renderAdminTable(filterType) {
-        var tbody = document.getElementById('adminTbody');
-        tbody.innerHTML = ''; 
-        var filteredData = [];
-        
-        for(var i=0; i<adminGlobalData.length; i++) {
-          var row = adminGlobalData[i];
-          
-          if(filterType === 'shuttle') {
-             var groupShuttleNames = [];
-             var mainShuttle = String(row.shuttle || '');
-             if(mainShuttle === '400' || mainShuttle.indexOf('接駁') !== -1 || mainShuttle.indexOf('需要') !== -1) {
-                groupShuttleNames.push(row.name + ' <span style="font-size:11px; color:#D4AF37;">(主)</span>');
-             }
-             
-             var compStr = String(row.compDetails || '');
-             if(compStr && compStr !== "無攜伴" && compStr !== "undefined") {
-                var lines = compStr.split('\n');
-                for(var k=0; k<lines.length; k++) {
-                   if(lines[k].indexOf('接駁') !== -1 || lines[k].indexOf('400') !== -1) {
-                      var match = lines[k].match(/朋友\d+:\s+(.*?)\s*\(/);
-                      var cName = match ? match[1].trim() : "攜伴朋友";
-                      groupShuttleNames.push(cName + ' <span style="font-size:11px; color:#8E9BAE;">(伴)</span>');
-                   }
-                }
-             }
-             if(groupShuttleNames.length > 0) {
-                var shuttleRow = Object.assign({}, row);
-                shuttleRow.displayName = groupShuttleNames.join('<br>');
-                filteredData.push(shuttleRow);
-             }
-          } 
-          else {
-             if (filterType === 'all') { filteredData.push(row); }
-             else if (filterType === 'paid' && row.payStatus === '已付款') { filteredData.push(row); }
-             else if (filterType === 'unpaid' && row.payStatus !== '已付款') { filteredData.push(row); }
-          }
-        }
-
-        if (filteredData.length === 0) {
-          tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 40px; color: #64748B;">無符合條件的名單</td></tr>';
-          return;
-        }
-
-        for(var j=0; j<filteredData.length; j++) {
-          var row = filteredData[j];
-          var statusBadge = '';
-          var verifyBtn = '';
-          var dispName = row.displayName ? row.displayName : row.name;
-          
-          var mPhone = row.phone;
-          if(mPhone && mPhone.length >= 10) {
-             mPhone = mPhone.substring(0,4) + '***' + mPhone.substring(mPhone.length-3);
-          }
-          
-          if (row.payStatus === '已付款') {
-            statusBadge = '<span class="status-badge bg-green">已付款</span>';
-          } else if (row.payStatus === '帳款確認中' || row.hasTransferInfo) {
-            statusBadge = '<span class="status-badge bg-yellow">確認中</span>';
-            verifyBtn = '<button class="btn-verify-pay" onclick="confirmPayment(\''+row.phone+'\')">帳款確認</button>';
-          } else {
-            statusBadge = '<span class="status-badge bg-red">未付款</span>';
-          }
-
-          var transferText = row.transferInfo ? row.transferInfo.replace('<br>', ' ｜ ') : '';
-          if(filterType === 'shuttle') transferText = '主報名人: ' + row.name; 
-            
-          var trStr = '<tr>' +
-              '<td class="col-name" style="line-height: 1.6;">' + dispName + '</td>' +
-              '<td class="col-phone">' + mPhone + '</td>' +
-              '<td class="col-total">$' + row.total + '</td>' +
-              '<td class="col-transfer"><div class="transfer-flex"><span>' + transferText + '</span>' + verifyBtn + '</div></td>' +
-              '<td class="col-status">' + statusBadge + '</td>' +
-            '</tr>';
-          tbody.innerHTML += trStr;
-        }
-      }
-
-      function confirmPayment(phone) {
-        if (!confirm("確認已收到款項，將更新為已付款狀態是否正確?")) return;
-        
-        fetch(GAS_URL, {
-          method: 'POST',
-          body: JSON.stringify({ action: 'updateStatus', phone: phone, status: '已付款' })
-        })
-        .then(function(res) { return res.json(); })
-        .then(function(data) {
-          if(data.status === 'success') {
-            for(var i=0; i<adminGlobalData.length; i++) {
-              if (adminGlobalData[i].phone === phone) {
-                adminGlobalData[i].payStatus = '已付款';
-                break;
-              }
-            }
-            calculateAdminStats();
-            renderAdminTable(document.querySelector('.btn-filter.active').getAttribute('onclick').match(/'([^']+)'/)[1]);
-            showCustomAlert('狀態已成功更新為「已付款」');
-          } else {
-            showCustomAlert('更新失敗：' + data.message);
-          }
-        })
-        .catch(function(err) { showCustomAlert('連線失敗，請檢查網路'); });
-      }
-      window.confirmPayment = confirmPayment;
-
-    } catch (error) {
-      console.log("Script execution error:", error);
     }
-  </script>
+
+    // 3. Submit merged data
+    const payload = {
+      action: 'submit',
+      phone: "'" + searchRes.data.phone.replace(/'/g, ''),
+      name: searchRes.data.name,
+      ig: searchRes.data.ig || '',
+      shuttle: searchRes.data.shuttle === '需要接駁' ? '400' : '0',
+      companions: comps,
+      transferDate: document.getElementById('pay-date').value,
+      account5: document.getElementById('pay-last5').value,
+      notes: document.getElementById('pay-note').value,
+      total: searchRes.data.total
+    };
+
+    let submitRes = await fetch(GAS_URL, { method: 'POST', body: JSON.stringify(payload) }).then(r=>r.json());
+    if(submitRes.status === 'success') {
+      showToast('✅ 付款憑證已更新，請等候主辦方核對帳款');
+      e.target.reset();
+    } else {
+      showToast('⚠️ 更新失敗：' + submitRes.message);
+    }
+  } catch (err) {
+    showToast('⚠️ 連線失敗');
+  } finally {
+    setBtnLoading(btn, false, '送出付款資訊');
+  }
+}
+
+// ── TAB 4: QUERY & EDIT ──
+async function fetchDataForEdit() {
+  const phone = document.getElementById('q-phone').value.trim();
+  if(!phone) { showToast('請輸入電話'); return; }
+  
+  const btn = document.getElementById('q-submit-btn');
+  setBtnLoading(btn, true);
+
+  try {
+    let res = await fetch(GAS_URL, { method: 'POST', body: JSON.stringify({ action: 'search', phone: phone }) }).then(r=>r.json());
+    if(res.status === 'success') {
+      const data = res.data;
+      document.getElementById('q-name').textContent = data.name;
+      document.getElementById('q-shuttle').textContent = data.shuttle;
+      
+      const badge = document.getElementById('q-status-badge');
+      let status = data.payStatus || "未付款";
+      if (status !== "已付款" && (data.transferDate || data.account5)) status = "帳款確認中";
+
+      badge.textContent = status;
+      badge.className = 'result-status ' + (status === '已付款' ? 'status-paid' : (status === '帳款確認中' ? 'status-verifying' : 'status-pending'));
+      
+      document.getElementById('queryResult').classList.add('show');
+
+      // Populate Edit Form
+      document.getElementById('edit-phone').value = data.phone.replace(/'/g,'');
+      document.getElementById('edit-name').value = data.name;
+      document.getElementById('edit-ig').value = data.ig || '';
+      document.getElementById('edit-shuttle').value = data.shuttle === '需要接駁' ? '400' : '0';
+      
+      document.getElementById('edit-companions').innerHTML = '';
+      compCounters['edit'] = 0;
+      if(data.compDetails && data.compDetails !== "無攜伴") {
+        const lines = data.compDetails.split('\n');
+        for(let line of lines) {
+          let match = line.match(/朋友\d+:\s+(.*?)\s+\((.*?),\s+(.*?)\)/);
+          if(match) {
+            addCompanion('edit');
+            const box = document.getElementById(`comp-edit-${compCounters['edit']}`);
+            box.querySelector('.c-name').value = match[1];
+            box.querySelector('.c-shuttle').value = match[2] === '接駁' ? '400' : '0';
+            box.querySelector('.c-pay').value = match[3] === '合併結帳' ? 'merged' : 'split';
+          }
+        }
+      }
+      updatePrice('edit');
+      document.getElementById('editSection').classList.add('show');
+    } else {
+      showToast(res.message);
+      document.getElementById('queryResult').classList.remove('show');
+      document.getElementById('editSection').classList.remove('show');
+    }
+  } catch (err) {
+    showToast('⚠️ 連線失敗');
+  } finally {
+    setBtnLoading(btn, false, '查詢資料');
+  }
+}
+
+async function submitEdit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('edit-submit-btn');
+  setBtnLoading(btn, true);
+
+  // We must re-fetch to not overwrite transfer/note info if we are only editing base fields
+  // However, GAS submit handles full overwrite, so we fetch first
+  const phone = document.getElementById('edit-phone').value.trim();
+  
+  try {
+    let searchRes = await fetch(GAS_URL, { method: 'POST', body: JSON.stringify({ action: 'search', phone: phone }) }).then(r=>r.json());
+    const oldData = searchRes.data || {};
+
+    let tDate = oldData.transferDate || "";
+    if (tDate.length > 10 && tDate.includes('GMT')) {
+      const d = new Date(tDate);
+      tDate = d.getFullYear() + '-' + ("0"+(d.getMonth()+1)).slice(-2) + '-' + ("0"+d.getDate()).slice(-2);
+    }
+
+    const payload = {
+      action: 'submit',
+      phone: "'" + phone,
+      name: document.getElementById('edit-name').value.trim(),
+      ig: document.getElementById('edit-ig').value.trim(),
+      shuttle: document.getElementById('edit-shuttle').value,
+      companions: getCompanionsData('edit'),
+      transferDate: tDate,
+      account5: oldData.account5 || "",
+      notes: oldData.notes || "",
+      total: updatePrice('edit')
+    };
+
+    let submitRes = await fetch(GAS_URL, { method: 'POST', body: JSON.stringify(payload) }).then(r=>r.json());
+    if(submitRes.status === 'success') {
+      showToast('✅ 資料已成功更新');
+      fetchDataForEdit(); // Refresh display
+    } else {
+      showToast('⚠️ 更新失敗');
+    }
+  } catch (err) {
+    showToast('⚠️ 連線失敗');
+  } finally {
+    setBtnLoading(btn, false, '儲存修改並送出');
+  }
+}
+
+// ── TAB 5: ADMIN ──
+async function adminLogin() {
+  const pw = document.getElementById('adminPw').value;
+  if(pw !== '0706') {
+    document.getElementById('adminLoginError').classList.add('show');
+    return;
+  }
+  document.getElementById('adminLoginError').classList.remove('show');
+  const btn = document.getElementById('admin-btn');
+  setBtnLoading(btn, true);
+
+  try {
+    let res = await fetch(GAS_URL, { method: 'POST', body: JSON.stringify({ action: 'admin' }) }).then(r=>r.json());
+    if(res.status === 'success') {
+      adminGlobalData = res.data;
+      document.getElementById('adminLogin').style.display = 'none';
+      document.getElementById('adminDashboard').style.display = 'block';
+      calcAdminStats();
+      filterAdminTable('all', document.querySelector('.admin-tab-btn'));
+    } else {
+      showToast('發生錯誤');
+    }
+  } catch (err) {
+    showToast('連線失敗');
+  } finally {
+    setBtnLoading(btn, false, '登入查看');
+  }
+}
+
+function calcAdminStats() {
+  const total = adminGlobalData.length;
+  let paid = 0, revenue = 0, shuttleCount = 0;
+
+  adminGlobalData.forEach(row => {
+    if(row.payStatus === '已付款') paid++;
+    revenue += (parseInt(row.total) || 0);
+
+    // 1. 計算主報名人接駁
+    // 容錯判斷：只要包含 400、接駁、需要 等字眼都算
+    const mShuttle = String(row.shuttle || '');
+    if(mShuttle === '400' || mShuttle.includes('接駁') || mShuttle.includes('需要')) {
+      shuttleCount++;
+    }
+
+    // 2. 計算攜伴接駁
+    const compStr = String(row.compDetails || '');
+    if(compStr && compStr !== "無攜伴" && compStr !== "undefined") {
+      const lines = compStr.split('\n');
+      lines.forEach(line => {
+        // 只要這行字串包含 400 或是 接駁，就視為該攜伴需要接駁
+        if(line.includes('接駁') || line.includes('400')) {
+          shuttleCount++;
+        }
+      });
+    }
+  });
+
+  document.getElementById('stat-total').textContent = total;
+  document.getElementById('stat-paid').textContent = paid;
+  document.getElementById('stat-unpaid').textContent = total - paid;
+  document.getElementById('stat-amount').textContent = '$' + revenue.toLocaleString();
+  document.getElementById('stat-shuttle').textContent = shuttleCount;
+}
+
+function filterAdminTable(type, btn) {
+  document.querySelectorAll('.admin-tab-btn').forEach(b => b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+
+  const tbody = document.getElementById('adminTableBody');
+  tbody.innerHTML = '';
+  let filtered = [];
+
+  adminGlobalData.forEach(row => {
+    if(type === 'shuttle') {
+      let groupShuttles = [];
+      
+      // 1. 抓取主報名人
+      const mShuttle = String(row.shuttle || '');
+      if(mShuttle === '400' || mShuttle.includes('接駁') || mShuttle.includes('需要')) {
+        groupShuttles.push(`${row.name} <span style="font-size:11px;color:var(--gold2);background:rgba(201,168,76,0.15);padding:2px 6px;border-radius:4px;">(主報名)</span>`);
+      }
+
+      // 2. 抓取攜伴名單
+      const compStr = String(row.compDetails || '');
+      if(compStr && compStr !== "無攜伴" && compStr !== "undefined") {
+        compStr.split('\n').forEach(line => {
+          if(line.includes('接駁') || line.includes('400')) {
+            // 放寬正規表達式：抓取 "朋友X: " 到 "(" 之間的所有文字作為姓名
+            const match = line.match(/朋友\d+:\s+([^\(]+)/);
+            const cName = match ? match[1].trim() : "攜伴朋友";
+            groupShuttles.push(`${cName} <span style="font-size:11px;color:var(--text2);background:rgba(255,255,255,0.05);padding:2px 6px;border-radius:4px;">(攜伴)</span>`);
+          }
+        });
+      }
+
+      // 如果這組有人需要接駁，才加入顯示清單
+      if(groupShuttles.length > 0) {
+        filtered.push({ ...row, displayName: groupShuttles.join('<br><div style="height:6px"></div>') });
+      }
+
+    } else {
+      if(type === 'all') filtered.push(row);
+      else if(type === 'paid' && row.payStatus === '已付款') filtered.push(row);
+      else if(type === 'unpaid' && row.payStatus !== '已付款') filtered.push(row);
+    }
+  });
+
+  if(filtered.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:24px">尚無符合條件的資料</td></tr>';
+    return;
+  }
+
+  filtered.forEach(row => {
+    // 若為接駁名單，顯示我們剛剛整理好的 displayName（包含主/伴標籤），否則顯示一般姓名
+    let dispName = row.displayName || row.name; 
+    
+    // 隱藏電話號碼中間碼
+    let mPhone = row.phone;
+    if(mPhone && mPhone.length >= 10) mPhone = mPhone.substring(0,4) + '***' + mPhone.substring(mPhone.length-3);
+
+    let statusHtml = '', btnHtml = '';
+    if (row.payStatus === '已付款') {
+      statusHtml = '<span class="badge badge-green">已付款</span>';
+    } else if (row.payStatus === '帳款確認中' || row.hasTransferInfo) {
+      statusHtml = '<span class="badge badge-warn">確認中</span>';
+      btnHtml = `<button onclick="confirmPayment('${row.phone}')" style="padding:5px 12px;background:linear-gradient(135deg,#4caf82,#3d8c68);border:none;border-radius:6px;color:#fff;font-size:11px;cursor:pointer;font-weight:600;">確認帳款</button>`;
+    } else {
+      statusHtml = '<span class="badge badge-red">未付款</span>';
+    }
+
+    // 若為接駁名單標籤，簡化憑證欄位顯示為 "需安排接駁"
+    let transferText = row.transferInfo ? row.transferInfo.replace('<br>', '｜') : '--';
+    if(type === 'shuttle') transferText = '<span style="color:var(--blue2)">需安排接駁位</span>';
+
+    tbody.innerHTML += `
+      <tr>
+        <td style="line-height:1.4;">${dispName}</td>
+        <td style="font-family:monospace;letter-spacing:0.05em">${mPhone}</td>
+        <td style="font-weight:600;color:var(--gold2)">$${row.total}</td>
+        <td><span style="font-size:11px;color:var(--text2)">${transferText}</span></td>
+        <td>${statusHtml}</td>
+        <td>${btnHtml}</td>
+      </tr>
+    `;
+  });
+}
+
+async function confirmPayment(phone) {
+  if(!confirm("確定已收到款項並更新為已付款？")) return;
+  
+  try {
+    let res = await fetch(GAS_URL, { method: 'POST', body: JSON.stringify({ action: 'updateStatus', phone: phone, status: '已付款' }) }).then(r=>r.json());
+    if(res.status === 'success') {
+      const idx = adminGlobalData.findIndex(r => r.phone === phone);
+      if(idx >= 0) adminGlobalData[idx].payStatus = '已付款';
+      calcAdminStats();
+      filterAdminTable(document.querySelector('.admin-tab-btn.active').textContent.includes('全部') ? 'all' : 'unpaid');
+      showToast('✅ 狀態已更新為「已付款」');
+    } else {
+      showToast('⚠️ 更新失敗');
+    }
+  } catch (err) {
+    showToast('連線錯誤');
+  }
+}
+
+// ── RULES MODAL ──
+function openRules() { document.getElementById('rulesModal').classList.add('show'); document.body.style.overflow = 'hidden'; }
+function closeRules() { document.getElementById('rulesModal').classList.remove('show'); document.body.style.overflow = ''; }
+function closeRulesOnBg(e) { if (e.target === document.getElementById('rulesModal')) closeRules(); }
+
+// INIT
+updatePrice('reg');
+</script>
 </body>
 </html>
