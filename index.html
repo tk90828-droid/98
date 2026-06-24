@@ -63,10 +63,12 @@
     z-index: 0; opacity: 0.85;
   }
   
-  @media(max-width: 768px) {
+ @media(max-width: 768px) {
     .image-background-layer {
-      background-size: 160% !important;
-      background-position: center 8% !important;
+      /* 強制替換為直式圖片 C2.jpg */
+      background-image: url('https://cdn-general.cybassets.com/s/files/35135/theme/127586/assets/C2.jpg') !important;
+      background-size: cover !important;
+      background-position: center top !important;
     }
     .luxury-hero-banner { min-height: 450px; height: 50vh; }
   }
