@@ -63,12 +63,15 @@
     z-index: 0; opacity: 0.85;
   }
   
-  @media(max-width: 768px) {
+ @media(max-width: 768px) {
     .image-background-layer {
-      /* 強制替換為直式圖片 C2.jpg */
       background-image: url('https://cdn-general.cybassets.com/s/files/35135/theme/127586/assets/C2.jpg') !important;
-      background-size: 130% !important;
-      background-position: center top !important;
+      
+      /* 比例不要放太大，110% 足以填滿兩側，又不會讓上下太長 */
+      background-size: 110% !important; 
+      
+      /* 將視覺中心抓在從上面數來 15% 到 20% 的位置，這樣剛好能包住星星跟男性的上半身 */
+      background-position: center 15% !important;
     }
     .luxury-hero-banner { min-height: 450px; height: 50vh; }
   }
